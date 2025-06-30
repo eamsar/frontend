@@ -1,0 +1,154 @@
+.carousel-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.highlight {
+  color: #ff6600;
+}
+
+/* ========== NOUVEAU ========== */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 40px;
+}
+
+.principle-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 20px;
+  flex: 1;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem;
+  flex-shrink: 0;
+}
+
+/* ========== CARTES ========== */
+.principle-card {
+  background: #fff;
+  border: 1px solid #cfe1e8;
+  border-radius: 10px;
+  padding: 30px 20px;
+  flex: 1 1 220px;
+  max-width: 250px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.principle-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.principle-card h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #007084;
+}
+
+.principle-card p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.principle-card .author,
+.principle-card .date {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* Hover */
+.principle-card:hover {
+  transform: translateY(-5px);
+  border-color: #00cccc;
+  box-shadow: 0 8px 20px rgba(0, 204, 204, 0.2);
+}
+.principle-card.active {
+  border: 2px solid #00796b;
+  background-color: #eefaf9;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* ========== DOTS ========== */
+.dots {
+  margin: 1rem 0;
+}
+.dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+}
+.dots .active {
+  background-color: #00796b;
+}
+
+/* ========== BUTTON ========== */
+.learn-more {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #00796b;
+  background: transparent;
+  color: #00796b;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.learn-more:hover {
+  background: #00796b;
+  color: white;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+  .carousel-wrapper {
+    flex-direction: column;
+  }
+
+  .principle-cards-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .principle-card {
+    max-width: 90%;
+  }
+}

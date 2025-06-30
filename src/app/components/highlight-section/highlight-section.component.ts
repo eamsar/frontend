@@ -21,7 +21,7 @@ setActiveCard(index: number) {
       title: 'VFS Global Leverages SAP Software to Power Digital Cross-Border Mobility',
       author: 'SAP NEWS',
       date: 'May 2, 2025',
-      image: 'assets/article1.jpg'
+      image: 'assets/partner.png'
     },
     {
       title: 'Six AI-Accelerated, Proactive, and Preventative Methods Transforming SAP’s Customer Support',

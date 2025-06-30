@@ -153,3 +153,30 @@
     max-width: 90%;
   }
 }
+.read-more {
+  margin-top: 1rem;
+  background: none;
+  border:#5290a8;
+  color: #008084;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+}
+
+.read-more .arrow {
+  margin-left: 5px;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.read-more:hover {
+  color: #ff6600;;
+}
+
+.read-more:hover .arrow {
+  transform: translateX(5px);
+}

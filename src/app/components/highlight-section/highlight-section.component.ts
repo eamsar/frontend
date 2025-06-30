@@ -18,16 +18,16 @@ setActiveCard(index: number) {
   itemsPerPage = 4;
   articles = [
     {
-      title: 'VFS Global Leverages SAP Software to Power Digital Cross-Border Mobility',
-      author: 'SAP NEWS',
-      date: 'May 2, 2025',
+      title: 'SAP Service Partner.It’s a recognition we’re proud of, especially as a young company. It shows what’s possible when a team puts in the effort to learn, grow, and stay committed to quality. It also reflects SAP’s trust in our work and strengthens our credibility in the ecosystem.',
+      author: 'Atliontech NEWS',
+      date: 'Jun 28, 2025',
       image: 'assets/partner.png'
     },
     {
       title: 'Six AI-Accelerated, Proactive, and Preventative Methods Transforming SAP’s Customer Support',
       author: 'Stefan Sterne',
       date: 'May 8, 2025',
-      image: 'assets/article2.jpg'
+      image: 'assets/onpvcloud.png'
     },
     {
       title: 'SAP Named a Leader in 2025 Gartner® Magic Quadrant™ for Warehouse Management Systems',
@@ -60,14 +60,14 @@ setActiveCard(index: number) {
   }
 
   next() {
-    if (this.currentIndex + this.itemsPerPage < this.articles.length) {
-      this.currentIndex += this.itemsPerPage;
+    if (this.currentIndex < this.articles.length) {
+      this.currentIndex += 1;
     }
   }
 
   prev() {
-    if (this.currentIndex - this.itemsPerPage >= 0) {
-      this.currentIndex -= this.itemsPerPage;
+    if (this.currentIndex >= 0) {
+      this.currentIndex -= 1;
     }
   }
 

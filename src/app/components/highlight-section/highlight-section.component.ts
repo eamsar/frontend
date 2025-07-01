@@ -6,16 +6,14 @@ import { CommonModule } from '@angular/common';
   selector: 'app-highlight-section',
   templateUrl: './highlight-section.component.html',
   styleUrls: ['./highlight-section.component.css'],
+  standalone: true,
   imports: [CommonModule],
 })
 export class HighlightSectionComponent {
   activeCardIndex: number | null = null;
-
-setActiveCard(index: number) {
-  this.activeCardIndex = index;
-}
   currentIndex = 0;
   itemsPerPage = 4;
+
   articles = [
     {
       title: 'SAP Service Partner.It’s a recognition we’re proud of, especially as a young company. It shows what’s possible when a team puts in the effort to learn, grow, and stay committed to quality. It also reflects SAP’s trust in our work and strengthens our credibility in the ecosystem.',
@@ -54,25 +52,38 @@ setActiveCard(index: number) {
     }
   ];
 
-  // Aller à l'article précédent
-   get visibleArticles() {
-    return this.articles.slice(this.currentIndex, this.currentIndex + this.itemsPerPage);
+  // Méthode pour activer le hover
+  setActiveCard(index: number) {
+    this.activeCardIndex = index;
   }
 
-  next() {
-    if (this.currentIndex < this.articles.length) {
-      this.currentIndex += 1;
+  // Renvoie les articles visibles (circulaire)
+  get visibleArticles() {
+    const start = this.currentIndex;
+    const end = (start + this.itemsPerPage) % this.articles.length;
+
+    if (end > start) {
+      return this.articles.slice(start, end);
+    } else {
+      // Si on arrive à la fin, on boucle
+      return [
+        ...this.articles.slice(start),
+        ...this.articles.slice(0, end)
+      ];
     }
   }
 
-  prev() {
-    if (this.currentIndex >= 0) {
-      this.currentIndex -= 1;
-    }
-  }
-
-  // Aller directement à un index donné
+  // Affiche les articles suivants
   goTo(index: number) {
     this.currentIndex = index;
   }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.articles.length;
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.articles.length) % this.articles.length;
+  }
+
 }

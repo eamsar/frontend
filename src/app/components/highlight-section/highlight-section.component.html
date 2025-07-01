@@ -29,13 +29,14 @@
     <button class="arrow" (click)="next()">&#8594;</button>
   </div>
 
-  <div class="dots">
+ <div class="dots">
     <span
-      *ngFor="let article of articles; let index = index"
-      [class.active]="index === currentIndex"
-      (click)="goTo(index)"
+      *ngFor="let dot of articles; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="goTo(i)"
     ></span>
   </div>
+
 
   <button class="learn-more">Learn more</button>
 </div>

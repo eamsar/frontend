@@ -1,1 +1,37 @@
-<p>industries-carousel works!</p>
+<section class="industry-section">
+  <div class="section-header">
+    <p>THE WORLD OF SAP CONSULTING</p>
+    <h2>
+      <span class="blue">we</span>
+      <span class="orange">are</span>
+      expert in the following industries
+    </h2>
+  </div>
+
+  <div class="carousel-container">
+    <!-- Arrows -->
+    <button class="carousel-arrow left" (click)="scrollLeft()">&#10094;</button>
+
+    <!-- Carousel -->
+    <div class="carousel-wrapper" #carousel>
+      <div class="industry-card" *ngFor="let industry of industries">
+        <img [src]="industry.imageUrl" [alt]="industry.name" />
+        <div class="industry-footer">
+          <p>{{ industry.name }}</p>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-arrow right" (click)="scrollRight()">&#10095;</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="pagination-dots">
+    <span *ngFor="let dot of dots; let i = index" class="dot" [class.active]="i === activeIndex"></span>
+  </div>
+
+  <div class="learn-more">
+    <button>Learn more</button>
+  </div>
+</section>

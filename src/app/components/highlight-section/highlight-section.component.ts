@@ -16,7 +16,7 @@ export class HighlightSectionComponent {
 
   articles = [
     {
-      title: 'SAP Service Partner.It’s a recognition we’re proud of, especially as a young company. It shows what’s possible when a team puts in the effort to learn, grow, and stay committed to quality. It also reflects SAP’s trust in our work and strengthens our credibility in the ecosystem.',
+      title: 'SAP Service Partner.It’s a recognition we’re proud of, especially as a young company. ',
       author: 'Atliontech NEWS',
       date: 'Jun 28, 2025',
       image: 'assets/partner.png'

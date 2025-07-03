@@ -1,7 +1,7 @@
 .carousel-container {
   text-align: center;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -67,7 +67,7 @@
   flex-direction: column;
   justify-content: space-between;
     width: 250px; /* largeur fixe */
-  height: 550px; /* hauteur fixe */
+  height: 330px; /* hauteur fixe */
   overflow: hidden;
 }
 
@@ -83,20 +83,25 @@
   font-weight: bold;
   margin: 0.5rem 0;
   color: #007084;
+    display: -webkit-box;
+  -webkit-line-clamp: 3;         /* 👈 Show max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .principle-card p {
   font-size: 0.85rem;
   color: #555;
   line-height: 1.4;
-    font-size: 0.85rem;
-  line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;         /* 👈 Show max 2 lines */
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* max 3 lignes */
-  -webkit-box-orient: vertical;
 }
+
 
 .principle-card .author,
 .principle-card .date {

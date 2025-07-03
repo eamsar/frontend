@@ -56,9 +56,9 @@
             font-weight: 600;
             padding: 6px 8px;
 
-            &:hover {
-              color: #00cccc;
-            }
+            &:not(.contact-button):hover {
+  color: #f17b00;
+}
           }
 
           &.dropdown:hover .dropdown-menu {

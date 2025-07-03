@@ -52,24 +52,24 @@
 
 /* ========== CARTES ========== */
 .principle-card {
-  
-  background: #fff;
+  background-color:  #eefaf9; /* 👈 Apply your color here */
   border: 1px solid #cfe1e8;
   border-radius: 10px;
   padding: 30px 20px;
   flex: 1 1 220px;
   max-width: 250px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  /*box-shadow: 0 0 5px rgba(0,0,0,0.05);*/
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-    width: 250px; /* largeur fixe */
-  height: 330px; /* hauteur fixe */
+  width: 250px;
+  height: 330px;
   overflow: hidden;
 }
+
 
 .principle-card img {
   width: 100%;
@@ -84,7 +84,7 @@
   margin: 0.5rem 0;
   color: #007084;
     display: -webkit-box;
-  -webkit-line-clamp: 3;         /* 👈 Show max 2 lines */
+  -webkit-line-clamp: 2;         /* 👈 Show max 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

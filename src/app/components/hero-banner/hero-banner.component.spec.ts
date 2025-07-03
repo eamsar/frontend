@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HeroBannerComponent } from './hero-banner.component';
+import { CommonModule } from '@angular/common';
 
 describe('HeroBannerComponent', () => {
   let component: HeroBannerComponent;
@@ -8,7 +8,8 @@ describe('HeroBannerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeroBannerComponent]
+      declarations: [HeroBannerComponent],
+      imports: [CommonModule]
     })
     .compileComponents();
 

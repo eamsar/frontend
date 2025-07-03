@@ -33,7 +33,7 @@
 
       .short-line {
         width: 100%;
-        max-width: 560px; 
+        max-width: 650px; 
         border: none;
         border-top: 1px solid #ccc;
         margin: 4px 0;
@@ -56,9 +56,9 @@
             font-weight: 600;
             padding: 6px 8px;
 
-            &:hover {
-              color: #00cccc;
-            }
+            &:not(.contact-button):hover {
+  color: #f17b00;
+}
           }
 
           &.dropdown:hover .dropdown-menu {
@@ -88,21 +88,21 @@
             }
           }
         }
+ .contact-button {
+      background-color: #008084;
+      border-radius: 6px; 
+      padding: 6px 12px; 
+      font-weight: bold;
+      font-size: 0.85rem;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block; 
+      line-height: 1.2; 
 
-        .contact-button {
-          background-color: #00b3b3;
-          border-radius: 8px;
-          padding: 8px 16px;
-          font-weight: bold;
-          color: white;
-          text-decoration: none;
-          transition: background-color 0.3s;
-
-          &:hover {
-            background-color: #00cccc;
-          }
-        }
+      &:hover {
+        background-color: #f17b00;
+        transform: translateY(-1px); 
       }
     }
-  }
-}
+  }}}}

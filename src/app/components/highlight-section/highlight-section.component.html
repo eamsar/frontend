@@ -1,1 +1,42 @@
-<p>highlight-section works!</p>
+<div class="carousel-container">
+  <h4 class="subtitle">THE WORLD OF IT & SAP CONSULTING</h4>
+  <h2 class="title">
+    and <span class="highlight">trends</span> around digital transformation
+  </h2>
+
+  <div class="carousel-wrapper">
+    <button class="arrow" (click)="prev()">&#8592;</button>
+
+    <div class="principle-cards-container">
+      <div
+        class="principle-card"
+        *ngFor="let article of visibleArticles; let i = index"
+        [class.active]="i === activeCardIndex"
+        (mouseenter)="setActiveCard(i)"
+        (mouseleave)="setActiveCard(0)"
+      >
+        <img [src]="article.image" alt="Article image" />
+        <h3>{{ article.title }}</h3>
+        <p class="author">BY {{ article.author }}</p>
+        <p class="date">{{ article.date }}</p>
+            <button class="read-more">
+  Read more <span class="arrow">→</span>
+</button>
+      </div>
+  
+    </div>
+
+    <button class="arrow" (click)="next()">&#8594;</button>
+  </div>
+
+ <div class="dots">
+    <span
+      *ngFor="let dot of articles; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="goTo(i)"
+    ></span>
+  </div>
+
+
+  <button class="learn-more">Learn more</button>
+</div>

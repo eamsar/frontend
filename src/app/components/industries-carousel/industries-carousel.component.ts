@@ -13,17 +13,17 @@ export class IndustriesCarouselComponent {
   industries = [
     {
       name: 'Insurance',
-      imageUrl: 'assets/insurance.webp',
+      imageUrl: 'assets/insurance.jpg',
       description: 'We help insurers optimize claim processes, improve compliance, and embrace digital transformation.'
     },
     {
       name: 'Industry',
-      imageUrl: 'assets/industry.jpg',
+      imageUrl: 'assets/industry.webp',
       description: 'We support industrial clients in modernizing production using SAP S/4HANA and automation solutions.'
     },
     {
       name: 'Health',
-      imageUrl: 'assets/health.jpg',
+      imageUrl: 'assets/health.webp',
       description: 'Enhancing healthcare delivery through data integration, regulatory compliance, and digital care paths.'
     },
     {

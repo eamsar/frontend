@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -22,9 +22,14 @@ export class IndustriesCarouselComponent implements AfterViewInit {
   activeIndex = 0;
   dots: number[] = [];
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   ngAfterViewInit() {
     const groupSize = 3;
     this.dots = Array(Math.ceil(this.industries.length / groupSize)).fill(0);
+    
+    this.cdr.detectChanges(); // 🟢 IMPORTANT pour éviter NG0100
+
     this.carousel.nativeElement.addEventListener('scroll', () => this.onScroll());
   }
 

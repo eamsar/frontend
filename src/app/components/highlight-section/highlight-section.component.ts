@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,10 +9,11 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
 })
-export class HighlightSectionComponent {
+export class HighlightSectionComponent   {
   activeCardIndex: number | null = null;
   currentIndex = 0;
   itemsPerPage = 4;
+  intervalId: any;
 
   articles = [
     {
@@ -77,6 +78,7 @@ export class HighlightSectionComponent {
   goTo(index: number) {
     this.currentIndex = index;
   }
+
 
   next() {
     this.currentIndex = (this.currentIndex + 1) % this.articles.length;

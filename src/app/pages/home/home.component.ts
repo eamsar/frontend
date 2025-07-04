@@ -10,7 +10,9 @@ import { ServiceComptComponent } from "../../components/service-compt/service-co
 
 @Component({
   selector: 'app-home',
+
   imports: [NavbarComponent, HeroBannerComponent, HighlightSectionComponent, TrustSectionComponent, IndustriesCarouselComponent, ContactFormComponent, FooterComponent,ServiceComptComponent],
+
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

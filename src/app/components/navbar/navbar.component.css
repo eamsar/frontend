@@ -55,6 +55,7 @@
             text-decoration: none;
             font-weight: 600;
             padding: 6px 8px;
+            cursor: pointer;
 
             &:not(.contact-button):hover {
   color: #f17b00;

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -21,7 +21,7 @@ export class IndustriesCarouselComponent implements AfterViewInit {
 
   activeIndex = 0;
   dots: number[] = [];
-
+ constructor(private cdr : ChangeDetectorRef){}
   ngAfterViewInit() {
     const groupSize = 3;
     this.dots = Array(Math.ceil(this.industries.length / groupSize)).fill(0);

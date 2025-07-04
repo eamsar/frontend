@@ -1,8 +1,10 @@
 .section-light {
-  background-color: white;
-  margin-left: 116px;
-  margin-right: 116px;
+  background-color: #eefaf9;
+  padding: 60px 20px; /* responsive spacing */
+  margin: 0 auto;
 }
+
+
 .services-section {
   text-align: center;
   

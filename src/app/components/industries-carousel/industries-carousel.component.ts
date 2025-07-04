@@ -40,17 +40,6 @@ export class IndustriesCarouselComponent {
 
 
   activeIndex = 0;
-  dots: number[] = [];
- constructor(private cdr : ChangeDetectorRef){}
-  ngAfterViewInit() {
-    const groupSize = 3;
-    this.dots = Array(Math.ceil(this.industries.length / groupSize)).fill(0);
-    this.carousel.nativeElement.addEventListener('scroll', () => this.onScroll());
-  }
-
-  scrollLeft() {
-    this.carousel.nativeElement.scrollBy({ left: -270 * 3, behavior: 'smooth' });
-  }
 
   activeIndustry = this.industries[0];
  fadeTrigger = true;

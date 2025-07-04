@@ -1,0 +1,17 @@
+<!-- services.component.html -->
+ <section class="section-light"> 
+<div class="services-section">
+  <h2 class="section-title">Nos <span class="highlight">Services</span></h2>
+  <div class="underline"></div>
+
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let service of services">
+      <img [src]="service.icon" alt="Icon service" class="service-icon" />
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.description }}</p>
+      <a class="read-more" href="#">Lire la suite <span class="arrow">&#8594;</span></a>
+    </div>
+  </div>
+</div>
+
+ </section>

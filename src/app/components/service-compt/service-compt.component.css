@@ -1,0 +1,92 @@
+.section-light {
+  background-color: #f8f9fa;
+  margin-left: 116px;
+  margin-right: 116px;
+}
+.services-section {
+  text-align: center;
+  
+ 
+}
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003b4a;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.highlight {
+  color: #ff6600; /* your brand color */
+}
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card {
+  flex: 1 1 calc(25% - 2rem); /* 👈 4 cards per row */
+  max-width: calc(25% - 2rem);
+  /*background: #fff;
+  /*border: 1px solid #e0e0e0;*/
+  padding: 1.5rem;
+  border-radius: 10px;
+  /*box-shadow: 0 4px 8px rgba(0,0,0,0.05);*/
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  color: #00796b;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.read-more:hover{
+   color: #ff6600;;
+}
+.read-more .arrow {
+  margin-left: 5px;
+}
+
+/* Responsive: 2 cards per row on tablet */
+@media (max-width: 992px) {
+  .service-card {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
+  }
+}
+
+/* Responsive: 1 card per row on mobile */
+@media (max-width: 600px) {
+  .service-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .service-icon {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #00184b;
+  margin: 1rem 0 0.5rem;
+}
+
+}

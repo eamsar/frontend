@@ -1,0 +1,48 @@
+.job-filter {
+  padding: 20px;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.filters button {
+  background-color: #005c66;
+  color: white;
+  border: none;
+}
+
+.job-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.job-card {
+  flex: 1 1 calc(33% - 20px);
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+}

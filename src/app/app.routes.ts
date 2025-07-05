@@ -15,6 +15,7 @@ import { EnergyComponent } from './pages/industries/energy/energy.component';
 import { FinancialServicesComponent } from './pages/industries/financial-services/financial-services.component';
 import { HealthCareComponent } from './pages/industries/health-care/health-care.component';
 import { ManufacturingComponent } from './pages/industries/manufacturing/manufacturing.component';
+import { CareerComponent } from './pages/career/career.component';
 
 export const routes: Routes = [ 
     { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ export const routes: Routes = [
      { path: 'industries/finacial-services', component: FinancialServicesComponent},
     { path: 'industries/health-care', component: HealthCareComponent },
     { path: 'industries/manufacturing', component: ManufacturingComponent },
+     { path: 'career', component: CareerComponent },
 
 ];
 @NgModule({

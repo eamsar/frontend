@@ -1,0 +1,26 @@
+<section class="job-filter">
+  <h2>Find Your Opportunity</h2>
+
+  <div class="filters">
+    <input type="text" placeholder="Search job title..." />
+    <select>
+      <option value="">Location</option>
+      <option value="remote">Remote</option>
+      <option value="morocco">Morocco</option>
+    </select>
+    <select>
+      <option value="">Department</option>
+      <option>Technical</option>
+      <option>Functional</option>
+    </select>
+    <button>Filter</button>
+  </div>
+
+  <div class="job-cards">
+    <div class="job-card" *ngFor="let job of [1,2,3]">
+      <h3>Software Developer</h3>
+      <p>Join our development team in building amazing tools.</p>
+      <button>Apply</button>
+    </div>
+  </div>
+</section>

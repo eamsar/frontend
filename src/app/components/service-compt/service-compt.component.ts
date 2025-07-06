@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 @Component({
@@ -7,12 +7,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './service-compt.component.css',
   imports: [CommonModule]
 })
-export class ServiceComptComponent {
+export class ServiceComptComponent  {
   services = [
     {
       title: 'SAP S/4HANA',
       description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
-      icon: '' // ← change to your actual image path
+      icon: 'assets/servicesimages/image.png' // ← change to your actual image path
     },
     {
       title: 'TMA',
@@ -39,4 +39,43 @@ export class ServiceComptComponent {
       icon: ''
     }
   ];
+    activeCardIndex: number | null = null;
+  currentIndex = 0;
+  intervalId: any;
+   get visibleArticles() {
+    const start = this.currentIndex;
+    const end = (start )  % this.services.length;
+
+    if (end > start) {
+      return this.services.slice(start, end);
+    } else {
+      // Si on arrive à la fin, on boucle
+      return [
+        ...this.services.slice(start),
+        ...this.services.slice(0, end)
+      ];
+    }
+  }
+    // Méthode pour activer le hover
+  setActiveCard(index: number) {
+    this.activeCardIndex = index;
+  }
+
+  // Renvoie les articles visibles (circulaire)
+
+
+  // Affiche les articles suivants
+  goTo(index: number) {
+    this.currentIndex = index;
+  }
+
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.services.length;
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.services.length) % this.services.length;
+  }
+
 }

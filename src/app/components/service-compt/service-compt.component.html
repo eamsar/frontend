@@ -1,17 +1,47 @@
 <!-- services.component.html -->
  <section class="section-light"> 
-<div class="services-section">
-  <h2 class="section-title">Nos <span class="highlight">Services</span></h2>
-  <div class="underline"></div>
+<div class="carousel-container">
+  <h1 class="subtitle">Nos services</h1>
+  <h2 class="">
+    <span class="highlight"></span>
+  </h2></div>
+<div class="carousel-wrapper">
+  
+  <button class="arrow" (click)="prev()">&#8592;</button>
 
-  <div class="services-grid">
-    <div class="service-card" *ngFor="let service of services">
-      <img [src]="service.icon" alt="Icon service" class="service-icon" />
-      <h3>{{ service.title }}</h3>
-      <p>{{ service.description }}</p>
-      <a class="read-more" href="#">Lire la suite <span class="arrow">&#8594;</span></a>
+  <div class="principle-cards-container">
+    <div
+      class="principle-card"
+      
+    >
+      <div class="card-content">
+        <div class="card-text">
+          <h2>{{ services[currentIndex]?.title }}</h2>
+          
+          <p class="description">{{ services[currentIndex]?.description }}</p>
+          <button class="read-more">
+            Read more <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <div class="card-image">
+          <img [src]="services[currentIndex]?.icon" alt="Article image" />
+        </div>
+      </div>
     </div>
   </div>
+
+  <button class="arrow" (click)="next()">&#8594;</button>
 </div>
+
+<div class="dots">
+  <span
+    *ngFor="let dot of services; let i = index"
+    [class.active]="i === currentIndex"
+    (click)="goTo(i)"
+  ></span>
+</div>
+
+
 
  </section>

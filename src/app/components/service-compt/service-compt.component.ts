@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 @Component({
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './service-compt.component.css',
   imports: [CommonModule]
 })
-export class ServiceComptComponent {
+export class ServiceComptComponent  {
   services = [
     {
       title: 'SAP S/4HANA',
@@ -39,4 +39,30 @@ export class ServiceComptComponent {
       icon: ''
     }
   ];
+  currentIndex = 0;
+     get visibleServices() {
+    const total = this.services.length;
+    const prevIndex = (this.currentIndex - 1 + total) % total;
+    const nextIndex = (this.currentIndex + 1) % total;
+
+    return [
+      this.services[prevIndex],
+      this.services[this.currentIndex],
+      this.services[nextIndex]
+    ];
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.services.length) % this.services.length;
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.services.length;
+  }
+
+  goTo(index: number) {
+    this.currentIndex = index;
+  }
+
+
 }

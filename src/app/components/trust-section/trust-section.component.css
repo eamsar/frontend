@@ -57,9 +57,6 @@
   color: #00cccc;
 }
 
-.principle-card:hover .icon {
-  background-color: #ccfafa;
-}
 
   @media (max-width: 768px) {
   .principle-card {
@@ -67,7 +64,7 @@
     max-width: 100%;
   }
 }
-.principle-card .icon {
+.principle-card img {
   width: 60px;
   height: 60px;
   margin: 0 auto 20px;
@@ -79,8 +76,14 @@
 }
 
 .principle-card img {
-  width: 28px;
-  height: 28px;
+   width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background-color: #e7f6f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .principle-card h3 {

@@ -1,8 +1,9 @@
 .section-light {
   padding: 2rem;
   text-align: center;
-   background-color: #ffffff;
-   min-height: 60vh;
+   background-color: #F4F6F8;
+   margin-bottom: 1cm;
+   margin-top: 2cm;
 }
 .title {
   font-size: 2.8rem;

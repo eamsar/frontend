@@ -1,16 +1,9 @@
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   background-color: #003640;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   padding: 10px 20px;
-  z-index: 9999;
-.dropdown-menu li {
-  list-style: none;
-}
+
   .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -65,8 +58,8 @@
             cursor: pointer;
 
             &:not(.contact-button):hover {
-              color: #f17b00;
-            }
+  color: #f17b00;
+}
           }
 
           &.dropdown:hover .dropdown-menu {
@@ -87,7 +80,7 @@
 
             li a {
               display: block;
-              padding: 10px 0.2px;
+              padding: 10px 12px;
               color: #003640;
 
               &:hover {
@@ -96,26 +89,21 @@
             }
           }
         }
+ .contact-button {
+      background-color: #008084;
+      border-radius: 6px; 
+      padding: 6px 12px; 
+      font-weight: bold;
+      font-size: 0.85rem;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block; 
+      line-height: 1.2; 
 
-        .contact-button {
-          background-color: #008084;
-          border-radius: 6px; 
-          padding: 6px 12px; 
-          font-weight: bold;
-          font-size: 0.85rem;
-          color: white;
-          text-decoration: none;
-          transition: all 0.3s;
-          display: inline-block; 
-          line-height: 1.2; 
-          margin-right: 0.8cm;
-
-          &:hover {
-            background-color: #f17b00;
-            transform: translateY(-1px); 
-          }
-        }
+      &:hover {
+        background-color: #f17b00;
+        transform: translateY(-1px); 
       }
     }
-  }
-}
+  }}}}

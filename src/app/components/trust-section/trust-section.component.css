@@ -1,9 +1,11 @@
 .principles-section {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+  margin:  auto;
+  padding: 30px 30px;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
+  height: 14cm;
+  margin-bottom: 3cm;
 }
 
 .principles-header h4 {

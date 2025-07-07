@@ -8,7 +8,9 @@
   font-family: 'Segoe UI', sans-serif;
   padding: 10px 20px;
   z-index: 9999;
-
+.dropdown-menu li {
+  list-style: none;
+}
   .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -85,7 +87,7 @@
 
             li a {
               display: block;
-              padding: 10px 12px;
+              padding: 10px 0.2px;
               color: #003640;
 
               &:hover {

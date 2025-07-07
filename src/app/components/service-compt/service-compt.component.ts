@@ -12,7 +12,7 @@ export class ServiceComptComponent  {
     {
       title: 'SAP S/4HANA',
       description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
-      icon: 'assets/servicesimages/image.png' // ← change to your actual image path
+      icon: '' // ← change to your actual image path
     },
     {
       title: 'TMA',
@@ -39,43 +39,30 @@ export class ServiceComptComponent  {
       icon: ''
     }
   ];
-    activeCardIndex: number | null = null;
   currentIndex = 0;
-  intervalId: any;
-   get visibleArticles() {
-    const start = this.currentIndex;
-    const end = (start )  % this.services.length;
+     get visibleServices() {
+    const total = this.services.length;
+    const prevIndex = (this.currentIndex - 1 + total) % total;
+    const nextIndex = (this.currentIndex + 1) % total;
 
-    if (end > start) {
-      return this.services.slice(start, end);
-    } else {
-      // Si on arrive à la fin, on boucle
-      return [
-        ...this.services.slice(start),
-        ...this.services.slice(0, end)
-      ];
-    }
-  }
-    // Méthode pour activer le hover
-  setActiveCard(index: number) {
-    this.activeCardIndex = index;
-  }
-
-  // Renvoie les articles visibles (circulaire)
-
-
-  // Affiche les articles suivants
-  goTo(index: number) {
-    this.currentIndex = index;
-  }
-
-
-  next() {
-    this.currentIndex = (this.currentIndex + 1) % this.services.length;
+    return [
+      this.services[prevIndex],
+      this.services[this.currentIndex],
+      this.services[nextIndex]
+    ];
   }
 
   prev() {
     this.currentIndex = (this.currentIndex - 1 + this.services.length) % this.services.length;
   }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.services.length;
+  }
+
+  goTo(index: number) {
+    this.currentIndex = index;
+  }
+
 
 }

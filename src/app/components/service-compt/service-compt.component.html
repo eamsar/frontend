@@ -1,47 +1,44 @@
-<!-- services.component.html -->
- <section class="section-light"> 
-<div class="carousel-container">
-  <h1 class="subtitle">Nos services</h1>
-  <h2 class="">
-    <span class="highlight"></span>
-  </h2></div>
-<div class="carousel-wrapper">
-  
-  <button class="arrow" (click)="prev()">&#8592;</button>
+<section class="section-light">
+  <div class="carousel-container">
+    <h1 class="subtitle">Nos services</h1>
+  </div>
 
-  <div class="principle-cards-container">
-    <div
-      class="principle-card"
-      
-    >
-      <div class="card-content">
-        <div class="card-text">
-          <h2>{{ services[currentIndex]?.title }}</h2>
-          
-          <p class="description">{{ services[currentIndex]?.description }}</p>
-          <button class="read-more">
-            Read more <span class="arrow">→</span>
-          </button>
-        </div>
+  <div class="carousel-wrapper">
+    <button class="arrow" (click)="prev()">&#8592;</button>
 
-        <div class="card-image">
-          <img [src]="services[currentIndex]?.icon" alt="Article image" />
+    <div class="principle-cards-container">
+      <div
+        class="principle-card"
+        *ngFor="let service of visibleServices; let i = index"
+        [ngClass]="{
+          'left-card': i === 0,
+          'active-card': i === 1,
+          'right-card': i === 2
+        }"
+      >
+        <div class="card-content">
+          <div class="card-text">
+            <h2>{{ service.title }}</h2>
+            <p class="description">{{ service.description }}</p>
+            <button class="read-more">
+              Read more <span class="arrow">→</span>
+            </button>
+          </div>
+          <div class="card-image">
+            <img [src]="service.icon" alt="Service image" />
+          </div>
         </div>
       </div>
     </div>
+
+    <button class="arrow" (click)="next()">&#8594;</button>
   </div>
 
-  <button class="arrow" (click)="next()">&#8594;</button>
-</div>
-
-<div class="dots">
-  <span
-    *ngFor="let dot of services; let i = index"
-    [class.active]="i === currentIndex"
-    (click)="goTo(i)"
-  ></span>
-</div>
-
-
-
- </section>
+  <div class="dots">
+    <span
+      *ngFor="let dot of services; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="goTo(i)"
+    ></span>
+  </div>
+</section>

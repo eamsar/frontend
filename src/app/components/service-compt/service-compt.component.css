@@ -40,7 +40,7 @@
 }
 
 .active-card {
-  flex: 0 0 50%;         /* agrandit la largeur */
+  flex: 0 0 60%;         /* agrandit la largeur */
   opacity: 1;
   filter: none;
   transform: scale(1.25); /* agrandit visuellement (zoom) */

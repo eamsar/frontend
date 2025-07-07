@@ -1,9 +1,18 @@
 .section-light {
   padding: 2rem;
-  background-color: #f5f5f5;
   text-align: center;
+   background-color: #003640;
+   min-height: 60vh;
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 1rem 0;
 }
 
+.highlight {
+  color: #ff6600;
+}
 .carousel-wrapper {
   display: flex;
   align-items: center;
@@ -12,10 +21,12 @@
 }
 
 .arrow {
-  background-color: transparent;
+  font-size: 1.5rem;
+  background: none;
   border: none;
-  font-size: 2rem;
   cursor: pointer;
+  padding: 0 1rem;
+  flex-shrink: 0;
 }
 
 .principle-cards-container {
@@ -67,14 +78,6 @@
   height: auto;
 }
 
-.read-more {
-  background: none;
-  border: none;
-  color: #00796b;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 1rem;
-}
 
 .dots {
   margin-top: 1rem;
@@ -92,4 +95,30 @@
 
 .dots span.active {
   background: #00796b;
+}
+.read-more {
+  margin-top: 1rem;
+  background: none;
+  border:#5290a8;
+  color: #008084;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+}
+.read-more .arrow {
+  margin-left: 5px;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.read-more:hover {
+  color: #ff6600;;
+}
+
+.read-more:hover .arrow {
+  transform: translateX(5px);
 }

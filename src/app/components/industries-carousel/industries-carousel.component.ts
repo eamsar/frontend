@@ -15,31 +15,31 @@ export class IndustriesCarouselComponent {
       name: 'Insurance',
       imageUrl: 'assets/test.png',
       description: 'We help insurers optimize claim processes, improve compliance, and embrace digital transformation.',
-      icon: '🛡️'
+      icon:  'assets/insurance.png'
     },
     {
       name: 'Industry',
       imageUrl: 'assets/industry.webp',
       description: 'We support industrial clients in modernizing production using SAP S/4HANA and automation solutions.',
-      icon: '🏭'
+      icon:  'assets/industry.png'
     },
     {
       name: 'Health',
       imageUrl: 'assets/health.webp',
       description: 'Enhancing healthcare delivery through data integration, regulatory compliance, and digital care paths.',
-      icon: '🏥'
+      icon:  'assets/health.png'
     },
     {
       name: 'Banking',
       imageUrl: 'assets/banking.png',
       description: 'Drive innovation in banking with real-time analytics, risk management, and SAP Financial Services.',
-      icon: '💰'
+      icon:  'assets/bank.png'
     },
     {
       name: 'Retail',
       imageUrl: 'assets/retail.webp',
       description: 'Enable personalized shopping and agile supply chains with SAP Retail & CX solutions.',
-      icon: '🛒'
+      icon:  'assets/retail.png'
     }
   ];
 

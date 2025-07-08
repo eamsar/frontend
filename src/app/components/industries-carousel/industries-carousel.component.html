@@ -11,7 +11,10 @@
           <li *ngFor="let ind of industries; let i = index"
               [class.active]="i === activeIndex"
               (mouseover)="activeIndex = i">
-            <span class="icon">{{ ind.icon }}  </span>
+           <span class="icon">
+  <img [src]="ind.icon" alt="{{ ind.name }} icon" />
+</span>
+
             <span class="label">{{ ind.name }}</span>
           </li>
         </ul>

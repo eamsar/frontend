@@ -78,15 +78,25 @@ body {
 }
 .industry-menu li:hover,
 .industry-menu li.active {
-  background-color: #008084;
-  color: #ffffff;
+  background-color: 	rgba(245, 124, 0, 0.2);
+  color: #008084;
   border-left-color: #f57c00;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+.icon img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  object-fit: contain;
 }
 
 /* Right Content */
 .industry-display {
   flex: 1;
+}
+.icon {
+  display: flex;
+  align-items: center;
 }
 
 /* Card */

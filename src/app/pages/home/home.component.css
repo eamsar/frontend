@@ -1,18 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .back-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #008084;
-  color: white;
+  bottom: 20px;
+  right: 20px;
   text-decoration: none;
+  background-color: #003640;
+  color: white;
   font-size: 24px;
   padding: 10px 15px;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  transition: background-color 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .back-to-top:hover {
-  background-color: #f17b00;
+  background-color: #005d73;
 }

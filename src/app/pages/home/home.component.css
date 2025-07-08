@@ -9,13 +9,12 @@ html {
   text-decoration: none;
   background-color: #003640;
   color: white;
-  font-size: 24px;
+  font-size: 15px;
   padding: 10px 15px;
   border-radius: 50%;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-
 .back-to-top:hover {
   background-color: #005d73;
 }

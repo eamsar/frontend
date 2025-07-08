@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-image 0.6s ease-in-out;
 }
 
 .industry-overlay {
@@ -99,4 +100,40 @@
   .industry-heading {
     font-size: 1.6rem;
   }
+}
+.industry-list-modern {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 16px;
+}
+
+.industry-list-modern li {
+  padding: 18px 24px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  color: white;
+}
+
+.industry-list-modern li:hover,
+.industry-list-modern li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #f17b00;
+  color: #f17b00;
+}
+.industry-list-modern li {
+  /* ...existing styles */
+  transform: translateY(0);
+}
+
+.industry-list-modern li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }

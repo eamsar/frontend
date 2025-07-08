@@ -16,15 +16,16 @@
           <span class="orange">are</span> expert in the following industries
         </h2>
 
-        <ul class="industry-list">
-          <li
-            *ngFor="let industry of industries; let i = index"
-            (mouseenter)="setActiveIndustry(i)"
-            [class.active]="industry.name === activeIndustry.name"
-          >
-            ➤ {{ industry.name }}
-          </li>
-        </ul>
+     <ul class="industry-list-modern">
+  <li
+    *ngFor="let industry of industries; let i = index"
+    (click)="setActiveIndustry(i)"
+    [class.active]="industry.name === activeIndustry.name"
+  >
+    {{ industry.name }}
+  </li>
+</ul>
+
 
         <p class="industry-description">{{ activeIndustry.description }}</p>
 

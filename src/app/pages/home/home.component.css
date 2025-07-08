@@ -1,0 +1,18 @@
+.section-divider {
+  height: 8px;
+  width: 100px;
+  background-color: #008084;
+  margin: 10px auto;
+
+  &.left {
+    margin-left: 0;
+    margin-right: auto;
+     width: 30%;
+  }
+
+  &.right {
+    margin-left: auto;
+    margin-right: 0;
+     width: 30%;
+  }
+}

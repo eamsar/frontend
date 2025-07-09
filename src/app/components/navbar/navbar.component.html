@@ -1,10 +1,18 @@
 <!-- BARRE SUPÉRIEURE -->
 <div class="top-bar">
-  <a routerLink="/career">Career</a>
-  <a href="#">Search</a>
+  <a href="/career">Career</a>
+  <button (click)="toggleSearch()" class="search-icon">Search</button>
   <a href="#">DE</a>
 </div>
-
+<div class="input" *ngIf="showSearch">
+ <input 
+    *ngIf="showSearch"
+    type="text"
+    placeholder="Search..."
+    class="search-input" [class.show-input]="showSearch"/>
+  <button class="search-submit">Search</button>
+  </div>
+  
 <!-- NAVBAR PRINCIPALE -->
 <nav>
   <div class="logo"><img src="assets/logo.png" alt="Logo" /></div>
@@ -58,8 +66,8 @@
         </div>
       </div>
     </li>
-    <li><a href="#">Solutions</a></li>
-    <li class="no-dropdown"><a href="#">About Atliontech</a></li>
-    <li class="no-dropdown"><a href="#contact" class="career-btn">Contact</a></li>
+    <li><a href="#">SOLUTIONS</a></li>
+    <li class="no-dropdown"><a href="#">ABOUT ATLIONTECH</a></li>
+    <li class="no-dropdown"><a href="#contact" class="career-btn">CONTACT</a></li>
   </ul>
 </nav>

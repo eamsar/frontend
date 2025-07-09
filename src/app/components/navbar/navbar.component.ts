@@ -14,4 +14,9 @@ isScrolled = false;
   onWindowScroll() {
     this.isScrolled = window.scrollY > 0;
   }
+    showSearch = false;
+
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
+  }
 }

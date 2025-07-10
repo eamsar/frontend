@@ -21,7 +21,9 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 30px;
-  padding: 40px;
+   margin: 0 auto;
+  padding: 3rem 150px;
+ 
   flex-wrap: nowrap;
 }
 

@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.back-to-top {
+.go-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -14,7 +14,4 @@ html {
   border-radius: 50%;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-.back-to-top:hover {
-  background-color: #005d73;
 }

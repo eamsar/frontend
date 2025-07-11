@@ -52,12 +52,12 @@
 
 /* ========== CARTES ========== */
 .principle-card {
-  background-color:  #f8f9fa;
-  border: 1px solid #cfe1e8;
+  background-color:  #ffffff;
+  border: 1px solid #acdabc;
   border-radius: 10px;
-  padding: 30px 20px;
-  flex: 1 1 220px;
-  max-width: 250px;
+  padding: 0.1px 0.1px 0.1px 0.1px;
+  flex: 1 1 300px;
+  max-width: 300px;
   /*box-shadow: 0 0 5px rgba(0,0,0,0.05);*/
   text-align: center;
   transition: all 0.3s ease;
@@ -65,17 +65,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 250px;
-  height: 330px;
+  width: 280px;
+  height: 450px;
   overflow: hidden;
+  margin: 0.2cm;
 }
 
 
 .principle-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
+  width: 100% !important;
+  height: 140px !important;
+  object-fit: cover !important;
+  display: block;
+ /* test visuel */
 }
 
 .principle-card h3 {
@@ -84,7 +86,7 @@
   margin: 0.5rem 0;
   color: #007084;
     display: -webkit-box;
-  -webkit-line-clamp: 2;         /* 👈 Show max 2 lines */
+  /*-webkit-line-clamp: 3;     */    /* 👈 Show max 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -96,7 +98,7 @@
   line-height: 1.4;
 
   display: -webkit-box;
-  -webkit-line-clamp: 2;         /* 👈 Show max 2 lines */
+      /* 👈 Show max 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -170,7 +172,8 @@
   }
 }
 .read-more {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 5rem;
   background: none;
   border:#5290a8;
   color: #008084;
@@ -183,7 +186,7 @@
 
 }
 
-.read-more .arrow {
+.read-more .arrow1 {
   margin-left: 5px;
   font-size: 1rem;
   transition: transform 0.3s ease;
@@ -193,6 +196,6 @@
   color: #ff6600;;
 }
 
-.read-more:hover .arrow {
+.read-more:hover .arrow1 {
   transform: translateX(5px);
 }

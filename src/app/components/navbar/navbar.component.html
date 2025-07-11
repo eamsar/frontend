@@ -7,13 +7,30 @@
 
     <!-- Right: Top bar and menu -->
     <div class="nav-area">
-      <!-- Top Right -->
-      <div class="top-bar">
-        <a href="/career">CAREER</a>
-        <span class="icon"><i class="fas fa-search"></i></span>
-        <span class="lang">EN</span>
-        <span class="icon"><i class="fas fa-globe"></i></span>
-      </div>
+ <div class="top-bar">
+  <a href="/career">CAREER</a>
+
+  <div class="search-wrapper">
+    <span class="icon" (click)="toggleSearch()">
+      <i class="fas fa-search"></i>
+    </span>
+
+    <div *ngIf="showSearch" class="input-container">
+      <input
+        [(ngModel)]="searchTerm"
+        type="text"
+        placeholder="Search..."
+        class="search-input"
+      />
+      <button class="search-submit" (click)="onSearch()">Search</button>
+      <button class="close-btn" (click)="toggleSearch()">×</button>
+    </div>
+  </div>
+
+  <span class="lang">EN</span>
+  <span class="icon"><i class="fas fa-globe"></i></span>
+</div>
+
 
       <!-- Short line under top bar -->
       <hr class="short-line" />

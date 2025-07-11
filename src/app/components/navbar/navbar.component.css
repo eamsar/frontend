@@ -194,6 +194,79 @@ html, body {
 .mega-menu ul li a:hover {
   color: #f57c00;
 }
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Wrapper needed to position input container below icon */
+.search-wrapper {
+  position: relative; /* relative for absolute positioning inside */
+  display: inline-block;
+}
+
+/* The input container will appear below the icon */
+.input-container {
+  position: absolute;
+  top: 30px; /* place just below the icon */
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  min-width: 250px;
+}
+
+/* Input styling */
+.search-input {
+  flex-grow: 1;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+/* Search button */
+.search-submit {
+  background-color: #003640;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-submit:hover {
+  background-color: #f17b00;
+}
+
+/* Close button styling */
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+  padding: 0 6px;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #f17b00;
+}
+
 
 /* Show mega menu on hover */
 .nav-item.mega-dropdown:hover > .mega-menu {

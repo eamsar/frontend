@@ -20,16 +20,36 @@ html {
   scroll-behavior: smooth;
 }
 
+.go-to-top-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 30px 0 0;
+}
+
 .go-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  text-decoration: none;
-  background-color: #003640;
-  color: white;
-  font-size: 15px;
-  padding: 10px 15px;
+  background-color: #008084;
+  color: #fff;
+  font-size: 22px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px #003640;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover color (always works, even after clicking) */
+.go-to-top:hover {
+  background-color: #f57c00;
+}
+
+/* Remove browser focus outline and avoid conflict */
+.go-to-top:focus {
+  outline: none;
+}
+
+/* Optional: subtle active/click effect */
+.go-to-top:active {
+  transform: scale(0.96);
 }

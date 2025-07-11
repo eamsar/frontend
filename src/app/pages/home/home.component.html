@@ -12,8 +12,13 @@
 <app-industries-carousel></app-industries-carousel>
 <div class="section-divider left"></div>
 <section id="contact">
- <app-contact-form></app-contact-form>
+  <app-contact-form></app-contact-form>
+  
+  <!-- Go to top button placed inside contact section, bottom right -->
+  <div class="go-to-top-wrapper">
+    <button class="go-to-top" (click)="goToTop()">↑</button>
+  </div>
 </section>
+
 <app-footer></app-footer>
-<!-- Go to top button (placed after footer) -->
-<button class="go-to-top" (click)="goToTop()">↑</button>
+

@@ -12,7 +12,7 @@ export class ServiceComptComponent  {
     {
       title: 'SAP S/4HANA',
       description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
-      icon: '' // ← change to your actual image path
+      icon: 'assets/servicesimages/image.png' // ← change to your actual image path
     },
     {
       title: 'TMA',

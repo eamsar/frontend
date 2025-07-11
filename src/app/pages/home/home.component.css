@@ -16,6 +16,10 @@
      width: 30%;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 .go-to-top {
   position: fixed;
   bottom: 20px;

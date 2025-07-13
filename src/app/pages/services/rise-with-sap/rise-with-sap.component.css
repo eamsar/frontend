@@ -26,7 +26,16 @@
  
   flex-wrap: nowrap;
 }
-
+.services-menu select {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #003643;
+}
 .services-menu {
   width: 250px;
   background: #f5f5f5;

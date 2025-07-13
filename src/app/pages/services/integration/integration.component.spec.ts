@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
-import { NavbarComponent } from "../../../components/navbar/navbar.component";
 
-@Component({
-  selector: 'app-integration',
-  templateUrl: './integration.component.html',
-  styleUrls: ['./integration.component.css'],
-  imports: [NavbarComponent]
-})
-export class IntegrationComponent {
-  // Component logic will go here
-}
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { IntegrationComponent } from './integration.component';
+
+describe('IntegrationComponent', () => {
+  let component: IntegrationComponent;
+  let fixture: ComponentFixture<IntegrationComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [IntegrationComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(IntegrationComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,3 +1,41 @@
 <app-navbar></app-navbar>
 
-<p>customer-experience works!</p>
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/servicesimages/rise-sap.png" alt="data analytics">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">SERVICES</div></h3>
+  <ul>
+  <li><a [ngClass]="{ 'active': isActive('/services/rise-with-sap') }">Rise with SAP</a></li>
+  <li><a href="/services/grow-with-sap" [ngClass]="{ 'active': isActive('/services/grow-with-sap') }">Grow with SAP</a></li>
+  <li><a href="/services/integration" [ngClass]="{ 'active': isActive('/services/integration') }">Integration</a></li>
+  <li><a href="/services/implementation-capm-fiori-abap" [ngClass]="{ 'active': isActive('/services/implementation-capm-fiori-abap') }">Implementation (CAPM / FIORI / ABAP)</a></li>
+  <li><a href="/services/data-analytics" [ngClass]="{ 'active': isActive('/services/data-analytics') }">Data analytics and AI</a></li>
+  <li><a href="/services/customer-experience" [ngClass]="{ 'active': isActive('/services/customer-experience') }">Customer experience</a></li>
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>Customer experience</h2>
+    <p>
+      RISE with SAP est une solution tout-en-un proposée par SAP pour accompagner les entreprises
+      dans leur transformation digitale. Elle inclut un ensemble de services et d’outils pour migrer
+      vers le cloud, optimiser les processus métiers, et adopter les innovations technologiques plus rapidement.
+    </p>
+    <ul>
+      <li>Migration vers SAP S/4HANA Cloud</li>
+      <li>Accès à Business Technology Platform (BTP)</li>
+      <li>Services de support et maintenance intégrés</li>
+    </ul>
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

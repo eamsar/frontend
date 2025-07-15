@@ -1,0 +1,83 @@
+/* blog-list.component.css */
+
+.header {
+  text-align: center;
+  padding: 40px 40px 40px;
+  background: #003640;
+  color: white;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  height: 10cm;
+}
+.blogs{
+   min-height: 200px;
+  height: 200px;
+  padding: 100px 0;
+}
+.blog-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.blog-content h2 {
+  font-size: 1.4rem;
+  margin: 0 0 10px;
+}
+
+.blog-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #00796b;
+  font-weight: bold;
+  border: 1px solid #00796b;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.read-more:hover {
+  background: #ff6600;
+  color: white;
+}

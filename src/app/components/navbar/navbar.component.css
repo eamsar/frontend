@@ -19,7 +19,7 @@
        BARRE SUPÉRIEURE
     -------------------- */
    .top-bar {
-  background-color: #003640;
+  background-color: #003640;;
   color: white;
   height: 40px;
   display: flex;
@@ -31,26 +31,26 @@
 }
 
     .top-bar a {
-      color: white;
+      color:white; 
       margin-left: 25px;
       font-weight: 500;
     }
     .top-bar a:hover {
-      text-decoration: underline;
+     /* text-decoration: underline;*/
     }
 
     /* -------------------
        NAVBAR PRINCIPALE
     -------------------- */
     nav {
-      background-color: #003640;
+      background-color: #003640;;
       color: white;
       position: relative;
       z-index: 1000;
       display: flex;
       align-items: center;
       padding: 0 20px;
-      height: 60px;
+      height: auto;
       font-size: 14px;
     }
 
@@ -58,7 +58,8 @@
       font-weight: bold;
       font-size: 22px;
       letter-spacing: 1px;
-      color: white;
+      color: #003640;
+      top: 0%;
       user-select: none;
     }
 

@@ -67,7 +67,15 @@
       </div>
     </li>
     <li><a href="#">SOLUTIONS</a></li>
-    <li class="no-dropdown"><a href="#">ABOUT ATLIONTECH</a></li>
+    <li class="no-dropdown"><a href="#">ABOUT ATLIONTECH</a>
+    <div class="mega-menu" *ngIf="!isScrolled">
+        <div>
+          <ul>
+            <li><a href="/blogs">blogs</a></li>
+            <li><a href="/industries/energy">****</a></li>
+          </ul>
+        </div></div>
+      </li>
     <li class="no-dropdown"><a href="#contact" class="career-btn">CONTACT</a></li>
   </ul>
 </nav>

@@ -16,9 +16,10 @@
         (mouseleave)="setActiveCard(0)"
       >
         <img [src]="article.image" alt="Article image" />
+        <p class="date">{{ article.date }}</p>
         <h3>{{ article.title }}</h3>
         <p class="author">BY {{ article.author }}</p>
-        <p class="date">{{ article.date }}</p>
+        
             <button class="read-more">
   Read more <span class="arrow1">→</span>
 </button>

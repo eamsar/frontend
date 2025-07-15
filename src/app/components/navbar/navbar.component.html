@@ -1,7 +1,9 @@
 <!-- ✅ ✅ ✅ TOP-BAR + NAVBAR ✅ ✅ ✅ -->
 
-<div class="navd">
+
+
   <!-- 🔹 TOP-BAR -->
+   <div class="header">
   <div class="top-bar">
     <a href="/career">Career</a>
     <button (click)="toggleSearch()" class="search-icon">Search</button>
@@ -26,7 +28,7 @@
 
     <ul class="nav-links">
       <li>
-        <a href="#">SERVICES</a>
+        <a href="#">Services</a>
         <div class="mega-menu" *ngIf="!isScrolled">
           <div>
             <h4>General</h4>
@@ -52,10 +54,9 @@
         </div>
       </li>
       <li>
-        <a href="#">INDUSTRIES</a>
+        <a href="#">Industries</a>
         <div class="mega-menu" *ngIf="!isScrolled">
           <div>
-            <h4>Industries</h4>
             <ul>
               <li><a href="/industries/automative">Automotive</a></li>
               <li><a href="/industries/energy">Energy</a></li>
@@ -70,13 +71,24 @@
           <div>
             <ul>
               <li><a href="/industries/manufacturing">Manufacturing</a></li>
+              <li><a href="/industries/manufacturing">******</a></li>
             </ul>
           </div>
         </div>
       </li>
-      <li><a href="#">SOLUTIONS</a></li>
-      <li class="no-dropdown">
-        <a href="#">ABOUT ATLIONTECH</a>
+      <li >
+        <a href="#">Solutions</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <ul>
+              <li><a href="">****</a></li>
+              <li><a href="">****</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li >
+        <a href="#">About Atliontech</a>
         <div class="mega-menu" *ngIf="!isScrolled">
           <div>
             <ul>

@@ -150,6 +150,7 @@
   color: #00796b;
   cursor: pointer;
   transition: background 0.3s;
+  text-decoration: none;
 }
 .learn-more:hover {
   background: #00796b;

@@ -1,4 +1,4 @@
-import { Component ,OnInit } from '@angular/core';
+import { Component  } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './service-compt.component.css',
   imports: [CommonModule]
 })
-export class ServiceComptComponent implements OnInit {
+export class ServiceComptComponent  {
   services = [
     {
       title: 'SAP S/4HANA',
@@ -52,11 +52,12 @@ export class ServiceComptComponent implements OnInit {
       this.services[nextIndex]
     ];
   }
- ngOnInit(): void {
-    setInterval(() => {
+  ngOnInit(): void {
+     setInterval(() => {
       this.next();
     }, 3000); // Changer toutes les 3s
   }
+
   prev() {
     this.currentIndex = (this.currentIndex - 1 + this.services.length) % this.services.length;
   }

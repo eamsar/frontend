@@ -1,25 +1,24 @@
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+/* ✅ RESET DE BASE */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    /* -------------------
-       BARRE SUPÉRIEURE
-    -------------------- */
-   .top-bar {
-  background-color: #003640;;
+/* ✅ TOP-BAR */
+.top-bar {
+  background-color: #003640;
   color: white;
   height: 40px;
   display: flex;
@@ -27,220 +26,187 @@
   align-items: center;
   padding: 0 20px;
   font-size: 14px;
-  position: relative; /* important pour le pseudo-élément */
+  position: relative;
 }
 
-    .top-bar a {
-      color:white; 
-      margin-left: 25px;
-      font-weight: 500;
-    }
-    .top-bar a:hover {
-     /* text-decoration: underline;*/
-    }
+.top-bar a {
+  color: white;
+  margin-left: 25px;
+  font-weight: 500;
+}
 
-    /* -------------------
-       NAVBAR PRINCIPALE
-    -------------------- */
-    nav {
-      background-color: #003640;;
-      color: white;
-      position: relative;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      height: auto;
-      font-size: 14px;
-    }
-
-    nav .logo {
-      font-weight: bold;
-      font-size: 22px;
-      letter-spacing: 1px;
-      color: #003640;
-      top: 0%;
-      user-select: none;
-    }
-
-    nav ul.nav-links {
-      display: flex;
-      margin-left: auto;
-      gap: 30px;
-    }
-
-    nav ul.nav-links > li {
-      position: relative;
-      padding: 20px 0;
-      cursor: pointer;
-    }
-
-    nav ul.nav-links > li > a {
-      color: white;
-      font-weight: 600;
-    }
-
-    nav ul.nav-links > li > a::after {
-      content: '▼';
-      font-size: 10px;
-      margin-left: 6px;
-      color: #aaa;
-    }
-    nav ul.nav-links > li.no-dropdown > a::after {
-      content: '';
-    }
-
-    /* -------------------
-       MEGA MENU FULLSCREEN
-    -------------------- */
-    .mega-menu {
-      position:fixed;
-      top: 100px; /* 40px top-bar + 60px navbar */
-      left: 0;
-      width: 100vw;
-      height: 10cm;
-      background: white;
-      color: #333;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      display: flex;
-      padding: 40px 80px;
-      gap: 80px;
-      overflow-y: auto;
-      z-index: 999;
-    }
-
-    nav ul.nav-links > li:hover .mega-menu,
-    nav ul.nav-links > li.mega-open .mega-menu {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .mega-menu > div {
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .mega-menu h3 {
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 18px;
-      font-weight: 700;
-      color: #333;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .mega-menu h3::before {
-      content: "•";
-      color: #f58220;
-      font-weight: bold;
-      font-size: 28px;
-    }
-
-    .mega-menu ul li {
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-
-    .mega-menu ul li a {
-      color: #444;
-      font-weight: 600;
-      display: block;
-      padding: 6px 0;
-      border-bottom: 1px solid #eee;
-      transition: color 0.2s ease;
-    }
-    .mega-menu ul li a:hover {
-      color: #f58220;
-      border-color: #f58220;
-    }
-
-    /* BOUTON CARRIÈRE */
-    .career-btn {
-      background: #008084;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-weight: bold;
-      color: white;
-    }
-
-    @media (max-width: 900px) {
-      .mega-menu {
-        flex-direction: column;
-        padding: 20px 20px;
-        height: auto;
-        max-height: 70vh;
-        position: absolute;
-        top: 100px;
-      }
-    }
- .top-bar::after {
+.top-bar::after {
   content: "";
   position: absolute;
-  bottom: 0; /* aligné en bas */
-  right: 20px; /* même padding que le contenu */
-  width: 580px; /* longueur de la ligne à droite */
+  bottom: 0;
+  right: 20px;
+  width: 580px;
   border-bottom: 1px solid #ccc;
 }
-.logo img {
-  height: 50px;
-  display: block;
-}
+
 .search-icon {
   background: none;
   border: none;
-  padding: 0;
-  margin: 0;
-  color: #ffffff;             /* couleur type lien */
-   /* souligné par défaut */
+  color: #fff;
   cursor: pointer;
-  font: inherit;
   margin-left: 25px;
-      font-weight: 500;
+  font-weight: 500;
+}
+.search-icon:hover {
+  text-decoration: underline;
 }
 
-.search-icon:hover {
-  text-decoration: underline;     /* enlever le souligné au hover */
-              /* changer la couleur au hover */
+.input {
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
 }
+
 .search-input {
   width: 0;
   opacity: 0;
   border: none;
   padding: 0;
   transition: all 0.3s ease;
-  margin-left: 10cm;
 }
 
 .show-input {
   width: 50%;
   opacity: 1;
   border: 1px solid #031b05;
- height: 1cm;
-  margin-top: 0.8cm;
+  height: 40px;
 }
-.input{
-   width: 100%;
-   height: 2.5cm;
-}
-.search-input.show {
-  width: 180px;
-  opacity: 1;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  transform: scale(1.05);
-}
+
 .search-submit {
-  padding: 5px 12px;
+  padding: 6px 12px;
   border: 1px solid #008084;
   background: #008084;
   color: #fff;
   font-size: 0.9rem;
   cursor: pointer;
-  padding: 6px 12px;
-   height: 1cm;
+  height: 42px;
+  margin-left: 10px;
+}
+
+/* ✅ NAVBAR */
+nav {
+  background-color: #003640;
+  color: white;
+  display: flex;
+  align-items: center;     /* ✅ Centre verticalement logo & liens */
+  justify-content: space-between; /* ✅ Logo gauche, liens droite */
+  padding: 0 40px;
+  height: 60px;            /* ✅ Hauteur réduite */
+}
+
+.logo img {
+  height: 40px;            /* ✅ Réduit le logo pour qu’il rentre proprement */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;     /* ✅ Centre verticalement les liens */
+  gap: 30px;
+}
+
+
+.nav-links > li {
+  position: relative;
+}
+
+.nav-links > li > a {
+  color: white;
+  font-weight: 600;
+}
+
+.nav-links > li > a::after {
+  content: '▼';
+  font-size: 10px;
+  margin-left: 6px;
+  color: #aaa;
+}
+
+.nav-links > li.no-dropdown > a::after {
+  content: '';
+}
+
+/* ✅ MEGA MENU */
+.mega-menu {
+  position: fixed;
+  top: 100px; /* 40px top-bar + 80px navbar */
+  left: 0;
+  width: 100vw;
+  height: auto;
+  background: white;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  display: flex;
+  padding: 40px 80px;
+  gap: 80px;
+  z-index: 999;
+}
+
+nav ul.nav-links > li:hover .mega-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mega-menu > div {
+  flex: 1;
+  min-width: 220px;
+}
+
+.mega-menu h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.mega-menu ul li {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.mega-menu ul li a {
+  color: #444;
+  font-weight: 600;
+  display: block;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  transition: color 0.2s ease;
+}
+
+.mega-menu ul li a:hover {
+  color: #f58220;
+  border-color: #f58220;
+}
+
+.career-btn {
+  background: #008084;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.navd {
+ 
+}
+
+@media (max-width: 900px) {
+  .mega-menu {
+    flex-direction: column;
+    padding: 20px;
+    position: absolute;
+    top: 120px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
 }

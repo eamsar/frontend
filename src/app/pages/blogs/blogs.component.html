@@ -3,7 +3,7 @@
   <h1>Nos Articles & Actualités</h1>
   <p>Découvrez nos dernières nouvelles, insights et projets.</p>
 </section>
-
+<div class="blogs">
 <section class="blog-container">
   <div class="blog-card" *ngFor="let post of blogPosts">
     <img [src]="post.imageUrl" [alt]="post.title" />
@@ -14,5 +14,6 @@
     </div>
   </div>
 </section>
+</div>
 <app-footer></app-footer>
 

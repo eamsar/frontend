@@ -141,7 +141,15 @@
   display: block;
 }
 
+@keyframes principle-card {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
 .read-more {
   margin-top: 1rem;
   background: none;
@@ -196,6 +204,7 @@
   .principle-cards-container {
     flex-direction: column;
     align-items: center;
+  
   }
 
   .principle-card {

@@ -5,7 +5,10 @@
   background: #003640;
   color: white;
 }
-
+.ligne{
+  height: 0.03cm;
+  color:black;
+}
 .header h1 {
   margin-bottom: 10px;
   font-size: 2.5rem;
@@ -24,6 +27,8 @@
   justify-content: flex-start; /* alignement à gauche */
   max-width: 1500px;     /* largeur max du conteneur */
   margin: 0 auto;        /* centrer horizontalement */
+  padding-bottom: 5cm;
+  padding-top: 3cm;
 }
 
 /* Style général de chaque carte */
@@ -41,6 +46,7 @@
   box-sizing: border-box;          /* inclure padding et border dans la largeur */
   min-width: 250px;   
   height: 15cm;  
+  
   
 }
 

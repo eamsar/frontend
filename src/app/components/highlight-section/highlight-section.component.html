@@ -15,7 +15,7 @@
         (mouseenter)="setActiveCard(i)"
         (mouseleave)="setActiveCard(0)"
       >
-        <img [src]="article.image" alt="Article image" />
+        <img [src]="article.imageUrl" alt="Article image" />
         <p class="date">{{ article.date }}</p>
         <h3>{{ article.title }}</h3>
         <p class="author">BY {{ article.author }}</p>

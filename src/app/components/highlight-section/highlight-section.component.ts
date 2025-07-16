@@ -52,13 +52,13 @@ export class HighlightSectionComponent   {
       image: 'assets/article3.jpg'
     }
   ];*/
-   blogs: Blog[] = [];
+   articles: Blog[] = [];
 
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
     this.blogService.getAllBlogs().subscribe(data => {
-      this.blogs = data;
+      this.articles = data;
     });
   }
 

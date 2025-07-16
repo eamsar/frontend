@@ -1,19 +1,36 @@
-<section ><app-navbar></app-navbar>
+<section><app-navbar></app-navbar>
+
 <section class="header">
   <h1>Nos Articles & Actualités</h1>
   <p>Découvrez nos dernières nouvelles, insights et projets.</p>
 </section>
-<div class="blogs">
-<section class="blog-container">
-  <div class="blog-card" *ngFor="let post of blogPosts">
-    <img [src]="post.imageUrl" [alt]="post.title" />
-    <div class="blog-content">
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.summary }}</p>
-      <a [href]="post.link" class="read-more">Lire plus</a>
-    </div>
-  </div>
+<!-- Filtre -->
+<section class="blog-filter">
+  <label>
+    <input type="radio" name="blogFilter" value="all" checked>
+    <span>Tous</span>
+  </label>
+  <label>
+    <input type="radio" name="blogFilter" value="news">
+    <span>News</span>
+  </label>
+  <label>
+    <input type="radio" name="blogFilter" value="blog">
+    <span>Blogs</span>
+  </label>
 </section>
-</div>
-<app-footer></app-footer>
 
+
+<div class="principle-cards-container">
+  <div class="principle-card" *ngFor="let article of blogPosts; let i = index">
+    <img [src]="article.imageUrl" alt="Article image" />
+    <p class="date">{{ article.date }}</p>
+    <h3>{{ article.title }}</h3>
+    <p class="author">BY {{ article.author }}</p>
+    <button class="read-more">
+      Read more <span class="arrow1">→</span>
+    </button>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 export interface Blog {
   id?: number;
   title: string;
@@ -27,6 +26,9 @@ export class BlogService {
 
   createBlog(blog: Blog): Observable<Blog> {
     return this.http.post<Blog>(this.apiUrl, blog);
+  }
+   getLatestBlogs(): Observable<Blog[]> {
+    return this.http.get<Blog[]>(`${this.apiUrl}/latest`);
   }
 }
 

@@ -14,50 +14,13 @@ export class HighlightSectionComponent   {
   currentIndex = 0;
   itemsPerPage = 4;
   intervalId: any;
-/*
-  articles = [
-    {
-      title: 'SAP Service Partner.It’s a recognition we’re proud of, especially as a young company. ',
-      author: 'Atliontech NEWS',
-      date: 'Jun 28, 2025',
-      image: 'assets/partner.png'
-    },
-    {
-      title: 'Six AI-Accelerated, Proactive, and Preventative Methods Transforming SAP’s Customer Support',
-      author: 'Stefan Sterne',
-      date: 'May 8, 2025',
-      image: 'assets/onpvcloud.png'
-    },
-    {
-      title: 'SAP Named a Leader in 2025 Gartner® Magic Quadrant™ for Warehouse Management Systems',
-      author: 'Till Dengel',
-      date: 'May 9, 2025',
-      image: 'assets/article3.jpg'
-    },{
-      title: 'VFS Global Leverages SAP Software to Power Digital Cross-Border Mobility',
-      author: 'SAP NEWS',
-      date: 'May 2, 2025',
-      image: 'assets/article1.jpg'
-    },
-    {
-      title: 'Six AI-Accelerated, Proactive, and Preventative Methods Transforming SAP’s Customer Support',
-      author: 'Stefan Sterne',
-      date: 'May 8, 2025',
-      image: 'assets/article2.jpg'
-    },
-    {
-      title: 'SAP Named a Leader in 2025 Gartner® Magic Quadrant™ for Warehouse Management Systems',
-      author: 'Till Dengel',
-      date: 'May 9, 2025',
-      image: 'assets/article3.jpg'
-    }
-  ];*/
+
    articles: Blog[] = [];
 
-  constructor(private blogService: BlogService) { }
+ constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
-    this.blogService.getAllBlogs().subscribe(data => {
+    this.blogService.getLatestBlogs().subscribe(data => {
       this.articles = data;
     });
   }

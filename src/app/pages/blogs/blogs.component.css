@@ -1,5 +1,4 @@
-/* blog-list.component.css */
-
+/* Conteneur des cartes en grille 3 colonnes */
 .header {
   text-align: center;
   padding: 40px 40px 40px;
@@ -17,67 +16,127 @@
   opacity: 0.9;
 }
 
-.blog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  height: 10cm;
+.principle-cards-container {
+  display: flex;
+  flex-wrap: wrap;       /* pour aller à la ligne */
+  gap: 30px;             /* espace entre les cards */
+  padding: 0 15px;       /* petit espace aux extrémités */
+  justify-content: flex-start; /* alignement à gauche */
+  max-width: 1500px;     /* largeur max du conteneur */
+  margin: 0 auto;        /* centrer horizontalement */
 }
-.blogs{
-   min-height: 200px;
-  height: 200px;
-  padding: 100px 0;
-}
-.blog-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+/* Style général de chaque carte */
+.principle-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+    flex: 1 1 calc(33.333% - 20px); /* largeur 1/3 moins l’espace gap */
+  box-sizing: border-box;          /* inclure padding et border dans la largeur */
+  min-width: 250px;   
+  height: 15cm;  
+  
 }
 
-.blog-card:hover {
+/* Effet au survol */
+.principle-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.blog-card img {
+/* Image */
+.principle-card img {
   width: 100%;
-  height: auto;
-  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 180px;
+  margin-bottom: 15px;
 }
 
-.blog-content {
-  padding: 20px;
-  flex: 1;
+/* Date */
+.principle-card .date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+  font-style: italic;
 }
 
-.blog-content h2 {
-  font-size: 1.4rem;
-  margin: 0 0 10px;
+/* Titre */
+.principle-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.blog-content p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0 0 20px;
+/* Auteur */
+.principle-card .author {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
+/* Bouton "Read more" */
 .read-more {
-  text-decoration: none;
-  color: #00796b;
-  font-weight: bold;
-  border: 1px solid #00796b;
-  padding: 8px 16px;
+  align-self: flex-start;
+  background-color:#003640;
+  border: none;
+  color: white;
+  padding: 8px 15px;
   border-radius: 20px;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .read-more:hover {
-  background: #ff6600;
-  color: white;
+  background-color: #ff6600;
 }
+
+/* Flèche dans le bouton */
+.arrow1 {
+  margin-left: 5px;
+  font-weight: bold;
+}
+.blog-filter {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.blog-filter label {
+  position: relative;
+  cursor: pointer;
+}
+
+.blog-filter input[type="radio"] {
+  display: none; /* cache le radio */
+}
+
+.blog-filter span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #003640;
+  
+  transition: all 0.3s ease;
+}
+
+.blog-filter input[type="radio"]:checked + span {
+  background-color:#003640;
+  color: #fff;
+  border-color:#003640;
+}
+
+.blog-filter span:hover {
+  background-color: #e6f2f8;
+}
+
+

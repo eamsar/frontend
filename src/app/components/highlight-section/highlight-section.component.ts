@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { BlogService, Blog } from '../../shared/services/blogservice.service';
 @Component({
   selector: 'app-highlight-section',
   templateUrl: './highlight-section.component.html',
@@ -14,7 +14,7 @@ export class HighlightSectionComponent   {
   currentIndex = 0;
   itemsPerPage = 4;
   intervalId: any;
-
+/*
   articles = [
     {
       title: 'SAP Service Partner.It’s a recognition we’re proud of, especially as a young company. ',
@@ -51,7 +51,16 @@ export class HighlightSectionComponent   {
       date: 'May 9, 2025',
       image: 'assets/article3.jpg'
     }
-  ];
+  ];*/
+   blogs: Blog[] = [];
+
+  constructor(private blogService: BlogService) { }
+
+  ngOnInit(): void {
+    this.blogService.getAllBlogs().subscribe(data => {
+      this.blogs = data;
+    });
+  }
 
   // Méthode pour activer le hover
   setActiveCard(index: number) {

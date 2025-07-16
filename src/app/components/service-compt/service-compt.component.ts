@@ -8,12 +8,37 @@ import { CommonModule } from '@angular/common';
 })
 export class ServiceComptComponent {
   services = [
-    { title: 'SAP S/4HANA', description: `SAP S/4HANA Cloud ...`, icon: 'assets/servicesimages/image.png' },
-    { title: 'TMA', description: `Avec notre offre TMA ...`, icon: '' },
-    { title: 'AMOA', description: `Nos consultants couvrent ...`, icon: '' },
-    { title: 'Grow with SAP', description: `SAP S/4HANA Cloud ...`, icon: '' },
-    { title: 'Data Analytics $ AI', description: `Avec notre offre TMA ...`, icon: '' },
-    { title: 'Customer Experiences', description: `Nos consultants couvrent ...`, icon: '' }
+
+    {
+      title: 'SAP S/4HANA',
+      description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
+      icon: 'assets/servicesimages/image.png' // ← change to your actual image path
+    },
+    {
+      title: 'TMA',
+      description: `Avec notre offre TMA, vous bénéficiez d’une assistance sur mesure, avec un choix selon votre besoin et votre budget`,
+      icon: ''
+    },
+    {
+      title: 'AMOA',
+      description: `Nos consultants couvrent tous les domaines fonctionnels liés au fonctionnement interne des entreprises....`,
+      icon: ''
+    },  {
+      title: 'Grow with SAP',
+      description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
+      icon: '' // 
+    },
+    {
+      title: 'Data Analytics $ AI',
+      description: `Avec notre offre TMA, vous bénéficiez d’une assistance sur mesure, avec un choix selon votre besoin et votre budget`,
+      icon: ''
+    },
+    {
+      title: 'Customer Experiences',
+      description: `Nos consultants couvrent tous les domaines fonctionnels liés au fonctionnement interne des entreprises....`,
+      icon: ''
+    }
+
   ];
 
   currentIndex = 0;

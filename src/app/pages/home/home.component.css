@@ -1,6 +1,24 @@
-html {
-  scroll-behavior: smooth;
+
+.section-divider {
+  height: 8px;
+  width: 100px;
+  background-color: #008084;
+  margin: 10px auto;
+
+  &.left {
+    margin-left: 0;
+    margin-right: auto;
+     width: 30%;
+  }
+
+  &.right {
+    margin-left: auto;
+    margin-right: 0;
+     width: 30%;
+  }
 }
+
+
 
 .go-to-top {
   position: fixed;
@@ -14,4 +32,5 @@ html {
   border-radius: 50%;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
 }

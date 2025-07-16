@@ -74,7 +74,9 @@
 
 .principle-card img {
   width: 100% !important;
+
   height: 160px !important;
+
   object-fit: cover !important;
   display: block;
  /* test visuel */

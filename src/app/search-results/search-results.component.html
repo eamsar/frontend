@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<h1>Search result</h1>
+
+<div class="search-box">
+  <input [(ngModel)]="query" placeholder="Search..." />
+  <button (click)="filterResults()">Search</button>
+</div>
+
+<p>{{ filteredItems.length }} results were found.</p>
+
+<div *ngFor="let item of filteredItems" class="result-card">
+  <h2>{{ item.title }}</h2>
+  <p>{{ item.content }}</p>
+  <span class="category">{{ item.category }}</span>
+  <a href="#">Read more →</a>
+</div>
+<app-contact-form></app-contact-form>
+<app-footer></app-footer>

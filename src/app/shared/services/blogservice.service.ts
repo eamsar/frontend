@@ -8,7 +8,8 @@ export interface Blog {
   author: string;
   imageUrl: string;
   link: string;
-  date: string; // ⚠️ format YYYY-MM-DD
+  date: string;
+  type:string; // ⚠️ format YYYY-MM-DD
 }
 
 @Injectable({
@@ -29,6 +30,12 @@ export class BlogService {
   }
    getLatestBlogs(): Observable<Blog[]> {
     return this.http.get<Blog[]>(`${this.apiUrl}/latest`);
+  }
+  getBlogs(): Observable<Blog[]> {
+    return this.http.get<Blog[]>(`${this.apiUrl}/only-blogs`);
+  }
+  getnews(): Observable<Blog[]> {
+    return this.http.get<Blog[]>(`${this.apiUrl}/only-news`);
   }
 }
 

@@ -12,15 +12,31 @@ import { FormsModule } from '@angular/forms';
 })
 export class BlogsComponent {
   blogPosts: Blog[] = [];
+   all:Blog[]=[];
+ 
 filterType: 'all' | 'blog' | 'news' = 'all';
  constructor(private blogService: BlogService) {}
-
   ngOnInit(): void {
-    this.blogService.getAllBlogs().subscribe(data => {
+    this.blogService.getLatestBlogs().subscribe(data => {
       this.blogPosts = data;
+      this.all=data;
+
     });
   }
 
-
+filterBlogs(type: string) {
+  console.log("Filter called with type:", type);
+  if (type === 'all') {
+    this.blogPosts = this.all;
+  } else if (type=='blog'){
+    console.log("this.allBlogs");
+    console.log(this.blogPosts[0].type);
+    this.blogPosts =  this.all.filter(b => b.type === 'blogs');
+    
+  }
+  else{
+this.blogPosts =  this.all.filter(b => b.type === 'news');
+  }
+}
 
 }

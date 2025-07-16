@@ -16,7 +16,6 @@ export class HighlightSectionComponent   {
   intervalId: any;
 
    articles: Blog[] = [];
-
  constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {

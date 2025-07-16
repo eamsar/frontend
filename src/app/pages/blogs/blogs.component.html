@@ -1,24 +1,24 @@
-<section><app-navbar></app-navbar>
+<app-navbar></app-navbar>
 <div class="ligne"></div>
-<section class="header">
+<div class="header">
   <h1>Nos Articles & Actualités</h1>
   <p>Découvrez nos dernières nouvelles, insights et projets.</p>
-</section>
+</div>
 <!-- Filtre -->
-<section class="blog-filter">
+<div class="blog-filter">
   <label>
-    <input type="radio" name="blogFilter" value="all" checked>
+    <input type="radio" name="blogFilter" value="all" checked (click)="filterBlogs('all')">
     <span>Tous</span>
   </label>
   <label>
-    <input type="radio" name="blogFilter" value="news">
+    <input type="radio" name="blogFilter" value="news"  (click)="filterBlogs('news')">
     <span>News</span>
   </label>
   <label>
-    <input type="radio" name="blogFilter" value="blog">
+    <input type="radio" name="blogFilter" value="blog" (click)="filterBlogs('blog')">
     <span>Blogs</span>
   </label>
-</section>
+</div>
 
 
 <div class="principle-cards-container">

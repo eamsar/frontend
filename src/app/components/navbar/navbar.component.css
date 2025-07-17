@@ -36,9 +36,7 @@
       margin-left: 25px;
       font-weight: 500;
     }
-    .top-bar a:hover {
-     /* text-decoration: underline;*/
-    }
+   
 
     /* -------------------
        NAVBAR PRINCIPALE
@@ -209,10 +207,7 @@ margin-bottom: 1.5cm;
       font-weight: 500;
 }
 
-.search-icon:hover {
-     /* enlever le souligné au hover */
-              /* changer la couleur au hover */
-}
+
 .search-input {
   width: 0;
   opacity: 0;
@@ -221,7 +216,20 @@ margin-bottom: 1.5cm;
   transition: all 0.3s ease;
   margin-left: 10cm;
 }
-
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+  padding: 0 6px;
+  transition: color 0.3s ease;
+}
+ 
+.close-btn:hover {
+  color: #f17b00;
+}
 .show-input {
   width: 50%;
   opacity: 1;

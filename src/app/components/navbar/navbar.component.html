@@ -10,16 +10,17 @@
     <a href="#">DE</a>
   </div>
 
-  <!-- 🔹 Barre de recherche -->
-  <div class="input" *ngIf="showSearch">
-    <input 
-      type="text"
-      placeholder="Search..."
-      class="search-input"
+  
+ <div *ngIf="showSearch" class="input"   (mouseleave)="closeSearch()">
+      <input 
+        [(ngModel)]="searchTerm"
+        type="text"
+        placeholder="Search..."
+        class="search-input"
       [class.show-input]="showSearch"/>
-    <button class="search-submit">Search</button>
-  </div>
-
+      <button class="search-submit" (click)="onSearch()">Search</button>
+    
+    </div>
   <!-- 🔹 NAVBAR PRINCIPALE -->
   <nav>
     <a href="/" class="logo">

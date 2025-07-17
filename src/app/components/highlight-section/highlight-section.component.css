@@ -66,9 +66,10 @@
   flex-direction: column;
   justify-content: space-between;
   width: 280px;
-  height: 450px;
+  height: 440px;
   overflow: hidden;
-  margin: 0.2cm;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+ 
 }
 
 
@@ -122,10 +123,10 @@
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 .principle-card.active {
-  border: 2px solid #008084;
-  background-color: #eefaf9;
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0, 128, 132, 0.5); /* softer highlight */
+  background-color: #f0fafa; /* lighter, clean background */
+  transform: translateY(-4px) scale(1.03); /* lift up + scale */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); /* elegant shadow */
 }
 
 /* ========== DOTS ========== */

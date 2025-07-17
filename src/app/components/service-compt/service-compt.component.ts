@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {interval} from 'rxjs';
+import { PLATFORM_ID, Inject } from '@angular/core';
 @Component({
   selector: 'app-service-compt',
   templateUrl: './service-compt.component.html',
@@ -45,14 +46,15 @@ export class ServiceComptComponent {
   currentIndex = 0;
   counter = 0;
   private intervalId!: number;
-
+ constructor(@Inject(PLATFORM_ID) private platformId: Object){}
   ngOnInit(): void {
+    if (typeof window !== 'undefined') {
     // Démarre l'auto-slide toutes les 2 secondes (2000 ms)
       this.intervalId = window.setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.services.length;
     }, 6000);
 
-  }
+  }}
 
   ngOnDestroy(): void {
     // Nettoie le timer pour éviter fuite mémoire

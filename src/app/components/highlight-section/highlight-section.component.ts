@@ -2,6 +2,8 @@ import { Component} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlogService, Blog } from '../../shared/services/blogservice.service';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, Inject } from '@angular/core';
 @Component({
   selector: 'app-highlight-section',
   templateUrl: './highlight-section.component.html',
@@ -17,15 +19,15 @@ export class HighlightSectionComponent   {
   hoveredIndex=0;
 
    articles: Blog[] = [];
- constructor(private blogService: BlogService) {}
-
+ constructor(private blogService: BlogService,@Inject(PLATFORM_ID) private platformId: Object) {}
   ngOnInit(): void {
     this.blogService.getLatestBlogs().subscribe(data => {
       this.articles = data;
     });
+      if (typeof window !== 'undefined') {
      this.intervalId = window.setInterval(() => {
       this.hoveredIndex = (this.hoveredIndex + 1) % this.itemsPerPage;console.log('Hovered index:', this.hoveredIndex);
-    }, 3000);
+    }, 2000);}
   }
 
   // Méthode pour activer le hover

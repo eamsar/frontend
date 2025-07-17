@@ -1,1 +1,43 @@
-<p>btp works!</p>
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/solutions-img/btp.png" alt="Rise with SAP">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">SOLUTIONS</div></h3>
+  <ul>
+  <li><a  href="/solutions/btp" [ngClass]="{ 'active': isActive('/solutions/btp') }">BTP</a></li>
+  <li><a href="/solutions/erp" [ngClass]="{ 'active': isActive('/solutions/erp') }">ERP</a></li>
+  <li><a href="/solutions/f-and-a" [ngClass]="{ 'active': isActive('/solutions/f-and-a') }">F&A</a></li>
+  
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>BTP </h2>
+  <p>
+  The Building and Public Works (BTP) sector is facing increasing pressure to modernize its practices in response to rising material costs, stricter environmental regulations, and growing demands for sustainable infrastructure. Digital transformation is now essential to improve project planning, ensure real-time coordination on construction sites, and optimize the use of resources. Our solutions enable construction companies, contractors, and engineering firms to gain better visibility over their operations, reduce delays and budget overruns, and comply with health and safety standards.
+</p>
+
+<ul>
+  <li>Digital management of construction projects and workflows</li>
+  <li>Real-time tracking of equipment, materials, and workforce</li>
+  <li>Integration of BIM (Building Information Modeling) for better planning</li>
+  <li>Environmental compliance and sustainability reporting</li>
+  <li>Cost control and predictive analysis for project budgeting</li>
+</ul>
+
+   
+
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

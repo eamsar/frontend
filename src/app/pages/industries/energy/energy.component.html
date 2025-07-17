@@ -1,1 +1,72 @@
-<p>energy works!</p>
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/industries-img/energy.jpg" alt="automative">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">INDUSTRIES</div></h3>
+  <ul>
+  <li><a  href="/industries/automative"[ngClass]="{ 'active': isActive('/industries/automative') }">Automative</a></li>
+  <li><a href="/industries/energy" [ngClass]="{ 'active': isActive('/industries/energy') }">Energy</a></li>
+  <li><a href="/industries/financial-services" [ngClass]="{ 'active': isActive('/industries/financial-services') }">Financial services</a></li>
+  <li><a href="/industries/health-care" [ngClass]="{ 'active': isActive('/industries/health-care') }">Health care</a></li>
+  <li><a href="/industries/manufacturing" [ngClass]="{ 'active': isActive('/industries/manufacturing') }">Manufacturing</a></li>
+  
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>Energy</h2>
+<p>
+  In a global context marked by the energy transition, decarbonization, and the rise of renewable energies, the energy sector faces major challenges. To address these issues, companies must adopt innovative digital solutions capable of transforming their operational models and ensuring sustainable resource management. Our support enables energy players to modernize their infrastructures, automate their processes, and leverage data analytics to make strategic decisions in real time.
+</p>
+<p>
+  Thanks to our solutions, it becomes possible to optimize the entire value chain: production, transportation, distribution, and consumption. We also offer intelligent tools to improve network reliability, reduce energy losses, and integrate alternative energy sources while ensuring compliance with environmental standards. By relying on SAP technologies, we help our clients achieve their goals in energy efficiency, sustainability, and innovation.
+</p>
+
+<ul>
+  <li>Intelligent monitoring and management of energy production</li>
+  <li>Optimization of infrastructure maintenance through IoT</li>
+  <li>Integrated management of assets and energy resources</li>
+  <li>Regulatory compliance and environmental reporting</li>
+  <li>Predictive analytics to anticipate consumption peaks</li>
+</ul>
+
+ <div class="testimonial-carousel">
+  <h3 class="section-title">
+    <span class="orange">Opinions</span> from our customers
+  </h3>
+
+  <div class="testimonial-card">
+    <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+  <div class="testimonial-left">
+    <p>{{ testimonials[currentIndex].message }}</p>
+    <div class="author">
+      <strong>{{ testimonials[currentIndex].name }}</strong><br />
+      <span>{{ testimonials[currentIndex].title }}</span><br />
+      <span class="company">{{ testimonials[currentIndex].company }}</span>
+    </div>
+  </div>
+  <div class="testimonial-logo-circle">
+    {{ testimonials[currentIndex].company }}
+  </div>
+
+
+
+    <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>
+
+
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

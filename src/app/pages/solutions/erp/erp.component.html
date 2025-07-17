@@ -1,1 +1,41 @@
-<p>erp works!</p>
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/solutions-img/erp.jpg" alt="ERP">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">SOLUTIONS</div></h3>
+ <ul>
+  <li><a  href="/solutions/btp" [ngClass]="{ 'active': isActive('/solutions/btp') }">BTP</a></li>
+  <li><a href="/solutions/erp" [ngClass]="{ 'active': isActive('/solutions/erp') }">ERP</a></li>
+  <li><a href="/solutions/f-and-a" [ngClass]="{ 'active': isActive('/solutions/f-and-a') }">F&A</a></li>
+  
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>ERP </h2>
+  <p>
+  In an increasingly competitive and fast-changing business environment, Enterprise Resource Planning (ERP) systems play a crucial role in driving operational efficiency, transparency, and strategic decision-making. By centralizing data and processes across departments, ERP solutions break down silos and enable organizations to operate in a more agile and integrated way. Leveraging modern ERP platforms like SAP S/4HANA, businesses gain real-time insights, automate routine tasks, and align their operations with business objectives, ensuring scalability and resilience in the face of disruption.
+</p>
+
+<ul>
+  <li>Centralized management of finance, procurement, and logistics</li>
+  <li>Real-time data visibility for faster decision-making</li>
+  <li>Process automation to reduce manual errors and increase productivity</li>
+  <li>Seamless integration across departments and business units</li>
+  <li>Scalability and compliance with evolving regulatory standards</li>
+</ul>
+
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

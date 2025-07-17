@@ -2,7 +2,7 @@
 
 <!-- Top Banner -->
 <div class="top-banner">
-  <img src="assets/servicesimages/rise-sap.png" alt="grow with sap">
+  <img src="assets/servicesimages/grow.jpg" alt="grow with sap">
 </div>
 
 <!-- Main Section -->
@@ -11,7 +11,7 @@
   <div class="services-menu">
     <h3> <div class="banner-text">SERVICES</div></h3>
   <ul>
-  <li><a [ngClass]="{ 'active': isActive('/services/rise-with-sap') }">Rise with SAP</a></li>
+  <li><a  href="/services/rise-with-sap"[ngClass]="{ 'active': isActive('/services/rise-with-sap') }">Rise with SAP</a></li>
   <li><a href="/services/grow-with-sap" [ngClass]="{ 'active': isActive('/services/grow-with-sap') }">Grow with SAP</a></li>
   <li><a href="/services/integration" [ngClass]="{ 'active': isActive('/services/integration') }">Integration</a></li>
   <li><a href="/services/implementation-capm-fiori-abap" [ngClass]="{ 'active': isActive('/services/implementation-capm-fiori-abap') }">Implementation (CAPM / FIORI / ABAP)</a></li>
@@ -23,17 +23,21 @@
 
   <!-- Right Content -->
   <div class="services-content">
-    <h2>Grow with sap</h2>
+    <h2>Grow with SAP</h2>
     <p>
-      RISE with SAP est une solution tout-en-un proposée par SAP pour accompagner les entreprises
-      dans leur transformation digitale. Elle inclut un ensemble de services et d’outils pour migrer
-      vers le cloud, optimiser les processus métiers, et adopter les innovations technologiques plus rapidement.
-    </p>
-    <ul>
-      <li>Migration vers SAP S/4HANA Cloud</li>
-      <li>Accès à Business Technology Platform (BTP)</li>
-      <li>Services de support et maintenance intégrés</li>
-    </ul>
+  <strong>GROW with SAP</strong> is a comprehensive solution designed to help midsize companies adopt SAP S/4HANA Cloud with speed, simplicity, and scalability. It offers a pre-configured, ready-to-run cloud ERP system based on industry best practices, allowing businesses to quickly gain value and future-proof their operations. With built-in tools, guidance, and continuous innovation from SAP, organizations can accelerate their digital transformation while remaining agile and competitive in a constantly evolving market.
+</p>
+
+<ul>
+  <li>Preconfigured processes based on industry standards and best practices</li>
+  <li>Fast implementation and time-to-value through guided onboarding and deployment</li>
+  <li>Built-in scalability to support business growth and global expansion</li>
+  <li>Continuous updates and innovation through SAP S/4HANA Cloud, public edition</li>
+  <li>Integration with SAP Business Technology Platform (BTP) for extensibility and analytics</li>
+</ul>
+<div class="schema">
+    <img src="assets/servicesimages/grow-schema.png" alt="schema grow">
+</div>
   </div>
 </div>
  <app-contact-form></app-contact-form>

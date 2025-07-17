@@ -1,1 +1,72 @@
-<p>financial-services works!</p>
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/industries-img/financial.jpg" alt="automative">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">INDUSTRIES</div></h3>
+  <ul>
+  <li><a  href="/industries/automative"[ngClass]="{ 'active': isActive('/industries/automative') }">Automative</a></li>
+  <li><a href="/industries/energy" [ngClass]="{ 'active': isActive('/industries/energy') }">Energy</a></li>
+  <li><a href="/industries/financial-services" [ngClass]="{ 'active': isActive('/industries/financial-services') }">Financial services</a></li>
+  <li><a href="/industries/health-care" [ngClass]="{ 'active': isActive('/industries/health-care') }">Health care</a></li>
+  <li><a href="/industries/manufacturing" [ngClass]="{ 'active': isActive('/industries/manufacturing') }">Manufacturing</a></li>
+  
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>Financial Services</h2>
+ <p>
+  The financial services sector is undergoing a major transformation, driven by evolving customer expectations, regulatory pressure, and the rise of digital technologies. In this context, banks, insurance companies, and other financial institutions must rethink their business models to remain competitive and meet new standards of agility, transparency, and security.
+</p>
+<p>
+  Our solutions support financial sector players in their digital transition by providing intelligent tools to automate processes, improve risk management, and enhance customer satisfaction. Through the integration of technologies such as SAP S/4HANA, SAP Fiori, and the Business Technology Platform, we enable better visibility into financial data, real-time decision-making, and easier compliance with current regulations.
+</p>
+
+<ul>
+  <li>Automation of financial and accounting processes</li>
+  <li>Optimization of risk management and compliance</li>
+  <li>Predictive analytics for fraud detection</li>
+  <li>Improved customer experience through modern interfaces</li>
+  <li>Reporting and visualization of performance indicators</li>
+</ul>
+
+ <div class="testimonial-carousel">
+  <h3 class="section-title">
+    <span class="orange">Opinions</span> from our customers
+  </h3>
+
+  <div class="testimonial-card">
+    <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+  <div class="testimonial-left">
+    <p>{{ testimonials[currentIndex].message }}</p>
+    <div class="author">
+      <strong>{{ testimonials[currentIndex].name }}</strong><br />
+      <span>{{ testimonials[currentIndex].title }}</span><br />
+      <span class="company">{{ testimonials[currentIndex].company }}</span>
+    </div>
+  </div>
+  <div class="testimonial-logo-circle">
+    {{ testimonials[currentIndex].company }}
+  </div>
+
+
+
+    <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>
+
+
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

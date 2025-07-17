@@ -1,1 +1,69 @@
-<p>manufacturing works!</p>
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/industries-img/manifacturing.jpg" alt="automative">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">INDUSTRIES</div></h3>
+  <ul>
+  <li><a  href="/industries/automative"[ngClass]="{ 'active': isActive('/industries/automative') }">Automative</a></li>
+  <li><a href="/industries/energy" [ngClass]="{ 'active': isActive('/industries/energy') }">Energy</a></li>
+  <li><a href="/industries/financial-services" [ngClass]="{ 'active': isActive('/industries/financial-services') }">Financial services</a></li>
+  <li><a href="/industries/health-care" [ngClass]="{ 'active': isActive('/industries/health-care') }">Health care</a></li>
+  <li><a href="/industries/manufacturing" [ngClass]="{ 'active': isActive('/industries/manufacturing') }">Manufacturing</a></li>
+  
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>Automative</h2>
+  <p>
+  The manufacturing industry is undergoing a profound transformation driven by digital technologies, automation, and the demand for greater efficiency and flexibility. Manufacturers are embracing Industry 4.0 solutions to optimize production processes, reduce downtime, and enhance product quality. By integrating smart sensors, IoT, and advanced analytics, companies can monitor operations in real time, predict maintenance needs, and quickly adapt to market changes. Our solutions empower manufacturers to streamline their supply chains, improve resource management, and accelerate innovation while maintaining compliance with safety and environmental standards.
+</p>
+
+<ul>
+  <li>Real-time monitoring and predictive maintenance</li>
+  <li>Optimization of production processes and quality control</li>
+  <li>Integration of smart factory technologies and IoT</li>
+  <li>Enhanced supply chain visibility and management</li>
+  <li>Compliance with safety and environmental regulations</li>
+</ul>
+
+ <div class="testimonial-carousel">
+  <h3 class="section-title">
+    <span class="orange">Opinions</span> from our customers
+  </h3>
+
+  <div class="testimonial-card">
+    <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+  <div class="testimonial-left">
+    <p>{{ testimonials[currentIndex].message }}</p>
+    <div class="author">
+      <strong>{{ testimonials[currentIndex].name }}</strong><br />
+      <span>{{ testimonials[currentIndex].title }}</span><br />
+      <span class="company">{{ testimonials[currentIndex].company }}</span>
+    </div>
+  </div>
+  <div class="testimonial-logo-circle">
+    {{ testimonials[currentIndex].company }}
+  </div>
+
+
+
+    <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>
+
+
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

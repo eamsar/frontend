@@ -16,6 +16,7 @@ import { FinancialServicesComponent } from './pages/industries/financial-service
 import { HealthCareComponent } from './pages/industries/health-care/health-care.component';
 import { ManufacturingComponent } from './pages/industries/manufacturing/manufacturing.component';
 import { CareerComponent } from './pages/career/career.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 export const routes: Routes = [ 
     { path: '', component: HomeComponent },
@@ -32,14 +33,14 @@ export const routes: Routes = [
 
     { path: 'industries/automative', component: AutomotiveComponent },
     { path: 'industries/energy', component: EnergyComponent },
-     { path: 'industries/finacial-services', component: FinancialServicesComponent},
+     { path: 'industries/financial-services', component: FinancialServicesComponent},
     { path: 'industries/health-care', component: HealthCareComponent },
     { path: 'industries/manufacturing', component: ManufacturingComponent },
      { path: 'career', component: CareerComponent },
 
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),SlickCarouselModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

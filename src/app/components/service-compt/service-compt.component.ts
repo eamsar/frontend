@@ -14,31 +14,31 @@ export class ServiceComptComponent {
     {
       title: 'SAP S/4HANA',
       description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
-      icon: 'assets/servicesimages/image.png' // ← change to your actual image path
+      icon: 'assets/servicesimages/images4hana.png' // ← change to your actual image path
     },
     {
       title: 'TMA',
       description: `Avec notre offre TMA, vous bénéficiez d’une assistance sur mesure, avec un choix selon votre besoin et votre budget`,
-      icon: ''
+      icon: 'assets/servicesimages/tma.png'
     },
     {
       title: 'AMOA',
       description: `Nos consultants couvrent tous les domaines fonctionnels liés au fonctionnement interne des entreprises....`,
-      icon: ''
+      icon: 'assets/servicesimages/amoase.png'
     },  {
       title: 'Grow with SAP',
       description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
-      icon: '' // 
+      icon: 'assets/servicesimages/gwsap.png' // 
     },
     {
       title: 'Data Analytics $ AI',
       description: `Avec notre offre TMA, vous bénéficiez d’une assistance sur mesure, avec un choix selon votre besoin et votre budget`,
-      icon: ''
+      icon: 'assets/servicesimages/dai.png'
     },
     {
       title: 'Customer Experiences',
       description: `Nos consultants couvrent tous les domaines fonctionnels liés au fonctionnement interne des entreprises....`,
-      icon: ''
+      icon: 'assets/servicesimages/custemerexp.png'
     }
 
   ];

@@ -27,7 +27,7 @@ export class HighlightSectionComponent   {
       if (typeof window !== 'undefined') {
      this.intervalId = window.setInterval(() => {
       this.hoveredIndex = (this.hoveredIndex + 1) % this.itemsPerPage;console.log('Hovered index:', this.hoveredIndex);
-    }, 2000);}
+    }, 1500);}
   }
 
   // Méthode pour activer le hover

@@ -1,1 +1,70 @@
-<p>health-care works!</p>
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/industries-img/health.jpg" alt="automative">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">INDUSTRIES</div></h3>
+  <ul>
+  <li><a  href="/industries/automative"[ngClass]="{ 'active': isActive('/industries/automative') }">Automative</a></li>
+  <li><a href="/industries/energy" [ngClass]="{ 'active': isActive('/industries/energy') }">Energy</a></li>
+  <li><a href="/industries/financial-services" [ngClass]="{ 'active': isActive('/industries/financial-services') }">Financial services</a></li>
+  <li><a href="/industries/health-care" [ngClass]="{ 'active': isActive('/industries/health-care') }">Health care</a></li>
+  <li><a href="/industries/manufacturing" [ngClass]="{ 'active': isActive('/industries/manufacturing') }">Manufacturing</a></li>
+  
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>Health Care</h2>
+  <p>
+  The healthcare sector is rapidly evolving due to digitalization, cost pressures, and growing patient demands for quality and speed of care. Healthcare institutions must now adopt intelligent and agile solutions to improve care efficiency, optimize resources, and ensure compliance with strict health standards. Digital transformation has become an essential lever to meet these challenges and provide a modern, connected care experience.
+</p>
+<p>
+  Thanks to our solutions based on SAP technologies, we support hospitals, clinics, and both public and private players in the medical sector in their modernization efforts. Our tools enable centralized management of medical records, better resource planning, and precise tracking of costs and performance. By integrating artificial intelligence, medical IoT, and data analytics, we help healthcare professionals make informed decisions, improve care quality, and enhance patient satisfaction.
+</p>
+
+<ul>
+  <li>Integrated management of medical records and patient journeys</li>
+  <li>Optimization of hospital planning and resources</li>
+  <li>Real-time monitoring of medical equipment and inventory</li>
+  <li>Analysis of clinical data for predictive medicine</li>
+  <li>Compliance with health standards and data security</li>
+</ul>
+
+  </div>
+</div>
+ <section class="testimonial-wrapper">
+  <div class="testimonial-carousel">
+    <h3 class="section-title">
+      <span class="orange">Opinions</span> from our customers
+    </h3>
+
+    <div class="testimonial-card">
+      <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+      <div class="testimonial-left">
+        <p>{{ testimonials[currentIndex].message }}</p>
+        <div class="author">
+          <strong>{{ testimonials[currentIndex].name }}</strong><br />
+          <span>{{ testimonials[currentIndex].title }}</span><br />
+          <span class="company">{{ testimonials[currentIndex].company }}</span>
+        </div>
+      </div>
+      <div class="testimonial-logo-circle">
+        {{ testimonials[currentIndex].company }}
+      </div>
+      <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

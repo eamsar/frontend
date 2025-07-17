@@ -1,1 +1,41 @@
-<p>f-and-a works!</p>
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/solutions-img/f-a.jpg" alt="Rise with SAP">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">SOLUTIONS</div></h3>
+ <ul>
+  <li><a  href="/solutions/btp" [ngClass]="{ 'active': isActive('/solutions/btp') }">BTP</a></li>
+  <li><a href="/solutions/erp" [ngClass]="{ 'active': isActive('/solutions/erp') }">ERP</a></li>
+  <li><a href="/solutions/f-and-a" [ngClass]="{ 'active': isActive('/solutions/f-and-a') }">F&A</a></li>
+  
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>F&A </h2>
+  <p>
+  The Finance & Accounting (F&A) function is no longer limited to transactional processing — it has evolved into a strategic pillar that drives business performance and value creation. With increasing pressure to ensure compliance, transparency, and real-time financial insights, organizations are turning to intelligent F&A solutions to streamline operations, reduce risks, and support data-driven decision-making. By adopting technologies like SAP S/4HANA, AI, and advanced analytics, finance teams can automate routine tasks, close books faster, and provide timely, actionable insights to leadership.
+</p>
+
+<ul>
+  <li>Automation of financial closing and reporting processes</li>
+  <li>Real-time monitoring of budgets, cash flow, and profitability</li>
+  <li>Improved compliance with local and international financial regulations</li>
+  <li>Advanced analytics for forecasting and performance management</li>
+  <li>Integrated planning and consolidation across business units</li>
+</ul>
+
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

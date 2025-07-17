@@ -1,69 +1,106 @@
-<header class="navbar">
-  <div class="navbar-container">
-    <!-- Left: Logo -->
-    <a href="" class="logo">
-      <img src="assets/logo.png" alt="Logo" />
+<!-- ✅ ✅ ✅ TOP-BAR + NAVBAR ✅ ✅ ✅ -->
+
+
+
+  <!-- 🔹 TOP-BAR -->
+   <div class="header">
+  <div class="top-bar">
+    <a href="/career">Career</a>
+    <button (click)="toggleSearch()" class="search-icon">Search</button>
+    <a href="#">DE</a>
+  </div>
+
+  <!-- 🔹 Barre de recherche -->
+  <div class="input" *ngIf="showSearch">
+    <input 
+      type="text"
+      placeholder="Search..."
+      class="search-input"
+      [class.show-input]="showSearch"/>
+    <button class="search-submit">Search</button>
+  </div>
+
+  <!-- 🔹 NAVBAR PRINCIPALE -->
+  <nav>
+    <a href="/" class="logo">
+      <img src="assets/logo.png"  alt="Logo" />
     </a>
 
-    <!-- Right: Top bar and menu -->
-    <div class="nav-area">
-      <!-- Top Right -->
-      <div class="top-bar">
-        <a href="/career">CAREER</a>
-        
-      <span class="icon"><i class="fas fa-search"></i></span>
-        <span class="lang">EN</span>
-<span class="icon"><i class="fas fa-globe"></i></span>
-
-      </div>
-
-      <!-- Short line under top bar -->
-      <hr class="short-line" />
-
-      <!-- Bottom Menu -->
-      <ul class="nav-menu">
-        <li class="nav-item dropdown">
-          
-          <a href="#">SERVICES ▾</a>
-          <ul class="dropdown-menu">
-          <li><a class="links" href="/services/rise-with-sap">Rise with SAP</a></li>
-          <li><a href="/services/grow-with-sap">Grow with SAP</a></li>
-          <li><a href="/services/integration">Integration</a></li>
-          <li><a href="/services/implementation-capm-fiori-abap">Implementation ( CAPM / FIORI / ABAP )</a></li>
-          <li><a href="/services/data-analytics">Data analytics and AI</a></li>
-          <li><a href="/services/customer-experience">Costmer experience</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#">INDUSTRIES ▾</a>
-           <ul class="dropdown-menu">
-          <li><a class="links" href="/industries/automative">Automative</a></li>
-          <li><a href="/industries/energy">Energy</a></li>
-          <li><a href="/industries/financial-services">Financial Services</a></li>
-          <li><a href="/industries/health-care">Health Care</a></li>
-          <li><a href="/industries/manufacturing">Manufacturing</a></li>
-         
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#">SOLUTION ▾</a>
-           <ul class="dropdown-menu">
-          <li><a class="links" href="/solutions/btp">BTP</a></li>
-          <li><a href="/solutions/erp">ERP</a></li>
-          <li><a href="/solutions/f-and-a">F&A</a></li>
-         
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#">ABOUT US ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Team</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="contact-button" href="#contact">CONTACT</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</header>
+    <ul class="nav-links">
+      <li>
+        <a href="#">Services</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <h4>General</h4>
+            <ul>
+              <li><a href="/services/rise-with-sap">Rise with SAP</a></li>
+              <li><a href="/services/grow-with-sap">Grow with SAP</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Implementation</h4>
+            <ul>
+              <li><a href="/services/integration">Integration</a></li>
+              <li><a href="/services/implementation-capm-fiori-abap">Implementation (CAPM / FIORI / ABAP)</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Analytics</h4>
+            <ul>
+              <li><a href="/services/data-analytics">Data Analytics and AI</a></li>
+              <li><a href="/services/customer-experience">Customer Experience</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Industries</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <ul>
+              <li><a href="/industries/automative">Automotive</a></li>
+              <li><a href="/industries/energy">Energy</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="/industries/financial-services">Financial Services</a></li>
+              <li><a href="/industries/health-care">Health Care</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="/industries/manufacturing">Manufacturing</a></li>
+              <li><a href="/industries/manufacturing">******</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li >
+        <a href="#">Solutions</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <ul>
+              <li><a href="">****</a></li>
+              <li><a href="">****</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li >
+        <a href="#">About Atliontech</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <ul>
+              <li><a href="/blogs">Blogs</a></li>
+              <li><a href="/industries/energy">****</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="no-dropdown">
+        <a href="#contact" class="career-btn">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+</div>

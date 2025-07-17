@@ -17,6 +17,10 @@ import { HealthCareComponent } from './pages/industries/health-care/health-care.
 import { ManufacturingComponent } from './pages/industries/manufacturing/manufacturing.component';
 import { CareerComponent } from './pages/career/career.component';
 
+import { BlogsComponent } from './pages/blogs/blogs.component';
+
+import { SearchResultsComponent } from './search-results/search-results.component';
+
 export const routes: Routes = [ 
     { path: '', component: HomeComponent },
     { path: 'services/rise-with-sap', component: RiseWithSAPComponent},
@@ -36,6 +40,12 @@ export const routes: Routes = [
     { path: 'industries/health-care', component: HealthCareComponent },
     { path: 'industries/manufacturing', component: ManufacturingComponent },
      { path: 'career', component: CareerComponent },
+
+      { path: 'blogs', component: BlogsComponent },
+
+     { path: 'search', component: SearchResultsComponent }
+
+
 
 ];
 @NgModule({

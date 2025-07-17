@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="ligne"></div>
+<div class="header">
+  <h1>Nos Articles & Actualités</h1>
+  <p>Découvrez nos dernières nouvelles, insights et projets.</p>
+</div>
+<!-- Filtre -->
+<div class="blog-filter">
+  <label>
+    <input type="radio" name="blogFilter" value="all" checked (click)="filterBlogs('all')">
+    <span>Tous</span>
+  </label>
+  <label>
+    <input type="radio" name="blogFilter" value="news"  (click)="filterBlogs('news')">
+    <span>News</span>
+  </label>
+  <label>
+    <input type="radio" name="blogFilter" value="blog" (click)="filterBlogs('blog')">
+    <span>Blogs</span>
+  </label>
+</div>
+
+
+<div class="principle-cards-container">
+  <div class="principle-card" *ngFor="let article of blogPosts; let i = index">
+    <img [src]="article.imageUrl" alt="Article image" />
+    <p class="date">{{ article.date }}</p>
+    <h3>{{ article.title }}</h3>
+    <p class="author">BY {{ article.author }}</p>
+    <button class="read-more">
+      Read more <span class="arrow1">→</span>
+    </button>
+  </div>
+</div>
+
+<app-footer></app-footer>

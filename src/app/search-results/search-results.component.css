@@ -1,0 +1,97 @@
+
+
+/* Title */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #003640;
+}
+
+/* Search input and button container */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 50%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  outline: none;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  background-color: #008084;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+  background-color: #f17b00;
+}
+
+/* Results count */
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Result card layout */
+.result-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto 20px;
+  max-width: 800px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.result-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #003640;
+}
+
+.result-card p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.result-card .category {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #008084;
+  margin-bottom: 10px;
+}
+
+.result-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f57c00;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.result-card a:hover {
+  color: #d95c00;
+}

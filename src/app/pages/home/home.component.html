@@ -1,14 +1,21 @@
-<app-navbar></app-navbar>
-<app-hero-banner></app-hero-banner>
-<app-highlight-section></app-highlight-section>
-<div class="section-divider right"></div>
-<app-service-compt></app-service-compt>
-<div class="section-divider left"></div>
-<app-trust-section></app-trust-section>
-<div class="section-divider right"></div>
-<app-industries-carousel></app-industries-carousel>
-<div class="section-divider left"></div>
-<section id="contact">
- <app-contact-form></app-contact-form>
+<section id="top"><app-navbar></app-navbar>
+
+
+  <app-hero-banner></app-hero-banner>
+
 </section>
+
+<app-highlight-section></app-highlight-section>
+<app-service-compt></app-service-compt>
+<app-trust-section></app-trust-section>
+<app-industries-carousel></app-industries-carousel>
+
+<section id="contact">
+  <app-contact-form></app-contact-form>
+</section>
+
 <app-footer></app-footer>
+
+<!-- Go to top button (placed after footer) -->
+<button class="go-to-top" (click)="goToTop()">↑</button>
+

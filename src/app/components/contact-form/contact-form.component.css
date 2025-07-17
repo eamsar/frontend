@@ -1,7 +1,7 @@
 .contact-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 10px; /* <-- Left and Right spacing = 80px */
+  padding: 3rem 10px;
   box-sizing: border-box;
 }
 
@@ -59,17 +59,34 @@ input, textarea {
 .radio-group label {
   font-size: 0.95rem;
 }
-
 .privacy {
-  margin: 1.5rem 0;
-  font-size: 0.9rem;
   display: flex;
-  align-items: center; /* Align checkbox with label */
+  align-items: center;
+  gap: 10px; /* space between checkbox and label */
+  margin: 20px 0;
 }
 
 .privacy input[type="checkbox"] {
-  margin-right: 0.5rem;
-  transform: translateY(1px); /* tiny adjust */
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.privacy label {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+.privacy-link {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.privacy-link:hover {
+  color: teal;
 }
 
 button {
@@ -81,5 +98,60 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+.toast-notification {
+  color: #f57c00; /* bright orange text */
+  background-color: #fde8d6; /* very light orange/pale peach background */
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  max-width: 350px;
+  box-shadow: 0 1px 3px rgba(245, 124, 0, 0.3); /* soft orange shadow */
+}
 
 
+.validation-message {
+  color: #d32f2f;  /* nice red */
+  background-color: #f9d6d5;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  max-width: 350px;
+  box-shadow: 0 1px 3px rgba(211, 47, 47, 0.3);
+}
+
+/* MODAL STYLES */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

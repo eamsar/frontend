@@ -1,3 +1,4 @@
+
 .section-divider {
   height: 8px;
   width: 100px;
@@ -15,4 +16,21 @@
     margin-right: 0;
      width: 30%;
   }
+}
+
+
+
+.go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  background-color: #003640;
+  color: white;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
 }

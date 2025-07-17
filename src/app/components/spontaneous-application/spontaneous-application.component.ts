@@ -1,20 +1,39 @@
 import { Component } from '@angular/core';
-
+import { ResumeService } from '../../shared/services/resume.service';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-spontaneous-application',
-  imports: [],
   templateUrl: './spontaneous-application.component.html',
-  styleUrl: './spontaneous-application.component.css'
+  styleUrls: ['./spontaneous-application.component.css'],
+  imports:[FormsModule]
 })
 export class SpontaneousApplicationComponent {
-onFileSelected(event: any) {
-  const file = event.target.files[0];
-  console.log('File selected:', file);
-}
+  fullName = '';
+  email = '';
+  about = '';
+  selectedFile!: File;
 
-onSubmit() {
-  console.log('Form submitted');
-  // Call your backend or service here
-}
+  constructor(private resumeService: ResumeService) {}
 
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+    console.log('File selected:', this.selectedFile);
+  }
+
+  onSubmit() {
+    if (!this.selectedFile) {
+      console.error('Please select a file.');
+      return;
+    }
+
+    this.resumeService.sendResume({
+      fullName: this.fullName,
+      email: this.email,
+      file: this.selectedFile,
+      about: this.about
+    }).subscribe({
+      next: res => console.log('Resume uploaded!', res),
+      error: err => console.error('Upload failed', err)
+    });
+  }
 }

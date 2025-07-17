@@ -1,18 +1,18 @@
-import { Component  } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-service-compt',
   templateUrl: './service-compt.component.html',
-  styleUrl: './service-compt.component.css',
-  imports: [CommonModule]
+  styleUrls: ['./service-compt.component.css'],
+  imports:[CommonModule]
 })
-export class ServiceComptComponent  {
+export class ServiceComptComponent {
   services = [
+
     {
       title: 'SAP S/4HANA',
       description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
-      icon: '' // ← change to your actual image path
+      icon: 'assets/servicesimages/image.png' // ← change to your actual image path
     },
     {
       title: 'TMA',
@@ -38,13 +38,28 @@ export class ServiceComptComponent  {
       description: `Nos consultants couvrent tous les domaines fonctionnels liés au fonctionnement interne des entreprises....`,
       icon: ''
     }
+
   ];
+
   currentIndex = 0;
-     get visibleServices() {
+  intervalId: any;
+
+  ngOnInit(): void {
+    // Démarre l'auto-slide toutes les 2 secondes (2000 ms)
+   
+  }
+
+  ngOnDestroy(): void {
+    // Nettoie le timer pour éviter fuite mémoire
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  get visibleServices() {
     const total = this.services.length;
     const prevIndex = (this.currentIndex - 1 + total) % total;
     const nextIndex = (this.currentIndex + 1) % total;
-
     return [
       this.services[prevIndex],
       this.services[this.currentIndex],
@@ -63,6 +78,4 @@ export class ServiceComptComponent  {
   goTo(index: number) {
     this.currentIndex = index;
   }
-
-
 }

@@ -15,12 +15,13 @@
         (mouseenter)="setActiveCard(i)"
         (mouseleave)="setActiveCard(0)"
       >
-        <img [src]="article.image" alt="Article image" />
+        <img [src]="article.imageUrl" alt="Article image" />
+        <p class="date">{{ article.date }}</p>
         <h3>{{ article.title }}</h3>
         <p class="author">BY {{ article.author }}</p>
-        <p class="date">{{ article.date }}</p>
+        
             <button class="read-more">
-  Read more <span class="arrow">→</span>
+  Read more <span class="arrow1">→</span>
 </button>
       </div>
   
@@ -38,5 +39,5 @@
   </div>
 
 
-  <button class="learn-more">Learn more</button>
+  <a class="learn-more" href="/blogs">Learn more</a>
 </div>

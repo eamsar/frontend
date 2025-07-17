@@ -1,34 +1,36 @@
-<section
-  class="industry-section"
-  [ngStyle]="{
-    'background-image': 'url(' + activeIndustry.imageUrl + ')',
-    'background-size': 'cover',
-    'background-position': 'center',
-    'background-repeat': 'no-repeat'
-  }"
->
-  <div class="industry-overlay">
-    <div class="industry-content">
-      <div class="industry-card">
-        <p class="industry-small-title">THE WORLD OF SAP CONSULTING</p>
-        <h2 class="industry-heading">
-          <span class="blue">We </span>
-          <span class="orange">are</span> expert in the following industries
-        </h2>
+<section class="industry-section">
+  <div class="container">
+    <div class="section-header">
+      <p>THE WORLD OF SAP CONSULTING</p>
+      <h2><span class="blue">We </span><span class="orange">are</span> expert in the following industries</h2>
+    </div>
 
-        <ul class="industry-list">
-          <li
-            *ngFor="let industry of industries; let i = index"
-            (mouseenter)="setActiveIndustry(i)"
-            [class.active]="industry.name === activeIndustry.name"
-          >
-            ➤ {{ industry.name }}
+    <div class="industry-wrapper">
+      <nav class="industry-menu">
+        <ul>
+          <li *ngFor="let ind of industries; let i = index"
+              [class.active]="i === activeIndex"
+              (mouseover)="activeIndex = i">
+           <span class="icon">
+  <img [src]="ind.icon" alt="{{ ind.name }} icon" />
+</span>
+
+            <span class="label">{{ ind.name }}</span>
           </li>
         </ul>
+      </nav>
 
-        <p class="industry-description">{{ activeIndustry.description }}</p>
-
-        <button class="industry-button">More →</button>
+      <div class="industry-display">
+        <div class="card">
+          <div class="card-image"
+               [style.background-image]="'url(' + industries[activeIndex].imageUrl + ')'">
+          </div>
+          <div class="card-content">
+            <h3>{{ industries[activeIndex].name }}</h3>
+            <p>{{ industries[activeIndex].description }}</p>
+            <a href="#" class="btn-read">Read more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

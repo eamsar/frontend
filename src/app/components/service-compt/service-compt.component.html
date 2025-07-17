@@ -11,7 +11,7 @@
 
     <div class="principle-cards-container">
       <div
-        class="principle-card"
+        class="principle-card" 
         *ngFor="let service of visibleServices; let i = index"
         [ngClass]="{
           'left-card': i === 0,
@@ -24,8 +24,10 @@
             <h2>{{ service.title }}</h2>
             <p class="description">{{ service.description }}</p>
              <button class="read-more">
-  Read more <span class="arrow1">→</span>
-</button>
+
+                    Read more <span class="arrow1">→</span>
+                     </button>
+
           </div>
           <div class="card-image">
             <img [src]="service.icon" alt="Service image" />

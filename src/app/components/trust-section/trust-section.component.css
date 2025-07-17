@@ -1,9 +1,11 @@
 .principles-section {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+  margin:  auto;
+  padding: 30px 30px;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
+  height: 14cm;
+  margin-bottom: 3cm;
 }
 
 .principles-header h4 {
@@ -62,6 +64,7 @@
   color: #008084;
 }
 
+
 .principle-card:hover .icon {
   background-color: #fff;
 }
@@ -71,6 +74,7 @@
   height: 70px;
   background-color: #fff;
   border-radius: 10px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,8 +82,14 @@
 }
 
 .principle-card img {
-  width: 28px;
-  height: 28px;
+   width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background-color: #e7f6f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .principle-card h3 {

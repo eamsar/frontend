@@ -74,7 +74,9 @@
 
 .principle-card img {
   width: 100% !important;
-  height: 140px !important;
+
+  height: 160px !important;
+
   object-fit: cover !important;
   display: block;
  /* test visuel */
@@ -150,6 +152,7 @@
   color: #00796b;
   cursor: pointer;
   transition: background 0.3s;
+  text-decoration: none;
 }
 .learn-more:hover {
   background: #00796b;

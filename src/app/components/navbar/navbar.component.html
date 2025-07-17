@@ -1,155 +1,106 @@
-<header class="navbar">
-  <div class="navbar-container">
-    <!-- Left: Logo -->
-    <a href="" class="logo">
+<!-- ✅ ✅ ✅ TOP-BAR + NAVBAR ✅ ✅ ✅ -->
+
+
+
+  <!-- 🔹 TOP-BAR -->
+   <div class="header">
+  <div class="top-bar">
+    <a href="/career">Career</a>
+    <button (click)="toggleSearch()" class="search-icon">Search</button>
+    <a href="#">DE</a>
+  </div>
+
+  <!-- 🔹 Barre de recherche -->
+  <div class="input" *ngIf="showSearch">
+    <input 
+      type="text"
+      placeholder="Search..."
+      class="search-input"
+      [class.show-input]="showSearch"/>
+    <button class="search-submit">Search</button>
+  </div>
+
+  <!-- 🔹 NAVBAR PRINCIPALE -->
+  <nav>
+    <div class="logo">
       <img src="assets/logo.png" alt="Logo" />
-    </a>
-
-    <!-- Right: Top bar and menu -->
-    <div class="nav-area">
- <div class="top-bar">
-  <a href="/career">CAREER</a>
-
-  <div class="search-wrapper">
-    <span class="icon" (click)="toggleSearch()">
-      <i class="fas fa-search"></i>
-    </span>
-
-    <div *ngIf="showSearch" class="input-container">
-      <input
-        [(ngModel)]="searchTerm"
-        type="text"
-        placeholder="Search..."
-        class="search-input"
-      />
-      <button class="search-submit" (click)="onSearch()">Search</button>
-      <button class="close-btn" (click)="toggleSearch()">×</button>
     </div>
-  </div>
 
-  <span class="lang">EN</span>
-  <span class="icon"><i class="fas fa-globe"></i></span>
+    <ul class="nav-links">
+      <li>
+        <a href="#">Services</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <h4>General</h4>
+            <ul>
+              <li><a href="/services/rise-with-sap">Rise with SAP</a></li>
+              <li><a href="/services/grow-with-sap">Grow with SAP</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Implementation</h4>
+            <ul>
+              <li><a href="/services/integration">Integration</a></li>
+              <li><a href="/services/implementation-capm-fiori-abap">Implementation (CAPM / FIORI / ABAP)</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Analytics</h4>
+            <ul>
+              <li><a href="/services/data-analytics">Data Analytics and AI</a></li>
+              <li><a href="/services/customer-experience">Customer Experience</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Industries</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <ul>
+              <li><a href="/industries/automative">Automotive</a></li>
+              <li><a href="/industries/energy">Energy</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="/industries/financial-services">Financial Services</a></li>
+              <li><a href="/industries/health-care">Health Care</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="/industries/manufacturing">Manufacturing</a></li>
+              <li><a href="/industries/manufacturing">******</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li >
+        <a href="#">Solutions</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <ul>
+              <li><a href="">****</a></li>
+              <li><a href="">****</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li >
+        <a href="#">About Atliontech</a>
+        <div class="mega-menu" *ngIf="!isScrolled">
+          <div>
+            <ul>
+              <li><a href="/blogs">Blogs</a></li>
+              <li><a href="/industries/energy">****</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="no-dropdown">
+        <a href="#contact" class="career-btn">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
 </div>
-
-
-      <!-- Short line under top bar -->
-      <hr class="short-line" />
-
-<ul class="nav-menu">
-  <!-- SERVICES -->
-  <li class="nav-item mega-dropdown">
-    <a href="#">SERVICES ▾</a>
-    <div class="mega-menu">
-      <div>
-        <div class="menu-group">
-          <div class="menu-title">Digital Transformation</div>
-          <ul>
-            <li><a href="#">*************</a></li>
-            <li><a href="#">*************</a></li>
-          </ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Software Development</div>
-          <ul>
-            <li><a href="#">*************</a></li>
-          </ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">DA/BD/AI Integration</div>
-          <ul>
-            <li><a href="#">*************</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </li>
-
-  <!-- SOLUTIONS -->
-  <li class="nav-item mega-dropdown">
-    <a href="#">SOLUTIONS ▾</a>
-    <div class="mega-menu">
-      <div>
-        <div class="menu-group">
-          <div class="menu-title">ERP (SAP S/4HANA)</div>
-          <ul>
-            <li><a href="#">*************</a></li>
-          </ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">SAP BTP</div>
-          <ul>
-            <li><a href="#">*************</a></li>
-          </ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Data & Analytics</div>
-          <ul>
-            <li><a href="#">*************</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </li>
-
-  <!-- INDUSTRIES -->
-  <li class="nav-item mega-dropdown">
-    <a href="#">INDUSTRIES ▾</a>
-    <div class="mega-menu">
-      <div>
-        <div class="menu-group">
-          <div class="menu-title">Insurance</div>
-          <ul><li><a href="#">*************</a></li></ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Logistics</div>
-          <ul><li><a href="#">*************</a></li></ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Health</div>
-          <ul><li><a href="#">*************</a></li></ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Energy</div>
-          <ul><li><a href="#">*************</a></li></ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Retail</div>
-          <ul><li><a href="#">*************</a></li></ul>
-        </div>
-      </div>
-    </div>
-  </li>
-
-  <!-- ABOUT ATLIONTECH -->
-  <li class="nav-item mega-dropdown">
-    <a href="#">ABOUT ATLIONTECH ▾</a>
-    <div class="mega-menu">
-      <div>
-        <div class="menu-group">
-          <div class="menu-title">Who are we?</div>
-          <ul>
-            <li><a href="#">Word from the CEO</a></li>
-            <li><a href="#">Our values</a></li>
-          </ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Blog</div>
-          <ul><li><a href="#">*************</a></li></ul>
-        </div>
-        <div class="menu-group">
-          <div class="menu-title">Team</div>
-          <ul><li><a href="#">*************</a></li></ul>
-        </div>
-      </div>
-    </div>
-  </li>
-
-  <!-- CONTACT -->
-  <li class="nav-item">
-    <a class="contact-button" href="#contact">CONTACT</a>
-  </li>
-</ul>
-
-    </div>
-  </div>
-</header>

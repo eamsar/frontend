@@ -1,0 +1,155 @@
+body {
+  margin: 0; /* Toujours bon pour éviter les marges par défaut */
+  padding: 0;
+}
+
+app-navbar {
+  display: block;
+}
+.ligne{
+  height: 0.04cm;
+  background-color: #000;
+}
+.header {
+  margin: 0; /* Pas de marge externe */
+  padding: 60px 20px;
+  background: #003640;
+  color: #fff;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0 0 10px; /* Supprime margin-top par défaut */
+  font-size: 2.5rem;
+}
+
+.header p {
+  margin: 0; /* en général p a du margin-top */
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+
+/* Ligne séparatrice */
+
+/* ====== FILTRE ====== */
+.blog-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.blog-filter label {
+  cursor: pointer;
+}
+
+.blog-filter input[type="radio"] {
+  display: none;
+}
+
+.blog-filter span {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #003640;
+  color: #003640;
+  transition: all 0.3s ease;
+}
+
+.blog-filter input[type="radio"]:checked + span {
+  background: #003640;
+  color: #fff;
+}
+
+.blog-filter span:hover {
+  background: #e6f2f8;
+}
+
+/* ====== CONTENEUR DES CARTES : 3 COLONNES ====== */
+.principle-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes fixes */
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto 5rem;
+  padding: 0 20px;
+}
+
+/* ====== UNE CARTE ====== */
+.principle-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.principle-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.principle-card .date {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 15px 20px 0;
+  font-style: italic;
+}
+
+.principle-card h3 {
+  font-size: 1.3rem;
+  margin: 10px 20px;
+  color: #003640;
+}
+
+.principle-card .author {
+  font-weight: 600;
+  color: #555;
+  margin: 0 20px 20px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.read-more {
+  margin: 0 20px 20px;
+  align-self: flex-start;
+  background: #003640;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: #ff6600;
+}
+
+.arrow1 {
+  margin-left: 5px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .principle-cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes tablette */
+  }
+}
+
+@media (max-width: 600px) {
+  .principle-cards-container {
+    grid-template-columns: 1fr; /* 1 carte mobile */
+  }
+}

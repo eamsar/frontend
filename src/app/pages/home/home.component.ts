@@ -17,7 +17,8 @@ import { ServiceComptComponent } from "../../components/service-compt/service-co
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-goToTop(): void {
+
+goToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 

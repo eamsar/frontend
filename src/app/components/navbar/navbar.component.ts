@@ -1,30 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule,FormsModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
+  standalone: true,
+  imports: [CommonModule],
 })
 export class NavbarComponent {
-showSearch = false;
-searchTerm = '';
+isScrolled = false;
 
-toggleSearch() {
-  this.showSearch = !this.showSearch;
-}
-
-constructor(private router: Router) {}
-
-
-onSearch() {
-      console.log('Searching for:', this.searchTerm);
-  if (this.searchTerm.trim()) {
-    this.router.navigate(['/search'], { queryParams: { q: this.searchTerm.trim() } });
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 0;
   }
-}
+    showSearch = false;
 
-
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
+  }
 }

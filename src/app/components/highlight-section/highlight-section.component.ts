@@ -14,6 +14,7 @@ export class HighlightSectionComponent   {
   currentIndex = 0;
   itemsPerPage = 4;
   intervalId: any;
+  hoveredIndex=0;
 
    articles: Blog[] = [];
  constructor(private blogService: BlogService) {}
@@ -22,6 +23,9 @@ export class HighlightSectionComponent   {
     this.blogService.getLatestBlogs().subscribe(data => {
       this.articles = data;
     });
+     this.intervalId = window.setInterval(() => {
+      this.hoveredIndex = (this.hoveredIndex + 1) % this.itemsPerPage;console.log('Hovered index:', this.hoveredIndex);
+    }, 3000);
   }
 
   // Méthode pour activer le hover

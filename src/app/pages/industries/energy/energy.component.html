@@ -38,35 +38,34 @@
   <li>Regulatory compliance and environmental reporting</li>
   <li>Predictive analytics to anticipate consumption peaks</li>
 </ul>
+  </div>
+</div>
+ <section class="testimonial-wrapper">
+  <div class="testimonial-carousel">
+    <h3 class="section-title">
+      <span class="orange">Opinions</span> from our customers
+    </h3>
 
- <div class="testimonial-carousel">
-  <h3 class="section-title">
-    <span class="orange">Opinions</span> from our customers
-  </h3>
-
-  <div class="testimonial-card">
-    <button class="arrow left" (click)="prevSlide()">&#10094;</button>
-  <div class="testimonial-left">
-    <p>{{ testimonials[currentIndex].message }}</p>
-    <div class="author">
-      <strong>{{ testimonials[currentIndex].name }}</strong><br />
-      <span>{{ testimonials[currentIndex].title }}</span><br />
-      <span class="company">{{ testimonials[currentIndex].company }}</span>
+    <div class="testimonial-card">
+      <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+      <div class="testimonial-left">
+        <p>{{ testimonials[currentIndex].message }}</p>
+        <div class="author">
+          <strong>{{ testimonials[currentIndex].name }}</strong><br />
+          <span>{{ testimonials[currentIndex].title }}</span><br />
+          <span class="company">{{ testimonials[currentIndex].company }}</span>
+        </div>
+      </div>
+      <div class="testimonial-logo-circle">
+        {{ testimonials[currentIndex].company }}
+      </div>
+      <button class="arrow right" (click)="nextSlide()">&#10095;</button>
     </div>
   </div>
-  <div class="testimonial-logo-circle">
-    {{ testimonials[currentIndex].company }}
-  </div>
+</section>
 
 
 
-    <button class="arrow right" (click)="nextSlide()">&#10095;</button>
-  </div>
-</div>
-
-
-  </div>
-</div>
  <app-contact-form></app-contact-form>
 
 <app-footer></app-footer>

@@ -4,7 +4,8 @@
     }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: system-ui, sans-serif;
+  
     }
     a {
       text-decoration: none;
@@ -28,7 +29,8 @@
   align-items: center;
   padding: 0 20px;
   font-size: 14px;
-  position: relative; /* important pour le pseudo-élément */
+  position: relative; 
+  font-family: system-ui, sans-serif !important;
 }
 
     .top-bar a {
@@ -64,6 +66,8 @@
       display: flex;
       margin-left: auto;
       gap: 30px;
+      font-family: system-ui, sans-serif !important;
+      font-size: 15px;
     }
 
     nav ul.nav-links > li {

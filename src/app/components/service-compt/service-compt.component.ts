@@ -52,7 +52,7 @@ export class ServiceComptComponent {
     // Démarre l'auto-slide toutes les 2 secondes (2000 ms)
       this.intervalId = window.setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.services.length;
-    }, 6000);
+    }, 5000);
 
   }}
 

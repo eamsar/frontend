@@ -7,25 +7,22 @@
   <div class="carousel-wrapper">
     <button class="arrow" (click)="prev()">&#8592;</button>
 
-    <div class="principle-cards-container">
-      <div
-        class="principle-card"
-        *ngFor="let article of visibleArticles; let i = index"
-        [class.active]="i === activeCardIndex"
-        (mouseenter)="setActiveCard(i)"
-        (mouseleave)="setActiveCard(0)"
-      >
-        <img [src]="article.imageUrl" alt="Article image" />
-        <p class="date">{{ article.date }}</p>
-        <h3>{{ article.title }}</h3>
-        <p class="author">BY {{ article.author }}</p>
-        
-            <button class="read-more">
-  Read more <span class="arrow1">→</span>
-</button>
-      </div>
-  
-    </div>
+  <div class="principle-cards-container">
+  <div
+    class="principle-card" 
+    *ngFor="let article of visibleArticles; let i = index"
+    [class.active]="i === hoveredIndex"
+    [class.hover]="i === hoveredIndex"
+  >
+    <img [src]="article.imageUrl" alt="Article image" />
+    <p class="date">{{ article.date }}</p>
+    <h3>{{ article.title }}</h3>
+    <p class="author">BY {{ article.author }}</p>
+    <button class="read-more">
+      Read more <span class="arrow1">→</span>
+    </button>
+  </div>
+</div>
 
     <button class="arrow" (click)="next()">&#8594;</button>
   </div>

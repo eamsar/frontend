@@ -2,25 +2,33 @@
   <h2>Find Your Opportunity</h2>
 
   <div class="filters">
-    <input type="text" placeholder="Search job title..." />
-    <select>
+    <input type="text" [(ngModel)]="titleFilter" placeholder="Search job title..." />
+    
+    <select [(ngModel)]="locationFilter">
       <option value="">Location</option>
-      <option value="remote">Remote</option>
-      <option value="morocco">Morocco</option>
+      <option value="Kenitra">Kenitra</option>
+      <option value="Remote">Remote</option>
     </select>
-    <select>
+    
+    <select [(ngModel)]="departmentFilter">
       <option value="">Department</option>
-      <option>Technical</option>
-      <option>Functional</option>
+      <option value="Technical">Technical</option>
+      <option value="Functional">Functional</option>
+      <option value="Human Resources">HR</option>
     </select>
-    <button>Filter</button>
+    
+    <button (click)="applyFilter()">Filter</button>
   </div>
 
   <div class="job-cards">
-    <div class="job-card" *ngFor="let job of [1,2,3]">
-      <h3>Software Developer</h3>
-      <p>Join our development team in building amazing tools.</p>
-      <button>Apply</button>
+    <div class="job-card" *ngFor="let job of filteredJobs">
+      <h3>{{ job.title }}</h3>
+      <p>{{ job.description }}</p>
+      <span><strong>Location:</strong> {{ job.location }}</span><br />
+      <span><strong>Type:</strong> {{ job.type }}</span><br />
+      <span><strong>Department:</strong> {{ job.department }}</span>
+      <br />
+     <a href="https://www.linkedin.com/company/atliontech/" target="_blank" class="apply-button">Apply</a>
     </div>
   </div>
 </section>

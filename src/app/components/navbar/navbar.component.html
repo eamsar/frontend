@@ -7,28 +7,34 @@
   <div class="top-bar">
     <a href="/career">Career</a>
     <button (click)="toggleSearch()" class="search-icon">Search</button>
-    <a href="#">DE</a>
+    <i class="fas fa-search" style="padding-left: 3px;padding-top: 3px;"></i>
+    <a href="#">En</a>
+    <span class="icon"><i class="fas fa-globe" style="padding-left: 3px;"></i></span>
   </div>
 
-  <!-- 🔹 Barre de recherche -->
-  <div class="input" *ngIf="showSearch">
-    <input 
-      type="text"
-      placeholder="Search..."
-      class="search-input"
+
+  
+ <div *ngIf="showSearch" class="input"   (mouseleave)="closeSearch()">
+      <input 
+        [(ngModel)]="searchTerm"
+        type="text"
+        placeholder="Search..."
+        class="search-input"
       [class.show-input]="showSearch"/>
-    <button class="search-submit">Search</button>
-  </div>
+      <button class="search-submit" (click)="onSearch()">Search</button>
+      
+    
 
+    </div>
   <!-- 🔹 NAVBAR PRINCIPALE -->
   <nav>
-    <div class="logo">
-      <img src="assets/logo.png" alt="Logo" />
-    </div>
+    <a href="/" class="logo">
+      <img src="assets/logo.png"  alt="Logo" />
+    </a>
 
     <ul class="nav-links">
       <li>
-        <a href="#">Services</a>
+        <a >Services</a>
         <div class="mega-menu" *ngIf="!isScrolled">
           <div>
             <h4>General</h4>
@@ -54,7 +60,9 @@
         </div>
       </li>
       <li>
-        <a >Industries</a>
+
+        <a>Industries</a>
+
         <div class="mega-menu" *ngIf="!isScrolled">
           <div>
             <ul>
@@ -71,7 +79,7 @@
           <div>
             <ul>
               <li><a href="/industries/manufacturing">Manufacturing</a></li>
-              <li><a href="/industries/manufacturing">******</a></li>
+             
             </ul>
           </div>
         </div>
@@ -81,8 +89,14 @@
         <div class="mega-menu" *ngIf="!isScrolled">
           <div>
             <ul>
-              <li><a href="">****</a></li>
-              <li><a href="">****</a></li>
+              <li><a href="/solutions/btp">SAP BTP</a></li>
+              <li><a href="/solutions/erp">ERP</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><a href="/solutions/f-and-a">F&A</a></li>
+             
             </ul>
           </div>
         </div>

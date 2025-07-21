@@ -1,5 +1,7 @@
 <div class="contact-wrapper">
   <div class="contact-container">
+
+    <!-- FORM SIDE -->
     <div class="contact-form">
       <p class="subtitle">CONTACT</p>
       <h2>Any <span class="highlight">questions</span>? We are looking forward to your message!</h2>
@@ -25,20 +27,44 @@
       <textarea placeholder="Your message *" rows="5"></textarea>
 
       <div class="privacy">
-        <label><input type="checkbox"> I agree to the <span class="highlight">privacy policy</span>.</label>
+        <input type="checkbox" id="agree" />
+        <label for="agree">
+          I agree to the <span class="privacy-link" (click)="openPrivacyModal()">privacy policy</span>.
+        </label>
       </div>
-
-      <button>Send</button>
+<div *ngIf="validationMessage" class="validation-message">
+  {{ validationMessage }}
+</div>
+ <div *ngIf="toastMessage" class="toast-notification">
+  {{ toastMessage }}
+</div>
+      <button  (click)="onSubmit()">Send</button>
+     
     </div>
 
+    <!-- MODAL -->
+    <div *ngIf="showPrivacyModal" class="modal-overlay">
+      <div class="modal-box">
+        <span class="close-button" (click)="closePrivacyModal()">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>Your personal data is safe with us. We only use it to respond to your inquiries.</p>
+        <button (click)="closePrivacyModal()">OK</button>
+      </div>
+    </div>
+
+
+    <!-- CONTACT INFO SIDE -->
     <div class="contact-info">
       <p class="subtitle">Contact</p>
       <h3><strong>atliontech Consulting</strong></h3>
       <p>📞 212 00 0000 00</p>
       <p>✉️ ContactAtlionTech.com</p>
       <p>📍 Casablanca Morocco</p>
-      <iframe src="https://maps.google.com/maps?q=Kénitra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe
+        src="https://maps.google.com/maps?q=Kénitra&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+      </iframe>
     </div>
+
   </div>
 </div>

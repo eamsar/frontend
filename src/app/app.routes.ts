@@ -36,7 +36,7 @@ export const routes: Routes = [
 
     { path: 'industries/automative', component: AutomotiveComponent },
     { path: 'industries/energy', component: EnergyComponent },
-     { path: 'industries/finacial-services', component: FinancialServicesComponent},
+     { path: 'industries/financial-services', component: FinancialServicesComponent},
     { path: 'industries/health-care', component: HealthCareComponent },
     { path: 'industries/manufacturing', component: ManufacturingComponent },
      { path: 'career', component: CareerComponent },
@@ -49,7 +49,7 @@ export const routes: Routes = [
 
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

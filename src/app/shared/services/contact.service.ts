@@ -1,12 +1,26 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class ContactService {
-  private API_URL = 'http://localhost:8080/api/contact';
+
+  private apiUrl = 'http://localhost:8080/api/contacts'; // Adjust if needed
+
   constructor(private http: HttpClient) {}
 
-  sendContactForm(data: any) {
-    return this.http.post(this.API_URL, data);
+  // Inline Contact interface
+  sendContact(contact: {
+    salutation: string;
+    company?: string;
+    phoneNumber?: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    message: string;
+  }): Observable<any> {
+    return this.http.post(this.apiUrl, contact);
   }
 }

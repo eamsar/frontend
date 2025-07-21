@@ -1,2 +1,44 @@
 <app-navbar></app-navbar>
-<p>This is the Integration page.</p>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  <img src="assets/servicesimages/integrations.jpg" alt="integration">
+</div>
+
+<!-- Main Section -->
+<div class="services-section">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3> <div class="banner-text">SERVICES</div></h3>
+  <ul>
+  <li><a  href="/services/rise-with-sap" [ngClass]="{ 'active': isActive('/services/rise-with-sap') }">Rise with SAP</a></li>
+  <li><a href="/services/grow-with-sap" [ngClass]="{ 'active': isActive('/services/grow-with-sap') }">Grow with SAP</a></li>
+  <li><a href="/services/integration" [ngClass]="{ 'active': isActive('/services/integration') }">Integration</a></li>
+  <li><a href="/services/implementation-capm-fiori-abap" [ngClass]="{ 'active': isActive('/services/implementation-capm-fiori-abap') }">Implementation (CAPM / FIORI / ABAP)</a></li>
+  <li><a href="/services/data-analytics" [ngClass]="{ 'active': isActive('/services/data-analytics') }">Data analytics and AI</a></li>
+  <li><a href="/services/customer-experience" [ngClass]="{ 'active': isActive('/services/customer-experience') }">Customer experience</a></li>
+</ul>
+
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>Integration </h2>
+<p>
+  Integration is a cornerstone of the SAP ecosystem, enabling businesses to connect systems, data, and processes across on-premise and cloud environments. With the evolution of hybrid architectures and the growing need for real-time data exchange, SAP provides a comprehensive set of integration tools through the SAP Business Technology Platform (BTP) and SAP Integration Suite. These tools help ensure seamless communication between SAP and non-SAP systems, enhance end-to-end visibility, and support intelligent, data-driven operations.
+</p>
+
+<ul>
+  <li>Integration between SAP S/4HANA, SAP SuccessFactors, SAP Ariba, and third-party systems</li>
+  <li>Use of pre-built connectors and integration flows via SAP Integration Suite</li>
+  <li>Support for API-based integration, event-driven architecture, and B2B scenarios</li>
+  <li>Centralized monitoring and governance of interfaces and data flows</li>
+  <li>Improved agility and innovation through modular, scalable integration</li>
+</ul>
+
+
+  </div>
+</div>
+ <app-contact-form></app-contact-form>
+
+<app-footer></app-footer>

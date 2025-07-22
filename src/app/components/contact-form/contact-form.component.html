@@ -1,11 +1,14 @@
 <!-- Floating Contact Button -->
 <div class="contact-toggle-wrapper">
 
-  <button class="contact-toggle-btn" (click)="toggleContact()">
-    📞 Contact Us
-  </button>
+  <button
+  *ngIf="!isHomePage"
+  class="contact-toggle-btn"
+  (click)="toggleContact()">
+  📞 Contact Us
+</button>
 
-  <div class="contact-wrapper" [class.visible]="isContactVisible">
+  <div class="contact-wrapper" [class.visible]="isHomePage || isContactVisible">
     <div class="contact-container">
 
       <!-- FORM SIDE -->

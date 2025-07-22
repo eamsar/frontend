@@ -5,6 +5,7 @@ padding: 0 1.5rem;           /* No inner space left or right */
   box-sizing: border-box;
   position: relative;
   min-height: 20px;
+  
 }
 
 /* Style the toggle button */

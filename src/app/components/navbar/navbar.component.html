@@ -1,16 +1,27 @@
 <!-- ✅ ✅ ✅ TOP-BAR + NAVBAR ✅ ✅ ✅ -->
+<!-- Add this in <head> -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
 
 
   <!-- 🔹 TOP-BAR -->
    <div class="header">
   <div class="top-bar">
-    <a href="/career">Career</a>
-    <button (click)="toggleSearch()" class="search-icon">Search</button>
-    <i class="fas fa-search" style="padding-left: 3px;padding-top: 3px;"></i>
-    <a href="#">En</a>
-    <span class="icon"><i class="fas fa-globe" style="padding-left: 3px;"></i></span>
+     <div class="top-left">
+    <!-- Left side content (if any) or empty -->
   </div>
+   <div class="top-right">
+    <!-- Left side content (if any) or empty -->
+  
+    <a href="/career">Career  </a>
+    <button (click)="toggleSearch()" class="search-icon"><i class="fa-solid fa-search"></i> Search</button>
+   
+    <a href="#"><i class="fa-solid fa-globe"></i> En</a>
+    
+  </div> </div>
 
 
   
@@ -111,7 +122,7 @@
         </div>
       </li>
       <li class="no-dropdown">
-        <a href="#contact" class="career-btn">CONTACT</a>
+        <a href="#contact" class="contact-btn">Contact </a>
       </li>
     </ul>
   </nav>

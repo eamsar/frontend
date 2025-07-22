@@ -1,38 +1,82 @@
-.contact-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 10px;
+.contact-toggle-wrapper {
+  max-width: 100%;         /* Full width of the viewport */
+  margin: 1rem 0;          /* Top and bottom margin */
+padding: 0 1.5rem;           /* No inner space left or right */
   box-sizing: border-box;
+  position: relative;
+  min-height: 20px;
+}
+
+/* Style the toggle button */
+.contact-toggle-btn {
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,128,128,0.35);
+  transition: background-color 0.3s ease;
+}
+.contact-toggle-btn:hover {
+  background-color: #f57c00;
+}
+
+/* Contact wrapper hidden by default */
+.contact-wrapper {
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 0.5rem 20px;
+  box-sizing: border-box;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Show contact form */
+.contact-wrapper.visible {
+  max-height: 2000px; /* large enough to fit content */
+  opacity: 1;
 }
 
 .contact-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap; /* prevent wrapping */
   gap: 3rem;
+  justify-content: space-between;
 }
 
-.contact-form, .contact-info {
-  flex: 1 1 45%;
+.contact-form {
+  flex: 0 0 60%;
   min-width: 320px;
-}
-
-.subtitle {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 0.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
 .contact-form h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  color: #003640;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.highlight {
-  color: orange;
-  font-weight: bold;
+label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .input-row {
@@ -41,87 +85,248 @@
   margin-bottom: 1rem;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 0.95rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+input[type="text"],
+input[type="email"],
+textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1.3px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
   box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #008080;
+  box-shadow: 0 0 6px rgba(0, 128, 128, 0.2);
 }
 
 .radio-group {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.2rem;
-}
-
-.radio-group label {
-  font-size: 0.95rem;
-}
-.privacy {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* space between checkbox and label */
-  margin: 20px 0;
-}
-
-.privacy input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-}
-
-.privacy label {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-
-.privacy-link {
-  color: inherit;
-  text-decoration: underline;
-  cursor: pointer;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-.privacy-link:hover {
-  color: teal;
+.radio-group label {
+  cursor: pointer;
+  user-select: none;
 }
 
-button {
-  background-color: teal;
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+  accent-color: #008080;
+}
+
+button.send-btn {
+  align-self: flex-start;
+  background-color: #008080;
   color: white;
-  padding: 0.7rem 1.8rem;
+  padding: 12px 26px;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 128, 128, 0.25);
+}
+
+button.send-btn:hover {
+  background-color: #f57c00;
+}
+
+.contact-info {
+  flex: 0 0 40%;   
+   min-width: 280px;    
+  max-width: none;     /* Minimum width */
+  padding: 2rem 1.5rem;    /* Inner spacing */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 54, 64, 0.15), /* subtle shading on top */
+    rgba(0, 54, 64, 0)     /* transparent at bottom */
+  ), 
+  #f9fafb;                 /* light background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  font-size: 1rem;
+  color: #222;
+  line-height: 1.5;
+  margin: 0;               /* no automatic centering */
+  text-align: left;        /* align text to left */
+  max-width: none;         /* remove max-width limit */
+  box-sizing: border-box;
+}
+
+.contact-info h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #004d4d;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-info iframe {
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  height: 220px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Subtitle */
+.subtitle {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1.1px;
+  font-weight: 600;
+}
+
+/* Heading */
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+  font-weight: 700;
+  color: #003640;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: #f57c00;
+}
+
+/* Radio group styling */
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.radio-group label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 6px;
+  accent-color: #008080;
+}
+
+/* Inputs and textarea */
+.input-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #008080;
+  box-shadow: 0 0 8px rgba(0,128,128,0.25);
+}
+
+/* Single input outside input-row */
+.contact-form > input[type="text"],
+.contact-form > textarea {
+  margin-bottom: 1.5rem;
+}
+
+/* Privacy checkbox */
+.privacy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 25px 0 30px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.privacy input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #008080;
+}
+
+.privacy label {
   cursor: pointer;
 }
-.toast-notification {
-  color: #f57c00; /* bright orange text */
-  background-color: #fde8d6; /* very light orange/pale peach background */
-  padding: 10px 15px;
-  margin-bottom: 15px;
-  border-radius: 4px;
+
+.privacy-link {
+  color: #f57c00;
+  text-decoration: underline;
+  cursor: pointer;
   font-weight: 600;
-  max-width: 350px;
-  box-shadow: 0 1px 3px rgba(245, 124, 0, 0.3); /* soft orange shadow */
 }
 
+.privacy-link:hover {
+  color: #c45c00;
+}
+
+/* Validation and toast messages */
+.toast-notification, .validation-message {
+  max-width: 360px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+}
+
+.toast-notification {
+  color: #f57c00;
+  background-color: #fff4e5;
+  border: 1px solid #fbbd69;
+}
 
 .validation-message {
-  color: #d32f2f;  /* nice red */
+  color: #d32f2f;
   background-color: #f9d6d5;
-  padding: 10px 15px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  font-weight: 600;
-  max-width: 350px;
-  box-shadow: 0 1px 3px rgba(211, 47, 47, 0.3);
+  border: 1px solid #e57373;
 }
 
-/* MODAL STYLES */
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-form, .contact-info {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+}
+
+/* Modal styling */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -151,7 +356,19 @@ button {
   cursor: pointer;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+.modal-box button {
+  background-color: #008080;      /* teal */
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-box button:hover {
+  background-color: #f57c00;      /* orange hover */
 }

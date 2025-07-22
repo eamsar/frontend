@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<div class="container">
 <h1>Search result</h1>
 
 <div class="search-box">
@@ -7,12 +8,14 @@
 </div>
 
 <p>{{ filteredItems.length }} results were found.</p>
+<p *ngIf="filteredItems.length === 0" class="no-results">No results found for "{{ query }}"</p>
 
 <div *ngFor="let item of filteredItems" class="result-card">
   <h2>{{ item.title }}</h2>
   <p>{{ item.content }}</p>
   <span class="category">{{ item.category }}</span>
   <a href="#">Read more →</a>
+</div>
 </div>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>

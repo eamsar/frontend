@@ -11,7 +11,11 @@ import { ContactService } from '../../shared/services/contact.service';
 export class ContactFormComponent {
   showPrivacyModal: boolean = false;
 validationMessage: string | null = null;
+  isContactVisible = false;
 
+  toggleContact() {
+    this.isContactVisible = !this.isContactVisible;
+  }
   openPrivacyModal() {
     this.showPrivacyModal = true;
   }

@@ -1,70 +1,81 @@
-<div class="contact-wrapper">
-  <div class="contact-container">
+<!-- Floating Contact Button -->
+<div class="contact-toggle-wrapper">
 
-    <!-- FORM SIDE -->
-    <div class="contact-form">
-      <p class="subtitle">CONTACT</p>
-      <h2>Any <span class="highlight">questions</span>? We are looking forward to your message!</h2>
+  <button class="contact-toggle-btn" (click)="toggleContact()">
+    📞 Contact Us
+  </button>
 
-      <label>Salutation *</label>
-      <div class="radio-group">
-        <label><input type="radio" name="salutation"> Mr.</label>
-        <label><input type="radio" name="salutation"> Ms. / Mrs.</label>
-        <label><input type="radio" name="salutation"> Others</label>
+  <div class="contact-wrapper" [class.visible]="isContactVisible">
+    <div class="contact-container">
+
+      <!-- FORM SIDE -->
+      <div class="contact-form">
+        <h2>Any <span class="highlight">questions</span>? We are looking forward to your message!</h2>
+
+        <label>Salutation *</label>
+        <div class="radio-group" style="justify-content: center;">
+          <label><input type="radio" name="salutation"> Mr.</label>
+          <label><input type="radio" name="salutation"> Ms. / Mrs.</label>
+          <label><input type="radio" name="salutation"> Others</label>
+        </div>
+
+        <div class="input-row">
+          <input type="text" placeholder="Company">
+          <input type="text" placeholder="Phone number">
+        </div>
+
+        <div class="input-row">
+          <input type="text" placeholder="First name *">
+          <input type="email" placeholder="E-mail *">
+        </div>
+
+        <input type="text" placeholder="Last name *">
+        <textarea placeholder="Your message *" rows="5"></textarea>
+
+        <div class="privacy">
+          <input type="checkbox" id="agree" />
+          <label for="agree">
+            I agree to the <span class="privacy-link" (click)="openPrivacyModal()">privacy policy</span>.
+          </label>
+        </div>
+
+        <div *ngIf="validationMessage" class="validation-message">
+          {{ validationMessage }}
+        </div>
+        <div *ngIf="toastMessage" class="toast-notification">
+          {{ toastMessage }}
+        </div>
+
+        <button class="send-btn" (click)="onSubmit()">Send</button>
       </div>
 
-      <div class="input-row">
-        <input type="text" placeholder="Company">
-        <input type="text" placeholder="Phone number">
+      <!-- CONTACT INFO SIDE -->
+      <div class="contact-info">
+        <div style="text-align: left;">
+          <h3><strong>AtlionTech Consulting</strong></h3>
+          <p><strong>📞</strong> 212 00 0000 00</p>
+          <p><strong>✉️</strong> ContactAtlionTech.com</p>
+          <p><strong>📍</strong> Casablanca, Morocco</p>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <iframe
+            src="https://maps.google.com/maps?q=Kénitra&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="300" style="border-radius:8px; border:none;" allowfullscreen loading="lazy">
+          </iframe>
+        </div>
       </div>
 
-      <div class="input-row">
-        <input type="text" placeholder="First name *">
-        <input type="email" placeholder="E-mail *">
-      </div>
-
-      <input type="text" placeholder="Last name *">
-      <textarea placeholder="Your message *" rows="5"></textarea>
-
-      <div class="privacy">
-        <input type="checkbox" id="agree" />
-        <label for="agree">
-          I agree to the <span class="privacy-link" (click)="openPrivacyModal()">privacy policy</span>.
-        </label>
-      </div>
-<div *ngIf="validationMessage" class="validation-message">
-  {{ validationMessage }}
+    </div>
+  </div>
 </div>
- <div *ngIf="toastMessage" class="toast-notification">
-  {{ toastMessage }}
-</div>
-      <button  (click)="onSubmit()">Send</button>
-     
-    </div>
 
-    <!-- MODAL -->
-    <div *ngIf="showPrivacyModal" class="modal-overlay">
-      <div class="modal-box">
-        <span class="close-button" (click)="closePrivacyModal()">&times;</span>
-        <h2>Privacy Policy</h2>
-        <p>Your personal data is safe with us. We only use it to respond to your inquiries.</p>
-        <button (click)="closePrivacyModal()">OK</button>
-      </div>
-    </div>
-
-
-    <!-- CONTACT INFO SIDE -->
-    <div class="contact-info">
-      <p class="subtitle">Contact</p>
-      <h3><strong>atliontech Consulting</strong></h3>
-      <p>📞 212 00 0000 00</p>
-      <p>✉️ ContactAtlionTech.com</p>
-      <p>📍 Casablanca Morocco</p>
-      <iframe
-        src="https://maps.google.com/maps?q=Kénitra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
-      </iframe>
-    </div>
-
+<!-- Privacy Modal -->
+<div *ngIf="showPrivacyModal" class="modal-overlay">
+  <div class="modal-box">
+    <span class="close-button" (click)="closePrivacyModal()">&times;</span>
+    <h2>Privacy Policy</h2>
+    <p>Your personal data is safe with us. We only use it to respond to your inquiries.</p>
+    <button (click)="closePrivacyModal()">OK</button>
   </div>
 </div>

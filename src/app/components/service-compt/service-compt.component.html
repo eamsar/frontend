@@ -1,39 +1,40 @@
 <section class="section-light">
   <div class="carousel-container">
-  <h4 class="subtitle">OUR SAP EXPERTISE</h4>
-  <h2 class="title">
-    Tailored <span class="highlight">Services</span> for Your Digital Transformation
-  </h2>
-</div>
+    <h4 class="subtitle">OUR SAP EXPERTISE</h4>
+    <h2 class="title">
+      Tailored <span class="highlight">Services</span> for Your Digital Transformation
+    </h2>
+  </div>
 
   <div class="carousel-wrapper">
     <button class="arrow" (click)="prev()">&#8592;</button>
 
     <div class="principle-cards-container">
-      <div
-        class="principle-card" 
-        *ngFor="let service of visibleServices; let i = index"
-        [ngClass]="{
-          'left-card': i === 0,
-          'active-card': i === 1,
-          'right-card': i === 2
-        }"
-      >
-        <div class="card-content">
-          <div class="card-text">
-            <h2>{{ service.title }}</h2>
-            <p class="description">{{ service.description }}</p>
-             <button class="read-more">
-
-                    Read more <span class="arrow1">→</span>
-                     </button>
-
-          </div>
-          <div class="card-image">
-            <img [src]="service.icon" alt="Service image" />
-          </div>
-        </div>
+<div
+  class="principle-card"
+  *ngFor="let service of visibleServices; let i = index"
+  [ngClass]="{
+    'left-card': i === 0,
+    'active-card': i === 1,
+    'right-card': i === 2
+  }"
+>
+  <ng-container *ngIf="service">
+    <div class="card-content">
+      <div class="card-text">
+        <h2>{{ service.name }}</h2>
+        <p class="description">{{ service.shortDescription }}</p>
+        <a class="read-more" [href]="service.link">
+          Read more <span class="arrow1">→</span>
+        </a>
       </div>
+      <div class="card-image">
+        <img [src]="service.imageUrl" alt="{{ service.name }}" />
+      </div>
+    </div>
+  </ng-container>
+</div>
+
     </div>
 
     <button class="arrow" (click)="next()">&#8594;</button>

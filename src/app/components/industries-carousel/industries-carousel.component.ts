@@ -1,7 +1,8 @@
 
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { IndustryServiceService,Industry } from '../../shared/services/industry-service.service';
+import { PLATFORM_ID, Inject } from '@angular/core';
 @Component({
   selector: 'app-industries-carousel',
   standalone: true,
@@ -10,7 +11,28 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./industries-carousel.component.css']
 })
 export class IndustriesCarouselComponent {
-  industries = [
+  industries:Industry[] =[]
+
+  activeIndex = 0;
+ constructor(private ind: IndustryServiceService, @Inject(PLATFORM_ID) private platformId: Object){}
+  ngOnInit(): void {
+    this.ind.getIndustries().subscribe(data=>{
+      this.industries = data;
+    });
+
+  };
+  activeIndustry = this.industries[0];
+ fadeTrigger = true;
+setActiveIndustry(index: number) {
+  this.activeIndustry = this.industries[index];
+
+  // reset fade effect
+  this.fadeTrigger = false;
+  setTimeout(() => {
+    this.fadeTrigger = true;
+  }, 10); // small delay to retrigger fade
+}}
+/* [
     {
       name: 'Insurance',
       imageUrl: 'assets/test.png',
@@ -42,20 +64,4 @@ export class IndustriesCarouselComponent {
       icon:  'assets/retail.png'
     }
   ];
-
-
-  activeIndex = 0;
-
-  activeIndustry = this.industries[0];
- fadeTrigger = true;
-
-
-setActiveIndustry(index: number) {
-  this.activeIndustry = this.industries[index];
-
-  // reset fade effect
-  this.fadeTrigger = false;
-  setTimeout(() => {
-    this.fadeTrigger = true;
-  }, 10); // small delay to retrigger fade
-}}
+*/

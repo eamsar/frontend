@@ -31,7 +31,7 @@ closeSearch() {
   onSearch() {
       console.log('Searching for:', this.searchTerm);
   if (this.searchTerm.trim()) {
-   this.router.navigate(['/api/search'], { queryParams: { keyword: this.searchTerm } });
+   this.router.navigate(['/search'], { queryParams: { keyword: this.searchTerm } });
 
  
   }

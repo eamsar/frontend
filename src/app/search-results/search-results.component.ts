@@ -41,7 +41,7 @@ export class SearchResultsComponent implements OnInit {
       }
     });
   }
-
+  activeTab: 'industries' | 'jobs' | 'services' = 'industries';
   filterResults() {
     if (!this.query.trim()) return;
 
@@ -50,6 +50,9 @@ export class SearchResultsComponent implements OnInit {
       next: (results) => {
         this.filteredResults = results;
         this.loading = false;
+
+        // Reset tab to industries whenever new results load
+        this.activeTab = 'industries';
       },
       error: (err) => {
         console.error('Search error:', err);
@@ -60,19 +63,18 @@ export class SearchResultsComponent implements OnInit {
   }
 
   hasAnyResults(): boolean {
-  return (
-    (this.filteredResults?.industries?.length || 0) +
-    (this.filteredResults?.jobs?.length || 0) +
-    (this.filteredResults?.services?.length || 0) > 0
-  );
-}
+    return (
+      (this.filteredResults?.industries?.length || 0) +
+      (this.filteredResults?.jobs?.length || 0) +
+      (this.filteredResults?.services?.length || 0) > 0
+    );
+  }
 
-totalResults(): number {
-  return (
-    (this.filteredResults?.industries?.length || 0) +
-    (this.filteredResults?.jobs?.length || 0) +
-    (this.filteredResults?.services?.length || 0)
-  );
-}
-
+  totalResults(): number {
+    return (
+      (this.filteredResults?.industries?.length || 0) +
+      (this.filteredResults?.jobs?.length || 0) +
+      (this.filteredResults?.services?.length || 0)
+    );
+  }
 }

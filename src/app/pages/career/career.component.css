@@ -10,7 +10,8 @@ body {
   text-align: center;
   margin-bottom: 60px;
   padding: 60px 20px;
-  background: linear-gradient(to right, #003640, #005c66);
+  /* background: linear-gradient(to right, #003640, #005c66); */
+  background-image: url('/assets/join.jpg');
   color: white;
 }
 

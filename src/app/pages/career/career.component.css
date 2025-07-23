@@ -226,23 +226,25 @@ body {
   right: -20px;
 }
 
-/* Inline scroll */
 .testimonials-grid {
   display: flex;
-  flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 50px;
-   margin: 0 auto;
-  padding: 0 50px;
+  padding: 10px 0;
+  width: calc(320px * 3 + 50px * 1); /* 3 cards + 2 gaps */
+  margin: 0 auto;
+  scroll-snap-type: x mandatory;
 }
+
 
 /* Clean no card layout */
 .team-quote-wrapper.no-card {
-  flex: 0 0 auto;
   text-align: center;
   color: white;
   max-width: 300px;
+    flex: 0 0 320px; /* Width of each card */
+  scroll-snap-align: start; /* Align on scroll stop */
 }
 
 .team-member-img {

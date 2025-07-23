@@ -1,21 +1,55 @@
 <app-navbar></app-navbar>
+
 <div class="container">
-<h1>Search result</h1>
+  <h1>Search Results</h1>
 
-<div class="search-box">
-  <input [(ngModel)]="query" placeholder="Search..." />
-  <button (click)="filterResults()">Search</button>
+  <div class="search-box">
+    <input [(ngModel)]="query" placeholder="Search..." />
+    <button (click)="filterResults()" [disabled]="loading || !query.trim()">Search</button>
+  </div>
+
+  <p *ngIf="loading">Searching...</p>
+
+  <ng-container *ngIf="!loading && filteredResults">
+    <p *ngIf="hasAnyResults()"> 
+      {{ totalResults() }} results were found.
+    </p>
+    <p *ngIf="!hasAnyResults() && query.trim()" class="no-results">
+      No results found for "{{ query }}"
+    </p>
+
+    <!-- Industries -->
+    <div *ngIf="filteredResults.industries.length">
+      <h2>Industries</h2>
+      <div *ngFor="let industry of filteredResults.industries" class="result-card">
+        <h3>{{ industry.name }}</h3>
+        <p>{{ industry.description }}</p>
+        <a [href]="industry.link || '#'">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Jobs -->
+    <div *ngIf="filteredResults.jobs.length">
+      <h2>Jobs</h2>
+      <div *ngFor="let job of filteredResults.jobs" class="result-card">
+        <h3>{{ job.title }}</h3>
+        <p>{{ job.description }}</p>
+        <span>{{ job.location }} - {{ job.type }}</span>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div *ngIf="filteredResults.services.length">
+      <h2>Services</h2>
+      <div *ngFor="let service of filteredResults.services" class="result-card">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.description }}</p>
+        <a [href]="service.Link || '#'">Read more →</a>
+      </div>
+    </div>
+  </ng-container>
 </div>
 
-<p>{{ filteredItems.length }} results were found.</p>
-<p *ngIf="filteredItems.length === 0" class="no-results">No results found for "{{ query }}"</p>
-
-<div *ngFor="let item of filteredItems" class="result-card">
-  <h2>{{ item.title }}</h2>
-  <p>{{ item.content }}</p>
-  <span class="category">{{ item.category }}</span>
-  <a href="#">Read more →</a>
-</div>
-</div>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>

@@ -4,6 +4,7 @@ body {
 
 .container {
   max-width: 900px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -82,7 +83,7 @@ p {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 20px;
-  margin: 0 auto 20px;
+  margin: 0 auto 16px;
   max-width: 800px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -107,20 +108,27 @@ p {
   color: #003640;
 }
 
+.result-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #005c66;
+}
+
 .result-card p {
   font-size: 1rem;
-  color: #333;
+  color: #555;
   margin-bottom: 10px;
 }
 
 .result-card .category {
   background-color: #e0f7f7;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 15px;
   font-weight: 600;
   color: #008084;
   margin-bottom: 10px;
   display: inline-block;
+  font-size: 0.85rem;
 }
 
 .result-card a {
@@ -134,4 +142,22 @@ p {
 
 .result-card a:hover {
   color: #d95c00;
+}
+
+/* Section headings for categories */
+.container > div > h2 {
+  font-size: 1.8rem;
+  color: #003640;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #008084;
+  padding-bottom: 6px;
+  font-weight: 700;
+}
+
+/* Optional: Add a subtle separator between categories */
+.container > div:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
 }

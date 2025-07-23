@@ -3,19 +3,10 @@
   <p>Send us your resume, and we'll keep in touch!</p>
 
   <form (ngSubmit)="onSubmit()">
-    <!-- Full Name -->
     <input type="text" name="fullName" [(ngModel)]="fullName" placeholder="Your Full Name" required />
-
-    <!-- Email -->
     <input type="email" name="email" [(ngModel)]="email" placeholder="Your Email" required />
-
-    <!-- CV File -->
     <input type="file" name="cv" (change)="onFileSelected($event)" required />
-
-    <!-- About -->
     <textarea name="about" [(ngModel)]="about" placeholder="Tell us about yourself..."></textarea>
-
-    <!-- Submit -->
-    <button type="submit">Send Resume</button>
+    <button type="submit">Send </button>
   </form>
 </section>

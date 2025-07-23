@@ -5,82 +5,104 @@
 body {
   overflow-x: hidden;
 }
-
 .career-header {
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 60px 20px;
-  /* background: linear-gradient(to right, #003640, #005c66); */
-  background-image: url('/assets/join.jpg');
+  padding: 20px 0; /* minimal vertical padding, no margin */
   color: white;
+  overflow: hidden;
+    /* background: linear-gradient(to right, #003640, #005c66); */
 }
 
-.career-header h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #f58220;
-}
-
-.career-header p {
-  font-size: 18px;
-  max-width: 700px;
+.career-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
+  gap: 20px;
 }
-/* Entrance animation (runs once) */
-@keyframes slideFadeIn {
-  from {
+
+.career-text {
+  flex: 1 1 50%;
+  min-width: 300px;
+  color: white;
+  animation: slideFadeInLeft 1s ease forwards;
+}
+
+.career-text h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  color: #f58220; /* orange */
+  animation: pulse 4s ease-in-out infinite 1s;
+}
+
+.career-text p {
+  font-size: 1.2rem;
+  margin: 0;
+  animation: softFade 6s ease-in-out infinite 1.3s;
+  color:#003640;
+}
+
+.career-image {
+  flex: 1 1 50%;
+  min-width: 300px;
+  text-align: right;
+  animation: fadeIn 1.2s ease forwards;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end; /* keep image right-aligned */
+}
+
+.career-image img {
+  max-width: 100%;
+  max-height: 400px;  /* limit height */
+  width: auto;        /* let width adjust automatically */
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: block;     /* remove inline gap */
+}
+
+
+@keyframes slideFadeInLeft {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(-40px);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-/* Continuous gentle pulse */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.03); }
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
 }
 
-/* Continuous soft fade */
 @keyframes softFade {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.85; }
-}
-
-/* Apply entrance animation ONCE */
-.career-header h1,
-.career-header p {
-  opacity: 0;
-  animation: slideFadeIn 0.8s ease forwards;
-}
-
-.career-header h1 {
-  animation-delay: 0.2s;
-}
-
-.career-header p {
-  animation-delay: 0.5s;
-}
-
-/* After entrance completes, switch to continuous animation */
-
-/* Use animation-fill-mode: forwards so final state persists */
-.career-header h1 {
-  animation-fill-mode: forwards;
-  animation-play-state: running;
-  /* Delay switching to pulse */
-  animation: slideFadeIn 0.8s ease forwards 0.2s, 
-             pulse 4s ease-in-out infinite 1.0s;
-}
-
-.career-header p {
-  animation-fill-mode: forwards;
-  animation-play-state: running;
-  animation: slideFadeIn 0.8s ease forwards 0.5s,
-             softFade 6s ease-in-out infinite 1.3s;
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
 }
 
 

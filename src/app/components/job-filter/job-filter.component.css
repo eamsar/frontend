@@ -1,53 +1,81 @@
+/* Container for filter section */
 .job-filter {
-  padding: 40px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 60px auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Filter form layout */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  margin-bottom: 40px; /* ✅ Add space below filter section */
+}
+
+/* Filter title */
+.job-filter h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #003640;
   text-align: center;
 }
 
-.job-filter h2 {
-  font-size: 26px;
-  color: #003640;
-  margin-bottom: 30px;
-  font-weight: 600;
-}
-
-.filters {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
+/* Input and select styles */
 .filters input,
 .filters select {
-  padding: 12px 14px;
+  padding: 10px 16px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
   min-width: 200px;
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  outline-color: #008084;
+  transition: border-color 0.2s ease;
 }
 
+/* Select dropdown arrow style */
+.filters select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23008480' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 12px center;
+  background-size: 12px;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Input/select focus style */
+.filters input:focus,
+.filters select:focus {
+  border-color: #008480;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 132, 128, 0.2);
+}
+
+/* Filter button */
 .filters button {
-  padding: 12px 20px;
+  padding: 14px 24px;
   background-color: #008480;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 600;
+  font-size: 15px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .filters button:hover {
   background-color: #f57c00;
+  transform: scale(1.05);
 }
 
+/* Job cards container */
 .job-cards {
   display: flex;
   flex-wrap: wrap;
@@ -55,6 +83,7 @@
   justify-content: center;
 }
 
+/* Individual job card */
 .job-card {
   flex: 1 1 300px;
   background: #ffffff;
@@ -95,6 +124,7 @@
   line-height: 1.6;
 }
 
+/* Apply button inside card */
 .apply-button {
   padding: 10px 22px;
   background-color: #008480;
@@ -110,4 +140,23 @@
 
 .apply-button:hover {
   background-color: #f57c00;
+}
+
+/* Scrollbar customization */
+select::-webkit-scrollbar {
+  width: 6px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+select::-webkit-scrollbar-thumb {
+  background-color: #008084;
+  border-radius: 10px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #008084 #f0f0f0;
 }

@@ -29,33 +29,63 @@
 
   <section class="divider"></section>
 <section class="team-quotes">
-  <h2>What Our Team Says</h2>
+  <div class="inner-container">
+    <h2>What Our Team Says</h2>
 
-  <div class="testimonials-grid">
-    <div class="team-quote-wrapper">
-      <img class="team-member-img" src="assets/asmae.jpg" alt="Asmae EL." />
-      <blockquote>
-        “At AtlionTech, I found not just a job, but a career path and a supportive family. Every day is a learning opportunity.”
-        <span>— Asmae EL., Technical Consultant</span>
-      </blockquote>
-    </div>
+    <div class="scroll-wrapper">
+     <button class="scroll-btn left" (click)="scrollTestimonials('left')">&#10094;</button>
 
-    <div class="team-quote-wrapper">
-      <img class="team-member-img" src="assets/chaimae.jpg" alt="Chaimae Gh." />
-      <blockquote>
-       “The supportive environment and collaborative spirit at AtlionTech make every challenge an opportunity to grow.”
-     <span>— Chaimae Gh., Technical Consultant</span>
-      </blockquote>
-    </div>
-    <div class="team-quote-wrapper">
-      <img class="team-member-img" src="assets/sanae.jpeg" alt="Sanae Az." />
-      <blockquote>
-         “Working at AtlionTech has truly empowered me to develop my skills and be part of innovative projects that make a difference.”
-   <span>— Sanae Az., Technical Consultant</span>
-      </blockquote>
-    </div>
+      <div class="testimonials-grid no-card"  #testimonialContainer>
+        <div class="team-quote-wrapper no-card">
+          <img class="team-member-img" src="assets/asmae.jpg" alt="Asmae EL." />
+          <blockquote>
+            “At AtlionTech, I found not just a job, but a career path and a supportive family. Every day is a learning opportunity.”
+            <span>— Asmae EL., Technical Consultant</span>
+          </blockquote>
+        </div>
 
-    <!-- Add more testimonials as needed -->
+        <div class="team-quote-wrapper no-card">
+          <img class="team-member-img" src="assets/chaimae.jpg" alt="Chaimae Gh." />
+          <blockquote>
+            “The supportive environment and collaborative spirit at AtlionTech make every challenge an opportunity to grow.”
+            <span>— Chaimae Gh., Technical Consultant</span>
+          </blockquote>
+        </div>
+
+        <div class="team-quote-wrapper no-card">
+          <img class="team-member-img" src="assets/sanae.jpeg" alt="Sanae Az." />
+          <blockquote>
+            “Working at AtlionTech has truly empowered me to develop my skills and be part of innovative projects that make a difference.”
+            <span>— Sanae Az., Technical Consultant</span>
+          </blockquote>
+        </div>
+         <div class="team-quote-wrapper no-card">
+          <img class="team-member-img" src="assets/asmae.jpg" alt="Asmae EL." />
+          <blockquote>
+            “At AtlionTech, I found not just a job, but a career path and a supportive family. Every day is a learning opportunity.”
+            <span>— Asmae EL., Technical Consultant</span>
+          </blockquote>
+        </div>
+
+        <div class="team-quote-wrapper no-card">
+          <img class="team-member-img" src="assets/chaimae.jpg" alt="Chaimae Gh." />
+          <blockquote>
+            “The supportive environment and collaborative spirit at AtlionTech make every challenge an opportunity to grow.”
+            <span>— Chaimae Gh., Technical Consultant</span>
+          </blockquote>
+        </div>
+
+        <div class="team-quote-wrapper no-card">
+          <img class="team-member-img" src="assets/sanae.jpeg" alt="Sanae Az." />
+          <blockquote>
+            “Working at AtlionTech has truly empowered me to develop my skills and be part of innovative projects that make a difference.”
+            <span>— Sanae Az., Technical Consultant</span>
+          </blockquote>
+        </div>
+      </div>
+
+     <button class="scroll-btn right" (click)="scrollTestimonials('right')">&#10095;</button>
+    </div>
   </div>
 </section>
 

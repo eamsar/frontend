@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { JobFilterComponent } from "../../components/job-filter/job-filter.component";
@@ -12,5 +12,16 @@ import { ContactFormComponent } from "../../components/contact-form/contact-form
   styleUrl: './career.component.css'
 })
 export class CareerComponent {
+@ViewChild('testimonialContainer', { static: false }) testimonialContainer!: ElementRef;
 
+  scrollTestimonials(direction: 'left' | 'right') {
+    const container = this.testimonialContainer.nativeElement;
+    const scrollAmount = 350;
+
+    if (direction === 'left') {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
 }

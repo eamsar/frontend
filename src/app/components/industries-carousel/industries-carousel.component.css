@@ -87,6 +87,17 @@ body {
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
   pointer-events: none;
 }
+.title-label::after {
+  content: " →"; /* You can also use other arrows like "›", "»", or a font icon */
+  font-size: 20px;
+  margin-left: 8px;
+  transition: opacity 0.3s ease;
+}
+.industry-panel.active .title-label {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
 
 /* Optional: white divider between panels */
 .industry-panel {

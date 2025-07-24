@@ -1,11 +1,27 @@
 <div class="hero">
-  <img class="hero-image" src="assets/homeimg.png" alt="Background image" />
-  
+  <div
+    class="slider-wrapper"
+  >
+    <div
+      class="slider-track"
+      [style.width.%]="25 * imagesWithClone.length"
+      [style.transform]="getTransform()"
+      [style.transition]="getTransition()"
+    >
+      <img
+        *ngFor="let image of imagesWithClone"
+        [src]="image"
+        class="slide-image"
+        alt="Hero slide"
+      />
+    </div>
+  </div>
+
   <div class="overlay">
     <div class="hero-text">
-      <h1>INNOVATE<span style="color: #f17b00;">.</span><br></h1>
-      <h1>IMPLEMENT<span style="color: #f17b00;">.</span><br></h1>
-      <h1>ELEVATE<span style="color: #f17b00;">.</span><br></h1>
+      <h1>INNOVATE<span style="color: #f17b00;">.</span><br /></h1>
+      <h1>IMPLEMENT<span style="color: #f17b00;">.</span><br /></h1>
+      <h1>ELEVATE<span style="color: #f17b00;">.</span><br /></h1>
     </div>
   </div>
 </div>

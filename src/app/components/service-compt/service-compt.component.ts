@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {interval} from 'rxjs';
 import { PLATFORM_ID, Inject } from '@angular/core';
 import { ServicesService,Service } from '../../shared/services/services.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'app-service-compt',
   templateUrl: './service-compt.component.html',
@@ -15,18 +16,32 @@ export class ServiceComptComponent {
   currentIndex = 0;
   counter = 0;
   private intervalId!: number;
- constructor(private Serv: ServicesService,@Inject(PLATFORM_ID) private platformId: Object){}
-  ngOnInit(): void {
-    this.Serv.getServices().subscribe(data=>{
-      this.services = data;
-    });
-    if (typeof window !== 'undefined') {
-    // Démarre l'auto-slide toutes les 2 secondes (2000 ms)
-      this.intervalId = window.setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.services.length;
-    }, 5000);
+ constructor(private Serv: ServicesService,@Inject(PLATFORM_ID) private platformId: Object,private sanitizer: DomSanitizer ){}
+ngOnInit(): void {
+  this.Serv.getServices().subscribe(data => {
+    this.services = data;
 
-  }}
+    // ✅ Parse sections pour chaque service reçu :
+    this.services.forEach(service => {
+      if (typeof service.sections === 'string') {
+        try {
+          service.sections = JSON.parse(service.sections);
+        } catch (error) {
+          console.error('Invalid JSON in sections:', error);
+          service.sections = [];
+        }
+      }
+    });
+
+    // ✅ Démarre l'auto-slide une fois les services chargés :
+    if (typeof window !== 'undefined') {
+      this.intervalId = window.setInterval(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.services.length;
+      }, 5000);
+    }
+  });
+}
+
 
   ngOnDestroy(): void {
     // Nettoie le timer pour éviter fuite mémoire

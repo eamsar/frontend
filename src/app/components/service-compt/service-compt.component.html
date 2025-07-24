@@ -1,50 +1,44 @@
-<section class="section-light">
-  <div class="carousel-container">
-    <h4 class="subtitle">OUR SAP EXPERTISE</h4>
-    <h2 class="title">
-      Tailored <span class="highlight">Services</span> for Your Digital Transformation
-    </h2>
-  </div>
+<section class="services-showcase">
+  <div class="services-grid">
 
-  <div class="carousel-wrapper">
-    <button class="arrow" (click)="prev()">&#8592;</button>
-
-    <div class="principle-cards-container">
-<div
-  class="principle-card"
-  *ngFor="let service of visibleServices; let i = index"
-  [ngClass]="{
-    'left-card': i === 0,
-    'active-card': i === 1,
-    'right-card': i === 2
-  }"
->
-  <ng-container *ngIf="service">
-    <div class="card-content">
-      <div class="card-text">
-        <h2>{{ service.name }}</h2>
-        <p class="description">{{ service.shortDescription }}</p>
-        <a class="read-more" [href]="service.link">
-          Read more <span class="arrow1">→</span>
-        </a>
-      </div>
-      <div class="card-image">
-        <img [src]="service.imageUrl" alt="{{ service.name }}" />
-      </div>
-    </div>
-  </ng-container>
-</div>
-
+    <!-- Colonne GAUCHE : Titre + Intro + Liste -->
+    <div class="services-left">
+      <h1>OUR SAP EXPERTISE</h1>
+      <p>
+        Your Partner for Comprehensive SAP Services — From Strategy and Implementation to Continuous Innovation and Support.
+        Driving Digital Transformation Through Proven SAP Solutions and Strategic Consulting for Future-Ready Enterprises
+      </p>
+      <ul>
+        <li *ngFor="let service of services; let i = index"
+            [class.active]="i === currentIndex"
+            (click)="goTo(i)">
+          {{ service.name }}
+        </li>
+      </ul>
     </div>
 
-    <button class="arrow" (click)="next()">&#8594;</button>
-  </div>
+    <!-- Colonne CENTRALE : Carte principale -->
+    <div class="services-main" *ngIf="services.length">
+      <div class="main-card">
+        <div class="main-card-content">
+          <h2>{{ services[currentIndex].name }}</h2>
+          <p [innerHTML]="services[currentIndex].description"></p>
+          <p [innerHTML]=" services[(currentIndex )].metaDescription"></p>
+          <a href="{{services[currentIndex].link}}">Explore more ↗</a>
+        </div>
+        <div class="main-card-image">
+          <img [src]="services[currentIndex].imageUrl" alt="{{ services[currentIndex].name }}">
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Colonne DROITE : Vignettes (ex. témoignages ou cas client) -->
+    <div class="services-side" *ngIf="services[currentIndex]?.sections">
+      <div class="side-card" *ngFor="let sec of services[currentIndex].sections" >
+        <h3>{{ sec.title }}</h3>
+    <p>{{ sec.content }}</p>
+      </div>
+    </div>
 
-  <div class="dots">
-    <span
-      *ngFor="let dot of services; let i = index"
-      [class.active]="i === currentIndex"
-      (click)="goTo(i)"
-    ></span>
   </div>
 </section>

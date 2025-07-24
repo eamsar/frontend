@@ -237,3 +237,53 @@ width: 15cm;
 .contact-toggle i {
   pointer-events: none; /* pour éviter de bloquer le clic */
 }
+@media (max-width: 768px) {
+  .top-banner {
+    height: 200px; /* bannière moins haute sur mobile */
+  }
+
+  .top-banner img {
+    height: 200px; /* adapte la hauteur de l'image */
+    object-fit: cover; /* pour bien cadrer */
+  }
+
+  .services-section {
+    flex-direction: column;
+    padding: 2rem 1rem; /* moins de padding horizontal sur mobile */
+  }
+
+  .services-menu {
+    width:auto ;
+    margin-bottom: 2rem;
+  }
+
+  .services-content {
+    max-width: 100%;
+  }
+
+  .content-flex {
+    flex-direction: column;
+  }
+
+  .text-block,
+  .schema {
+    width: 100%;
+  }
+
+  .schema {
+    margin-top: 1rem;
+  }
+
+  .services-content h2 {
+    font-size: 28px; /* titre moins grand */
+  }
+
+  .services-content p,
+  .services-content ul {
+    font-size: 14px; /* texte plus petit pour les petits écrans */
+  }
+  .services-menu ul {
+  overflow-x: auto;
+}
+
+}

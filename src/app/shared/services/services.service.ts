@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 export interface Service {
   id: number;
   name: string;
-  description: Text;
+  description: string;
   imageUrl: string;
   backimageUrl: string;
   link:string;

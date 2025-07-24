@@ -1,224 +1,63 @@
-.contact-toggle-wrapper {
-  max-width: 100%;         /* Full width of the viewport */
-  margin: 1rem 0;          /* Top and bottom margin */
-padding: 0 1.5rem;           /* No inner space left or right */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+/* Container for contact form and info side by side */
+.contact-content-box {
+  max-width: 100%;      /* Allow full width */
+  margin: 0;            /* Remove horizontal centering */
+  padding: 2rem 1.5rem; /* Keep vertical & horizontal padding or reduce if you want */
   box-sizing: border-box;
-  position: relative;
-  min-height: 20px;
-  
 }
 
-/* Style the toggle button */
-.contact-toggle-btn {
-  background-color: #008080;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 14px 24px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 6px 14px rgba(0,128,128,0.35);
-  transition: background-color 0.3s ease;
-}
-.contact-toggle-btn:hover {
-  background-color: #f57c00;
+/* Grid layout: form left, info right */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
 }
 
-/* Contact wrapper hidden by default */
-.contact-wrapper {
-  background-color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  border-radius: 12px;
-  padding: 0.5rem 20px;
-  box-sizing: border-box;
-
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+/* Responsive: single column on small screens */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Show contact form */
-.contact-wrapper.visible {
-  max-height: 2000px; /* large enough to fit content */
-  opacity: 1;
-}
-
-.contact-container {
-  display: flex;
-  flex-wrap: nowrap; /* prevent wrapping */
-  gap: 3rem;
-  justify-content: space-between;
-}
-
+/* Contact Form Styles */
 .contact-form {
-  flex: 0 0 60%;
-  min-width: 320px;
-  padding: 1rem;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .contact-form h2 {
   font-size: 1.6rem;
   color: #003640;
   font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
 
 label {
   font-weight: 600;
   color: #444;
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
-}
-
-.input-row {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1.3px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  box-sizing: border-box;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  outline: none;
-  border-color: #008080;
-  box-shadow: 0 0 6px rgba(0, 128, 128, 0.2);
-}
-
-.radio-group {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.2rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.radio-group label {
-  cursor: pointer;
-  user-select: none;
-}
-
-.radio-group input[type="radio"] {
-  margin-right: 5px;
-  accent-color: #008080;
-}
-
-button.send-btn {
-  align-self: flex-start;
-  background-color: #008080;
-  color: white;
-  padding: 12px 26px;
-  border: none;
-  border-radius: 40px;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 5px 10px rgba(0, 128, 128, 0.25);
-}
-
-button.send-btn:hover {
-  background-color: #f57c00;
-}
-
-.contact-info {
-  flex: 0 0 40%;   
-   min-width: 280px;    
-  max-width: none;     /* Minimum width */
-  padding: 2rem 1.5rem;    /* Inner spacing */
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 54, 64, 0.15), /* subtle shading on top */
-    rgba(0, 54, 64, 0)     /* transparent at bottom */
-  ), 
-  #f9fafb;                 /* light background */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-  font-size: 1rem;
-  color: #222;
-  line-height: 1.5;
-  margin: 0;               /* no automatic centering */
-  text-align: left;        /* align text to left */
-  max-width: none;         /* remove max-width limit */
-  box-sizing: border-box;
-}
-
-.contact-info h3 {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #004d4d;
-  margin-bottom: 1rem;
-}
-
-.contact-info p {
-  margin: 0.5rem 0;
-  font-weight: 500;
-  color: #333;
-}
-
-.contact-info iframe {
-  margin-top: 1.5rem;
-  border-radius: 8px;
-  border: none;
-  width: 100%;
-  height: 220px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  box-sizing: border-box;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
   display: block;
 }
 
-/* Subtitle */
-.subtitle {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 0.8rem;
-  letter-spacing: 1.1px;
-  font-weight: 600;
-}
-
-/* Heading */
-.contact-form h2 {
-  font-size: 2rem;
-  margin-bottom: 1.8rem;
-  font-weight: 700;
-  color: #003640;
-  line-height: 1.3;
-}
-
-.highlight {
-  color: #f57c00;
-}
-
-/* Radio group styling */
 .radio-group {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 1.8rem;
+  gap: 1.8rem;
+  margin-bottom: 1.5rem;
   font-size: 1rem;
   font-weight: 500;
+  flex-wrap: wrap;
 }
 
 .radio-group label {
@@ -231,11 +70,16 @@ button.send-btn:hover {
   accent-color: #008080;
 }
 
-/* Inputs and textarea */
 .input-row {
   display: flex;
   gap: 1.2rem;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .input-row {
+    flex-direction: column;
+  }
 }
 
 input, textarea {
@@ -247,6 +91,7 @@ input, textarea {
   box-sizing: border-box;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   font-family: inherit;
+  resize: vertical;
 }
 
 input:focus, textarea:focus {
@@ -255,10 +100,65 @@ input:focus, textarea:focus {
   box-shadow: 0 0 8px rgba(0,128,128,0.25);
 }
 
-/* Single input outside input-row */
-.contact-form > input[type="text"],
-.contact-form > textarea {
-  margin-bottom: 1.5rem;
+button.send-btn {
+  background-color: #008080;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 128, 128, 0.3);
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+button.send-btn:hover {
+  background-color: #f57c00;
+}
+
+/* Contact Info Side */
+.contact-side-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-info-compact {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact-info-compact p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Icons color for info */
+.contact-info-compact i {
+  color: #008080;
+  font-size: 1.1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Map Styling */
+.contact-map {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: block;
 }
 
 /* Privacy checkbox */
@@ -266,34 +166,31 @@ input:focus, textarea:focus {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 25px 0 30px;
+  margin: 1.5rem 0 1rem;
   font-size: 0.9rem;
   color: #444;
+  user-select: none;
 }
-
 .privacy input[type="checkbox"] {
   width: 18px;
   height: 18px;
   cursor: pointer;
   accent-color: #008080;
 }
-
 .privacy label {
   cursor: pointer;
 }
-
 .privacy-link {
   color: #f57c00;
   text-decoration: underline;
   cursor: pointer;
   font-weight: 600;
 }
-
 .privacy-link:hover {
   color: #c45c00;
 }
 
-/* Validation and toast messages */
+/* Toast and validation messages */
 .toast-notification, .validation-message {
   max-width: 360px;
   padding: 14px 18px;
@@ -303,31 +200,65 @@ input:focus, textarea:focus {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-size: 0.95rem;
 }
-
 .toast-notification {
   color: #f57c00;
   background-color: #fff4e5;
   border: 1px solid #fbbd69;
 }
-
 .validation-message {
   color: #d32f2f;
   background-color: #f9d6d5;
   border: 1px solid #e57373;
 }
 
-/* Responsive tweaks */
-@media (max-width: 900px) {
-  .contact-container {
-    flex-direction: column;
-  }
-  .contact-form, .contact-info {
-    flex: 1 1 100%;
-    min-width: auto;
-  }
+/* Contact Toggle Button */
+.contact-toggle-wrapper {
+  max-width: 100%;
+  margin: 1rem 0;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 20px;
 }
 
-/* Modal styling */
+.contact-toggle-btn {
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,128,128,0.35);
+  transition: background-color 0.3s ease;
+}
+
+.contact-toggle-btn:hover {
+  background-color: #f57c00;
+}
+
+/* Contact wrapper hidden by default */
+.contact-wrapper {
+  background-color: white;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 0;
+  box-sizing: border-box;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.contact-wrapper.visible {
+  max-height: 3000px; /* enough for content */
+  opacity: 1;
+  padding: 2rem 1.5rem;
+}
+
+/* Modal Styling */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -342,34 +273,43 @@ input:focus, textarea:focus {
 
 .modal-box {
   background: white;
-  padding: 20px;
+  padding: 25px 30px;
   width: 90%;
   max-width: 500px;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
   animation: fadeIn 0.3s ease-in-out;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .close-button {
   position: absolute;
-  top: 10px; right: 15px;
-  font-size: 22px;
+  top: 12px; right: 18px;
+  font-size: 26px;
   cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #f57c00;
 }
 
 .modal-box button {
-  background-color: #008080;      /* teal */
+  background-color: #008080;
   color: white;
   border: none;
-  padding: 10px 24px;
+  padding: 12px 28px;
   border-radius: 25px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 128, 128, 0.3);
 }
 
 .modal-box button:hover {
-  background-color: #f57c00;      /* orange hover */
+  background-color: #f57c00;
 }

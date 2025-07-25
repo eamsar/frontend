@@ -1,52 +1,43 @@
 <!-- ✅ ✅ ✅ TOP-BAR + NAVBAR ✅ ✅ ✅ -->
 <!-- Add this in <head> -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-
-
+<div class="header">
   <!-- 🔹 TOP-BAR -->
-   <div class="header">
   <div class="top-bar">
-     <div class="top-left">
-    <!-- Left side content (if any) or empty -->
-  </div>
-   <div class="top-right">
-    <!-- Left side content (if any) or empty -->
-  
-    <a href="/career">Career  </a>
-    <button (click)="toggleSearch()" class="search-icon"><i class="fa-solid fa-search"></i> Search</button>
-   
-    <a href="#"><i class="fa-solid fa-globe"></i> En</a>
-    
-  </div> </div>
-
-
-  
- <div *ngIf="showSearch" class="input"   (mouseleave)="closeSearch()">
-      <input 
-        [(ngModel)]="searchTerm"
-        type="text"
-        placeholder="Search..."
-        class="search-input"
-      [class.show-input]="showSearch"/>
-      <button class="search-submit" (click)="onSearch()">Search</button>
-      
-    
-
+    <div class="top-left"></div>
+    <div class="top-right">
+      <a href="/career">Career</a>
+      <button (click)="toggleSearch()" class="search-icon">
+        <i class="fa-solid fa-search"></i> Search
+      </button>
+      <a href="#"><i class="fa-solid fa-globe"></i> En</a>
     </div>
-  <!-- 🔹 NAVBAR PRINCIPALE -->
+  </div>
+
+  <!-- 🔹 SEARCH BAR -->
+  <div *ngIf="showSearch" class="input" (mouseleave)="closeSearch()">
+    <input
+      [(ngModel)]="searchTerm"
+      type="text"
+      placeholder="Search..."
+      class="search-input"
+      [class.show-input]="showSearch"
+    />
+    <button class="search-submit" (click)="onSearch()">Search</button>
+  </div>
+
+  <!-- 🔹 NAVBAR -->
   <nav>
     <a href="/" class="logo">
-      <img src="assets/logo.png"  alt="Logo" />
+      <img src="assets/logo.png" alt="Logo" />
     </a>
 
     <ul class="nav-links">
-      <li>
-        <a >Services</a>
-        <div class="mega-menu" *ngIf="!isScrolled">
+      <!-- Services -->
+      <li class="has-dropdown" (mouseenter)="hoverMenu = 'services'" (mouseleave)="hoverMenu = null">
+        <a>Services</a>
+        <div class="mega-menu" *ngIf="hoverMenu === 'services'">
           <div>
             <h4>General</h4>
             <ul>
@@ -70,9 +61,11 @@
           </div>
         </div>
       </li>
-      <li>
+
+      <!-- Industries -->
+      <li class="has-dropdown" (mouseenter)="hoverMenu = 'industries'" (mouseleave)="hoverMenu = null">
         <a>Industries</a>
-        <div class="mega-menu" *ngIf="!isScrolled">
+        <div class="mega-menu" *ngIf="hoverMenu === 'industries'">
           <div>
             <ul>
               <li><a href="/industries/automative">Automotive</a></li>
@@ -88,14 +81,15 @@
           <div>
             <ul>
               <li><a href="/industries/manufacturing">Manufacturing</a></li>
-             
             </ul>
           </div>
         </div>
       </li>
-      <li >
-        <a >Solutions</a>
-        <div class="mega-menu" *ngIf="!isScrolled">
+
+      <!-- Solutions -->
+      <li class="has-dropdown" (mouseenter)="hoverMenu = 'solutions'" (mouseleave)="hoverMenu = null">
+        <a>Solutions</a>
+        <div class="mega-menu" *ngIf="hoverMenu === 'solutions'">
           <div>
             <ul>
               <li><a href="/solutions/btp">SAP BTP</a></li>
@@ -105,14 +99,15 @@
           <div>
             <ul>
               <li><a href="/solutions/f-and-a">F&A</a></li>
-             
             </ul>
           </div>
         </div>
       </li>
-      <li >
-        <a >About Atliontech</a>
-        <div class="mega-menu" *ngIf="!isScrolled">
+
+      <!-- About -->
+      <li class="has-dropdown" (mouseenter)="hoverMenu = 'about'" (mouseleave)="hoverMenu = null">
+        <a>About Atliontech</a>
+        <div class="mega-menu" *ngIf="hoverMenu === 'about'">
           <div>
             <ul>
               <li><a href="/blogs">Blogs</a></li>
@@ -121,8 +116,10 @@
           </div>
         </div>
       </li>
+
+      <!-- Contact -->
       <li class="no-dropdown">
-        <a href="#contact" class="contact-btn">Contact </a>
+        <a href="#contact" class="contact-btn">Contact</a>
       </li>
     </ul>
   </nav>

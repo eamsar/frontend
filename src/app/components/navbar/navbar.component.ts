@@ -19,14 +19,17 @@ constructor(private router: Router) {}
   }
     showSearch = false;
 
- toggleSearch() {
+
+
+hoverMenu: string | null = null;
+
+toggleSearch(): void {
   this.showSearch = !this.showSearch;
 }
 
-closeSearch() {
+closeSearch(): void {
   this.showSearch = false;
 }
-
 
   onSearch() {
       console.log('Searching for:', this.searchTerm);

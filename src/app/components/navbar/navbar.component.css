@@ -127,7 +127,8 @@ ul.nav-links > li.no-dropdown > a::after {
   top: 130px;
   left: 0;
   width: 100vw;
-  height: 500px;
+ min-height: 300px;
+height: auto;
   background: white;
   color: #333;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -136,9 +137,11 @@ ul.nav-links > li.no-dropdown > a::after {
   transform: translateY(-10px);
   transition: all 0.4s ease;
   display: flex;
-  justify-content: center;
-  gap: 100px;
-  padding: 40px 80px;
+  justify-content: flex-start;
+  align-items: flex-start;  /* ✅ aligns all columns to top */
+  flex-wrap: wrap;          /* ✅ responsive support */
+  gap: 60px;
+  padding: 30px 60px;
   overflow-y: auto;
   z-index: 999;
 }
@@ -149,9 +152,9 @@ nav ul.nav-links > li.mega-open .mega-menu {
   transform: translateY(0);
 }
 .mega-menu > div {
-  flex: 1;
+   flex: 1;
   min-width: 220px;
-  text-align: center;
+  text-align: left;   /* ✅ no centering */
 }
 .mega-menu h4 {
   margin-top: 0;

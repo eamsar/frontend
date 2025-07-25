@@ -1,217 +1,149 @@
-.career-page {
-  background: #f7f9fc;
-  padding: 40px 20px;
-}
 body {
   overflow-x: hidden;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  color: #2b2b2b;
 }
+
+/* ============================
+   1. Career Header
+============================ */
 .career-header {
-  padding: 20px 0; /* minimal vertical padding, no margin */
+  position: relative;
+  height: 70vh;
+  background: url('/assets/hiring.jpg') center/cover no-repeat;
   color: white;
   overflow: hidden;
-    /* background: linear-gradient(to right, #003640, #005c66); */
+}
+
+.career-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .career-content {
-  display: flex;
-  align-items: center;
+  position: relative;
+  z-index: 2;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 20px;
+  display: flex;
+  align-items: flex-end;   /* Align to bottom */
+  justify-content: center;
+  padding: 0 20px 40px;     /* Padding at bottom */
 }
 
 .career-text {
-  flex: 1 1 50%;
-  min-width: 300px;
-  color: white;
+  text-align: center;
+  max-width: 600px;
   animation: slideFadeInLeft 1s ease forwards;
 }
 
-.career-text h1 {
-  font-size: 3rem;
-  margin: 0 0 10px 0;
-  color: #f58220; /* orange */
-  animation: pulse 4s ease-in-out infinite 1s;
-}
 
-.career-text p {
-  font-size: 1.2rem;
-  margin: 0;
-  animation: softFade 6s ease-in-out infinite 1.3s;
-  color:#003640;
-}
-
-.career-image {
-  flex: 1 1 50%;
-  min-width: 300px;
-  text-align: right;
-  animation: fadeIn 1.2s ease forwards;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-end; /* keep image right-aligned */
-}
-
-.career-image img {
-  max-width: 100%;
-  max-height: 400px;  /* limit height */
-  width: auto;        /* let width adjust automatically */
-  height: auto;
-  border-radius: 16px;
-  object-fit: contain;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  display: block;     /* remove inline gap */
-}
-
-
-@keyframes slideFadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
-}
-
-@keyframes softFade {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.85;
-  }
-}
-
-
-.divider {
-  border-top: 2px solid #005c66;
-  margin: 60px auto;
-  width: 60px;
-}.why-join-us-clean {
+.why-join-us-clean {
   padding: 80px 20px;
-  background-color: #fff;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
 .why-join-us-clean h2 {
   font-size: 2.4rem;
-  color: #003640;
-  margin-bottom: 50px;
+  color: #1d1d1d;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.benefits-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 50px;
-  max-width: 1100px;
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.why-list {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.benefit-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s forwards;
-}
-
-.benefit-block:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.benefit-block:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.benefit-block:nth-child(3) {
-  animation-delay: 0.5s;
-}
-
-.benefit-block h4 {
-  font-size: 1.4rem;
-  color: #f58220;
-  margin-bottom: 8px;
-  transition: transform 0.3s ease;
-}
-
-.benefit-block p {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 16px;
-  max-width: 90%;
-}
-
-.benefit-img {
-  width: 100%;
-  height: 220px;
+.why-item {
+  background: white;
   border-radius: 16px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  flex: 1 1 280px;
+  max-width: 320px;
+  min-width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.benefit-img:hover {
-  transform: scale(1.05) rotate(1deg);
+.why-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.benefit-block:hover h4 {
-  transform: scale(1.05);
-  color: #d95b00;
+.why-item-icon {
+  font-size: 42px;
+  color: #f58220;
+  margin-bottom: 18px;
 }
 
-/* Animation keyframes */
-@keyframes fadeUp {
+.why-item h4 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+  color: #2b2b2b;
+}
+
+.why-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.why-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.why-item:nth-child(1) { --delay: 0.1s; }
+.why-item:nth-child(2) { --delay: 0.2s; }
+.why-item:nth-child(3) { --delay: 0.3s; }
+
+@keyframes fadeInUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-
-.team-quotes h2 {
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: #f58220;
-}
-/* Section full width */
 .team-quotes {
   width: 100%;
   margin: 0;
   padding: 60px 20px;
-  background: linear-gradient(to right, #003640, #005c66);
-  color: white;
+  background: linear-gradient(to right, #b5c9cdff, #eee); /* You can soften these */
+  color: #003640;
   text-align: center;
   box-sizing: border-box;
 }
 
-
-.team-quotes .inner-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.team-quotes h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #003640; /* Keep your orange accent */
 }
 
 /* Scroll setup */
@@ -258,119 +190,50 @@ body {
   margin: 0 auto;
   scroll-snap-type: x mandatory;
 }
-
-
+.testimonials-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 /* Clean no card layout */
 .team-quote-wrapper.no-card {
   text-align: center;
   color: white;
   max-width: 300px;
-    flex: 0 0 320px; /* Width of each card */
-  scroll-snap-align: start; /* Align on scroll stop */
+  flex: 0 0 320px; /* Width of each card */
+  scroll-snap-align: start;
 }
 
-.team-member-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #f58220;
-}
-
-/* Quote & Name */
-.team-quote-wrapper blockquote {
-  font-style: italic;
-  font-size: 16px;
-  margin: 0;
-  color: #eee;
-}
-
-.team-quote-wrapper span {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #f58220;
-}
-
-/* Optional scrollbar */
-.testimonials-grid::-webkit-scrollbar {
-  height: 6px;
-}
-.testimonials-grid::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 4px;
-}
-
-@media(min-width: 768px) {
-  .team-quote-wrapper {
-    flex-direction: row;
-    text-align: left;
-  }
-}
-
-@media(min-width: 768px) {
-  .team-quote-wrapper {
-    flex-direction: row;
-    text-align: left;
-    align-items: center;
-  }
-}
-
-/* Circular team member image */
 .team-member-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #f58220;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
   flex-shrink: 0;
   animation: pulseBorder 3s ease-in-out infinite;
 }
 
-/* Quote block */
-.team-quotes blockquote {
+.team-quote-wrapper blockquote {
   font-style: italic;
   font-size: 1.2rem;
   max-width: 500px;
   margin: 0;
-  color: #fff;
+  color: #003640; /* Softer white */
 }
 
-.team-quotes span {
+.team-quote-wrapper span {
   display: block;
   margin-top: 20px;
   font-weight: bold;
-  color: #f58220;
+  color: #fff; /* Orange accent */
 }
 
 /* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes pulseBorder {
   0%, 100% {
-    box-shadow: 0 4px 15px rgba(245, 130, 32, 0.7);
+    box-shadow: 0 4px 15px #003640;
   }
   50% {
-    box-shadow: 0 4px 25px rgba(245, 130, 32, 1);
+    box-shadow: 0 4px 25px #003640;
   }
 }
 
-.career-image-banner img {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 40px;
-}

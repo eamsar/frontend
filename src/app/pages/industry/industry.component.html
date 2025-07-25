@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+
+<!-- Top Banner -->
+<div class="top-banner" *ngIf="activeIndustry">
+  <img [src]="activeIndustry.backimageUrl" [alt]="activeIndustry.name + ' banner'">
+</div>
+
+<!-- Main Section -->
+<div class="services-section" *ngIf="activeIndustry">
+  <!-- Left Menu -->
+  <div class="services-menu">
+    <h3><div class="banner-text">SERVICES</div></h3>
+    <ul>
+      <li *ngFor="let s of industries">
+        <a [href]="s.link" [ngClass]="{ 'active': isActive(s.link) }">{{ s.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Right Content -->
+  <div class="services-content">
+    <h2>{{ activeIndustry.name }}</h2>
+    <div [innerHTML]="activeIndustry.description"></div>
+
+  <div *ngIf="activeIndustry?.sections">
+  <div *ngFor="let sec of activeIndustry.sections">
+    <h2>{{ sec.title }}</h2>
+    <p>{{ sec.content }}</p>
+  </div>
+</div>
+   
+  </div>
+</div>
+
+<app-contact-form></app-contact-form>
+<app-footer></app-footer>

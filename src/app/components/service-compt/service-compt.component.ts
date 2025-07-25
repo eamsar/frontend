@@ -2,8 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {interval} from 'rxjs';
 import { PLATFORM_ID, Inject } from '@angular/core';
-import { ServicesService,Service } from '../../shared/services/services.service';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'app-service-compt',
   templateUrl: './service-compt.component.html',
@@ -11,37 +9,52 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   imports:[CommonModule]
 })
 export class ServiceComptComponent {
-  services : Service[] = [];
+  services = [
+
+    {
+      title: 'SAP S/4HANA',
+      description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
+      icon: 'assets/servicesimages/images4hana.png' // ← change to your actual image path
+    },
+    {
+      title: 'TMA',
+      description: `Avec notre offre TMA, vous bénéficiez d’une assistance sur mesure, avec un choix selon votre besoin et votre budget`,
+      icon: 'assets/servicesimages/tma.png'
+    },
+    {
+      title: 'AMOA',
+      description: `Nos consultants couvrent tous les domaines fonctionnels liés au fonctionnement interne des entreprises....`,
+      icon: 'assets/servicesimages/amoase.png'
+    },  {
+      title: 'Grow with SAP',
+      description: `SAP S/4HANA Cloud est un progiciel de gestion intégré (ERP) complet, doté de technologies intelligentes intégrées...`,
+      icon: 'assets/servicesimages/gwsap.png' // 
+    },
+    {
+      title: 'Data Analytics $ AI',
+      description: `Avec notre offre TMA, vous bénéficiez d’une assistance sur mesure, avec un choix selon votre besoin et votre budget`,
+      icon: 'assets/servicesimages/dai.png'
+    },
+    {
+      title: 'Customer Experiences',
+      description: `Nos consultants couvrent tous les domaines fonctionnels liés au fonctionnement interne des entreprises....`,
+      icon: 'assets/servicesimages/custemerexp.png'
+    }
+
+  ];
 
   currentIndex = 0;
   counter = 0;
   private intervalId!: number;
- constructor(private Serv: ServicesService,@Inject(PLATFORM_ID) private platformId: Object,private sanitizer: DomSanitizer ){}
-ngOnInit(): void {
-  this.Serv.getServices().subscribe(data => {
-    this.services = data;
-
-    // ✅ Parse sections pour chaque service reçu :
-    this.services.forEach(service => {
-      if (typeof service.sections === 'string') {
-        try {
-          service.sections = JSON.parse(service.sections);
-        } catch (error) {
-          console.error('Invalid JSON in sections:', error);
-          service.sections = [];
-        }
-      }
-    });
-
-    // ✅ Démarre l'auto-slide une fois les services chargés :
+ constructor(@Inject(PLATFORM_ID) private platformId: Object){}
+  ngOnInit(): void {
     if (typeof window !== 'undefined') {
+    // Démarre l'auto-slide toutes les 2 secondes (2000 ms)
       this.intervalId = window.setInterval(() => {
-        this.currentIndex = (this.currentIndex + 1) % this.services.length;
-      }, 5000);
-    }
-  });
-}
+      this.currentIndex = (this.currentIndex + 1) % this.services.length;
+    }, 5000);
 
+  }}
 
   ngOnDestroy(): void {
     // Nettoie le timer pour éviter fuite mémoire
@@ -54,9 +67,6 @@ ngOnInit(): void {
     const total = this.services.length;
     const prevIndex = (this.currentIndex - 1 + total) % total;
     const nextIndex = (this.currentIndex + 1) % total;
-  if (total === 0) {
-    return [];
-  }
     return [
       this.services[prevIndex],
       this.services[this.currentIndex],

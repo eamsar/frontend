@@ -20,26 +20,25 @@ import { CareerComponent } from './pages/career/career.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 
 import { SearchResultsComponent } from './search-results/search-results.component';
-import{AllservicesComponent} from './pages/allservices/allservices.component';
-import { IndustryComponent } from './pages/industry/industry.component';
+
 export const routes: Routes = [ 
     { path: '', component: HomeComponent },
-    { path: 'services/rise-with-sap', component: AllservicesComponent},
-    { path: 'services/grow-with-sap', component: AllservicesComponent },
-    { path: 'services/integration', component: AllservicesComponent },
-    { path: 'services/customer-experience', component: AllservicesComponent},
-    { path: 'services/implementation-capm-fiori-abap', component: AllservicesComponent },
-    { path: 'services/data-analytics', component: AllservicesComponent },
+    { path: 'services/rise-with-sap', component: RiseWithSAPComponent},
+    { path: 'services/grow-with-sap', component: GrowWithSAPComponent },
+    { path: 'services/integration', component: IntegrationComponent },
+    { path: 'services/customer-experience', component: CustomerExperienceComponent},
+    { path: 'services/implementation-capm-fiori-abap', component: ImplementationCAPMFIORIABAPComponent },
+    { path: 'services/data-analytics', component: DataAnalyticsComponent },
 
     { path: 'solutions/btp', component: BTPComponent },
     { path: 'solutions/erp', component: ERPComponent },
     { path: 'solutions/f-and-a', component: FAndAComponent},
 
-    { path: 'industries/automative', component: IndustryComponent },
-    { path: 'industries/energy', component: IndustryComponent },
-     { path: 'industries/financial-services', component: IndustryComponent},
-    { path: 'industries/health-care', component: IndustryComponent },
-    { path: 'industries/manufacturing', component: IndustryComponent },
+    { path: 'industries/automative', component: AutomotiveComponent },
+    { path: 'industries/energy', component: EnergyComponent },
+     { path: 'industries/financial-services', component: FinancialServicesComponent},
+    { path: 'industries/health-care', component: HealthCareComponent },
+    { path: 'industries/manufacturing', component: ManufacturingComponent },
      { path: 'career', component: CareerComponent },
 
       { path: 'blogs', component: BlogsComponent },

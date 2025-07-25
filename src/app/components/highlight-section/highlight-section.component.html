@@ -1,4 +1,4 @@
-<!--<div class="carousel-container">
+<div class="carousel-container">
   <h4 class="subtitle">THE WORLD OF IT & SAP CONSULTING</h4>
   <h2 class="title">
     and <span class="highlight">trends</span> around digital transformation
@@ -6,28 +6,28 @@
 
   <div class="carousel-wrapper">
     <button class="arrow" (click)="prev()">&#8592;</button>
-  
-    <div class="principle-cards-container">
-      <div
-        class="principle-card"
-        *ngFor="let article of visibleArticles; let i = index"
-      >
-        <img [src]="article.imageUrl" alt="Article image" />
-        <div class="card-content">
-          <p class="date">{{ article.date }}</p>
-          <h3>{{ article.title }}</h3>
-          <p class="author">BY {{ article.author }}</p>
-          <button class="read-more">
-            Read more <span class="arrow1">→</span>
-          </button>
-        </div>
-      </div>
-    </div>
+
+  <div class="principle-cards-container">
+  <div
+    class="principle-card" 
+    *ngFor="let article of visibleArticles; let i = index"
+    [class.active]="i === hoveredIndex"
+    [class.hover]="i === hoveredIndex"
+  >
+    <img [src]="article.imageUrl" alt="Article image" />
+    <p class="date">{{ article.date }}</p>
+    <h3>{{ article.title }}</h3>
+    <p class="author">BY {{ article.author }}</p>
+    <button class="read-more">
+      Read more <span class="arrow1">→</span>
+    </button>
+  </div>
+</div>
 
     <button class="arrow" (click)="next()">&#8594;</button>
   </div>
 
-  <div class="dots">
+ <div class="dots">
     <span
       *ngFor="let dot of articles; let i = index"
       [class.active]="i === currentIndex"
@@ -35,39 +35,6 @@
     ></span>
   </div>
 
+
   <a class="learn-more" href="/blogs">Learn more</a>
 </div>
--->
-<section class="timeline-section" aria-label="IT & SAP Consulting Articles Timeline">
-   
-  <h2 >THE WORLD OF IT & SAP CONSULTING
-    and trends around digital transformation
-  </h2>
-
-
-  <div class="timeline-grid" >
-    <div class="timeline-card" *ngFor="let article of visibleArticles"  
-    >
-      <img [src]="article.imageUrl" alt="Article image">
-
-      <div class="timeline-body">
-        <div class="timeline-left">
-          <div class="timeline-circle">
-            <div class="day">{{ article.date.split('-')[0] }}</div>
-            <div class="month">{{  article.date.split('-')[1] }}</div>
-            <div class="year">{{ article.date.split('-')[2] }}</div>
-          </div>
-          <div class="timeline-line"></div>
-        </div>
-
-        <div class="timeline-content">
-          <h3>{{ article.title }}</h3>
-          <p>{{ article.description }}</p>
-          <a [href]="article.link">Learn more &gt;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="learn-more" href="/blogs">Learn more</a>
-</section>
-

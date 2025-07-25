@@ -17,18 +17,14 @@
   <!-- Always visible title -->
   <div class="title-label">{{ ind.name }}</div>
 
-  <div class="industry-display">
-    <div class="card">
-      <div class="card-image"
-           [style.background-image]="'url(' + industries[activeIndex].imageUrl + ')'">
-      </div>
-      <div class="card-content">
-        <h3>{{ industries[activeIndex].name }}</h3>
-        <p>{{ industries[activeIndex].description }}</p>
-        <a href="{{industries[activeIndex].link}}" class="btn-read">Read more →</a>
-      </div>
-    </div>
+  <!-- Only visible when active -->
+  <div class="overlay" *ngIf="i === activeIndex">
+    <h3>{{ ind.name }}</h3>
+    <p>{{ ind.description }}</p>
+    <a href="#" class="btn-read">Read more →</a>
   </div>
+</div>
+
 </div>
 
 </section>

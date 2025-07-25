@@ -70,6 +70,8 @@ nav {
   height: 70px;
   position: relative;
   z-index: 1000;
+
+
 }
 
 .logo {
@@ -124,11 +126,10 @@ ul.nav-links > li.no-dropdown > a::after {
 ======================== */
 .mega-menu {
   position: fixed;
-  top: 130px;
+  top: 115px;
   left: 0;
   width: 100vw;
- min-height: 300px;
-height: auto;
+height: 10cm;
   background: white;
   color: #333;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

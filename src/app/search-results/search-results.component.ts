@@ -1,45 +1,80 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../components/navbar/navbar.component";
 import { ContactFormComponent } from "../components/contact-form/contact-form.component";
 import { FooterComponent } from "../components/footer/footer.component";
+import { SearchService } from '../shared/services/search.service';
+import { ActivatedRoute } from '@angular/router';
+
+interface SearchResult {
+  industries: any[];
+  jobs: any[];
+  services: any[];
+}
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   imports: [FormsModule, CommonModule, NavbarComponent, ContactFormComponent, FooterComponent],
+  standalone: true,  // add this if your component is standalone
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
   query = '';
-  allItems: any[] = []; // Mocked data from all components
-  filteredItems: any[] = [];
+  filteredResults: SearchResult | null = null;
+  loading = false;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private searchService: SearchService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    // Read the query param 'q' from URL and perform search
     this.route.queryParams.subscribe(params => {
-      this.query = (params['q'] || '').toLowerCase();
-      this.loadAllContent();
-      this.filterResults();
+      const q = params['keyword'] || '';
+
+      if (q) {
+        this.query = q;
+        this.filterResults();
+      }
+    });
+  }
+  activeTab: 'industries' | 'jobs' | 'services' = 'industries';
+  filterResults() {
+    if (!this.query.trim()) return;
+
+    this.loading = true;
+    this.searchService.search(this.query).subscribe({
+      next: (results) => {
+        this.filteredResults = results;
+        this.loading = false;
+
+        // Reset tab to industries whenever new results load
+        this.activeTab = 'industries';
+      },
+      error: (err) => {
+        console.error('Search error:', err);
+        this.filteredResults = null;
+        this.loading = false;
+      },
     });
   }
 
-  loadAllContent() {
-    // Simulate pulling data from news/services/industries
-    this.allItems = [
-      { title: 'Data Analytics, Big Data & AI', category: 'Services', content: 'We make data talk...' },
-      { title: 'Health Insurance', category: 'Industries', content: 'Insurance services for health' },
-      { title: 'SAP BTP', category: 'Solutions', content: 'Platform for development' },
-      // ... inject from real services later
-    ];
+  hasAnyResults(): boolean {
+    return (
+      (this.filteredResults?.industries?.length || 0) +
+      (this.filteredResults?.jobs?.length || 0) +
+      (this.filteredResults?.services?.length || 0) > 0
+    );
   }
 
-  filterResults() {
-    this.filteredItems = this.allItems.filter(item =>
-      item.title.toLowerCase().includes(this.query) ||
-      item.content.toLowerCase().includes(this.query)
+  totalResults(): number {
+    return (
+      (this.filteredResults?.industries?.length || 0) +
+      (this.filteredResults?.jobs?.length || 0) +
+      (this.filteredResults?.services?.length || 0)
     );
   }
 }

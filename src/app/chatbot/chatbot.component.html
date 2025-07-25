@@ -1,0 +1,33 @@
+<div class="chatbot-container" [class.open]="isOpen">
+  <!-- Toggle button -->
+  <button class="chatbot-toggle" (click)="toggleChat()">
+    <i class="fas fa-comments"></i> 
+  </button>
+
+  <!-- Chat window -->
+  <div class="chatbot-window" *ngIf="isOpen">
+    <div class="chatbot-header">
+      <span>How can we help you?</span>
+      <button class="close-btn" (click)="toggleChat()">&times;</button>
+    </div>
+
+    <div class="chatbot-messages" #messagesContainer>
+      <!-- Chat messages will go here -->
+      <div *ngFor="let msg of messages" [ngClass]="{'user-msg': msg.from === 'user', 'bot-msg': msg.from === 'bot'}">
+        {{ msg.text }}
+      </div>
+    </div>
+
+    <form (submit)="sendMessage()" class="chatbot-input-area">
+      <input
+        type="text"
+        placeholder="Type your message..."
+        [(ngModel)]="userInput"
+        name="message"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" [disabled]="!userInput.trim()">Send</button>
+    </form>
+  </div>
+</div>

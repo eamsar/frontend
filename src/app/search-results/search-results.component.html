@@ -1,18 +1,57 @@
 <app-navbar></app-navbar>
-<h1>Search result</h1>
 
-<div class="search-box">
-  <input [(ngModel)]="query" placeholder="Search..." />
-  <button (click)="filterResults()">Search</button>
+<div class="container">
+  <section class="search-header">
+    <h1>Search Results</h1>
+    <p *ngIf="query">Showing results for <strong>"{{ query }}"</strong></p>
+
+    <div class="search-box">
+      <input [(ngModel)]="query" placeholder="Search..." />
+      <button (click)="filterResults()" [disabled]="loading || !query.trim()">
+        <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m-4.9 0a7 7 0 1110 0 7 7 0 01-10 0z"/></svg>
+        Search
+      </button>
+    </div>
+
+    <div *ngIf="loading" class="loading-spinner"></div>
+
+    <p *ngIf="!loading && hasAnyResults()" class="result-count">{{ totalResults() }} results found</p>
+    <p *ngIf="!loading && !hasAnyResults() && query.trim()" class="no-results">No results found for "{{ query }}"</p>
+  </section>
+
+  <section *ngIf="!loading && filteredResults" class="results-section">
+    <div class="tabs">
+      <button [class.active]="activeTab === 'industries'" (click)="activeTab='industries'">Industries ({{ filteredResults.industries.length }})</button>
+      <button [class.active]="activeTab === 'jobs'" (click)="activeTab='jobs'">Jobs ({{ filteredResults.jobs.length }})</button>
+      <button [class.active]="activeTab === 'services'" (click)="activeTab='services'">Services ({{ filteredResults.services.length }})</button>
+    </div>
+
+    <div *ngIf="activeTab === 'industries'" class="category-results">
+      <div *ngFor="let industry of filteredResults.industries" class="result-card">
+        <h3>{{ industry.name }}</h3>
+        <p>{{ industry.description }}</p>
+        <a [href]="industry.link || '#'" target="_blank" rel="noopener">Read more →</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeTab === 'jobs'" class="category-results">
+      <div *ngFor="let job of filteredResults.jobs" class="result-card">
+        <h3>{{ job.title }}</h3>
+        <p>{{ job.description }}</p>
+        <span class="job-meta">{{ job.location }} — {{ job.type }}</span>
+        <a href="#" target="_blank" rel="noopener">Read more →</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeTab === 'services'" class="category-results">
+      <div *ngFor="let service of filteredResults.services" class="result-card">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.description }}</p>
+        <a [href]="service.Link || '#'" target="_blank" rel="noopener">Read more →</a>
+      </div>
+    </div>
+  </section>
 </div>
 
-<p>{{ filteredItems.length }} results were found.</p>
-
-<div *ngFor="let item of filteredItems" class="result-card">
-  <h2>{{ item.title }}</h2>
-  <p>{{ item.content }}</p>
-  <span class="category">{{ item.category }}</span>
-  <a href="#">Read more →</a>
-</div>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>

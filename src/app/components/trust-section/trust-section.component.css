@@ -1,120 +1,97 @@
 .principles-section {
   max-width: 1200px;
-  margin:  auto;
-  padding: 30px 30px;
-  text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-  height: 14cm;
-  margin-bottom: 3cm;
+  margin: auto;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  background: #fff;
+  color: #222; /* darker base text color for visibility */
 }
 
 .principles-header h4 {
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  color: #aaa;
-  margin-bottom: 8px;
+  font-size: 14px;              /* slightly bigger */
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  color: #444;                  /* medium-dark gray */
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .principles-header h2 {
-  font-size: 28px;
-  font-weight: 400;
-  color: #003b4a;
+  font-size: 36px;
+  font-weight: 700;         /* stronger weight */
+  margin-bottom: 10px;
+  color: #003b4a;               /* original dark blue */
+  text-align: center;
 }
 
 .principles-header .bold {
-  font-weight: bold;
+  font-weight: 800;
+  color: #003b4a;
 }
 
 .principles-header .highlight {
-  color: #f78c00;
-  font-weight: bold;
+  color: #f78c00;               /* keep original orange */
+  font-weight: 600;
 }
 
-.principles-cards {
+.principles-header .subtitle {
+  font-size: 16px;
+  color: #333;                  /* darker gray for readability */
+  max-width: 700px;
+  margin: 0 0 40px 0;           /* remove auto to avoid centering */
+  line-height: 1.7;
+  font-weight: 500;             /* medium weight */
+  text-align: left;
+  /* Optional: add some padding-left if needed */
+   padding-left: 22px; 
+}
+
+
+.principles-list {
   display: flex;
   flex-wrap: wrap;
-    justify-content: center;
-  margin-top: 40px;
-  gap: 30px;
-}
-.principle-card {
-  background: #daefef;
-  border-radius: 10px;
-  padding: 30px 20px;
-  width: 270px;
-  min-height: 400px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  gap: 40px;
   justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
-.principle-card:hover {
- transform: translateY(-8px);
-  border-color: #00cccc; /* Bright teal on hover */
-  box-shadow: 0 8px 20px rgba(0, 204, 204, 0.2);
+.principle-block {
+  flex: 1 1 220px;
+  max-width: 260px;
+  text-align: left;
 }
 
-.principle-card:hover h3 {
-  color: #008084;
-}
-
-
-.principle-card:hover .icon {
-  background-color: #fff;
-}
-
-.principle-card .icon {
-  width: 70px;
-  height: 70px;
-  background-color: #fff;
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.principle-icon {
+  width: 50px;
+  height: 50px;
   margin-bottom: 15px;
 }
 
-.principle-card img {
-   width: 70px;
-  height: 70px;
-  margin: 0 auto 20px;
-  background-color: #e7f6f8;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.principle-card h3 {
-  font-size: 16px;
+.principle-block h3 {
+  font-size: 18px;              /* larger heading */
   font-weight: 700;
-  color: #f78c00;
-  margin: 15px 0 10px;
+  color: #222;                  /* darker for visibility */
+  margin-bottom: 10px;
 }
 
-.principle-card p {
-  font-size: 13px;
-  color: #555;
-  line-height: 1.5;
-  max-width: 90%;
-  margin: 0 auto;
+.principle-block p {
+  font-size: 16px;              /* larger paragraph */
+  line-height: 1.7;
+  color: #333;                  /* medium-dark gray */
+  font-weight: 500;
 }
 
 .principles-button {
-  margin-top: 40px;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .btn-outline {
-  border: 1px solid #f78c00;
+  border: 1px solid #f78c00;   /* orange border */
   padding: 10px 20px;
-  color: #f78c00;
+  color: #f78c00;               /* orange text */
+  background: transparent;
   text-decoration: none;
   border-radius: 5px;
   font-weight: 500;
@@ -126,15 +103,10 @@
   color: #fff;
 }
 
-/* ✅ RESPONSIVE BREAKPOINTS */
-@media (max-width: 992px) {
-  .principle-card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 600px) {
-  .principle-card {
-    width: 100%;
+/* Responsive */
+@media (max-width: 768px) {
+  .principle-block {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }

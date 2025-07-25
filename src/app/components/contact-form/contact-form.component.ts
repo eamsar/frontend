@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ContactService } from '../../shared/services/contact.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-contact-form',
   imports: [CommonModule,FormsModule],
@@ -11,15 +12,21 @@ import { ContactService } from '../../shared/services/contact.service';
 export class ContactFormComponent {
   showPrivacyModal: boolean = false;
 validationMessage: string | null = null;
+  isContactVisible = false;
 
+  toggleContact() {
+    this.isContactVisible = !this.isContactVisible;
+  }
   openPrivacyModal() {
     this.showPrivacyModal = true;
   }
-
+  get isHomePage(): boolean {
+    return this.router.url === '/' || this.router.url === '/home';
+  }
   closePrivacyModal() {
     this.showPrivacyModal = false;
   }
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService , private router: Router) {}
    onSubmit() {
     const salutation = (document.querySelector('input[name="salutation"]:checked') as HTMLInputElement)?.nextSibling?.textContent?.trim() || '';
     const company = (document.querySelector('input[placeholder="Company"]') as HTMLInputElement)?.value || '';
